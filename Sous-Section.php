@@ -203,8 +203,9 @@ ob_start();
 </html>
 
 <?php
+
 // Récupérer le contenu du tampon de sortie dans une variable et effacer le tampon
 $content = ob_get_clean();
-
+echo $content;
 // Maintenant, $content contient tout le contenu HTML de la page Sous-section Viewer
 ?>
