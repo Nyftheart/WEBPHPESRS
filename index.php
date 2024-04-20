@@ -1,61 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f8f8;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin-right: 20px;
-        }
-
-        nav ul li:last-child {
-            margin-right: 0;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        section {
-            padding: 50px;
-            background-color: #fff;
-            margin: 20px;
-            border-radius: 10px;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-            margin-top: 20px;
-        }
-    </style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -85,6 +29,7 @@
             margin: 0;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         nav ul li {
@@ -115,11 +60,24 @@
             text-align: center;
             margin-top: 20px;
         }
+
+        /* Media queries pour la responsivité */
+        @media screen and (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin-bottom: 10px;
+            }
+        }
     </style>
 </head>
 <body>
 <header>
     <h1>Normes Européennes de Reporting en Matière de Durabilité (ESRS)</h1>
+    <br>
     <nav>
         <ul>
             <li><a href="#about">À propos des ESRS</a></li>
@@ -162,8 +120,5 @@
 <footer>
     <p>Inscrivez-vous dès aujourd'hui pour rejoindre le mouvement pour la durabilité en Europe !</p>
 </footer>
-</body>
-</html>
-
 </body>
 </html>
