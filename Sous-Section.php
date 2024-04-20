@@ -1,7 +1,7 @@
 <?php
 // Démarrer la session PHP
 session_start();
-
+ob_start();
 ?>
 <style>
     body {
@@ -201,3 +201,10 @@ session_start();
 </script>
 </body>
 </html>
+
+<?php
+// Récupérer le contenu du tampon de sortie dans une variable et effacer le tampon
+$content = ob_get_clean();
+
+// Maintenant, $content contient tout le contenu HTML de la page Sous-section Viewer
+?>
