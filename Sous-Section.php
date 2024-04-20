@@ -176,6 +176,7 @@ session_start();
     }
     ?>
 </div>
+<form method="post" action="export_pdf.php">
 <script>
     // Récupérer tous les éléments de sélection de réponse
     var responseSelects = document.querySelectorAll('.response');

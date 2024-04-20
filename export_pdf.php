@@ -9,7 +9,7 @@ use Dompdf\Dompdf;
 $dompdf = new Dompdf();
 
 // Charger votre HTML dans Dompdf
-$html = file_get_contents('index.php');
+$html = file_get_contents('Sous_Section.php');
 $dompdf->loadHtml($html);
 
 // (Optionnel) Définir les options du PDF (par exemple, la taille du papier et l'orientation)
