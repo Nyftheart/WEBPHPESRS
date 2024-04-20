@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil - Normes Européennes de Reporting en Matière de Durabilité (ESRS)</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -60,28 +56,6 @@
             margin-top: 20px;
         }
     </style>
-</head>
-<body>
-<header>
-    <h1>Normes Européennes de Reporting en Matière de Durabilité (ESRS)</h1>
-    <nav>
-        <ul>
-            <li><a href="#about">À propos des ESRS</a></li>
-            <li><a href="#compliance-test">Participez au test de conformité</a></li>
-            <li><a href="#benefits">Pourquoi rejoindre les ESRS ?</a></li>
-            <li><a href="#resources">Ressources et support</a></li>
-            <li><a href="#contact">Contactez-nous</a></li>
-        </ul>
-    </nav>
-</header>
-
-<section id="about">
-    <h2>À propos des ESRS</h2>
-    <p>Les Normes Européennes de Reporting en Matière de Durabilité (ESRS) sont un cadre harmonisé pour la collecte, la mesure et la communication des informations sur la durabilité au sein de l'Union Européenne. Adoptées par la Commission Européenne, ces normes visent à renforcer la transparence et la responsabilité des entreprises et des organisations en matière de durabilité.</p>
-</section>
-
-<!DOCTYPE html>
-<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
