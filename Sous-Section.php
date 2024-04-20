@@ -177,6 +177,8 @@ session_start();
     ?>
 </div>
 <form method="post" action="export_pdf.php">
+    <button type="submit" name="export_pdf">Exporter en PDF</button>
+</form>
 <script>
     // Récupérer tous les éléments de sélection de réponse
     var responseSelects = document.querySelectorAll('.response');
