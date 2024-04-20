@@ -1,3 +1,8 @@
+<?php
+// Démarrer la session PHP
+session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,6 +54,9 @@
                     $url = "https://api-esrs.azurewebsites.net/Sous-section.php?section_id=" . substr($key, strrpos($key, '-') + 1);
                     $sous_sections = json_decode(file_get_contents($url), true);
 
+                    $url2 = "https://api-esrs.azurewebsites.net/Question.php?";
+                    $questions = json_decode(file_get_contents($url2), true);
+
                     // Afficher la question de la section principale
                     $section_id = substr($key, strrpos($key, '-') + 1);
                     echo "<h2>Question de la section :</h2>";
@@ -69,11 +77,23 @@
                         echo "<td><input type='text' name='justification-" . $sous_section['ID_Sous_section'] . "'></td></tr>"; // Colonne Justification
                         // Ajout d'un identifiant unique pour chaque sous-section
                         echo "<tr class='additional-questions' id='additional-questions-" . $sous_section['ID_Sous_section'] . "' style='display:none;'><td colspan='3'>";
-                        echo "<table>"; // Créer un sous-tableau pour les questions supplémentaires
-                        echo "<tr><td>Question supplémentaire 1</td><td>Réponse</td><td>Justification</td></tr>";
-                        echo "<tr><td>Question supplémentaire 2</td><td>Réponse</td><td>Justification</td></tr>";
-                        // Ajoutez autant de questions supplémentaires que nécessaire
-                        echo "</table>";
+                        if (!empty($questions)) {
+                            echo "<table>";
+                            echo "<tr><th>Question</th><th>Réponse</th><th>Justification</th></tr>";
+                            foreach ($questions as $question) {
+                                echo "<tr>";
+                                echo "<td>" . $question['Contenu'] . "</td>";
+                                echo "<td><select name='response-" . $question['ID_Question'] . "'>";
+                                echo "<option value='oui'>Oui</option>";
+                                echo "<option value='non'>Non</option>";
+                                echo "</select></td>";
+                                echo "<td><input type='text' name='justification-" . $question['ID_Question'] . "'></td>";
+                                echo "</tr>";
+                            }
+                            echo "</table>";
+                        } else {
+                            echo "<p>Aucune question supplémentaire trouvée.</p>";
+                        }
                         echo "</td></tr>";
                         echo "</table>";
                     }

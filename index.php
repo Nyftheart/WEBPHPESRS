@@ -139,7 +139,7 @@
 <section id="compliance-test">
     <h2>Participez au test de conformité</h2>
     <p>Évaluez votre niveau de conformité aux ESRS en participant à notre test de conformité en ligne. Découvrez dans quelle mesure votre entreprise ou organisation est concernée par ces normes et identifiez les domaines dans lesquels des améliorations peuvent être apportées.</p>
-    <a href="Section.php" class="btn">Accéder au test de conformité</a>
+    <a href="PReSection.php" class="btn">Accéder au test de conformité</a>
 </section>
 
 
