@@ -2,6 +2,10 @@
 // Démarrer la session PHP
 session_start();
 ob_start();
+$content = ob_get_clean();
+echo $content;
+$file = "sous_section_viewer.html";
+file_put_contents($file, $content);
 ?>
 <style>
     body {
@@ -176,8 +180,8 @@ ob_start();
     }
     ?>
 </div>
-<form method="post" action="export_pdf.php">
-    <button type="submit" name="export_pdf">Exporter en PDF</button>
+<form method="post" action="<?php echo $file; ?>" target="_blank">
+    <button type="submit" name="download_html">Télécharger le fichier HTML</button>
 </form>
 <script>
     // Récupérer tous les éléments de sélection de réponse
@@ -205,7 +209,6 @@ ob_start();
 <?php
 
 // Récupérer le contenu du tampon de sortie dans une variable et effacer le tampon
-$content = ob_get_clean();
-echo $content;
+
 // Maintenant, $content contient tout le contenu HTML de la page Sous-section Viewer
 ?>
