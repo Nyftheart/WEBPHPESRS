@@ -191,25 +191,5 @@
 </body>
 </html>
 
-
-<section id="benefits">
-    <h2>Pourquoi rejoindre les ESRS ?</h2>
-    <p>En adoptant les ESRS, vous renforcez la confiance de vos parties prenantes et contribuez à la construction d'un avenir plus durable. Apprenez-en plus sur les avantages de l'adhésion aux ESRS et sur la manière dont ces normes peuvent vous aider à intégrer les principes de durabilité dans vos opérations et vos rapports.</p>
-</section>
-
-<section id="resources">
-    <h2>Ressources et support</h2>
-    <p>Explorez nos ressources pour en savoir plus sur les ESRS et accédez à notre support pour vous aider à mettre en œuvre ces normes au sein de votre entreprise ou organisation.</p>
-</section>
-
-<section id="contact">
-    <h2>Contactez-nous</h2>
-    <p>Pour plus d'informations sur les ESRS ou pour obtenir de l'aide, n'hésitez pas à nous contacter. Notre équipe est là pour répondre à toutes vos questions et vous guider dans votre démarche vers la durabilité.</p>
-    <!-- Ajoutez un formulaire de contact ici -->
-</section>
-
-<footer>
-    <p>Inscrivez-vous dès aujourd'hui pour rejoindre le mouvement pour la durabilité en Europe !</p>
-</footer>
 </body>
 </html>
