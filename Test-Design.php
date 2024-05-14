@@ -432,7 +432,11 @@
                 <p>Previous <i class="fas fa-chevron-right"></i></p> <!-- Icône de flèche -->
             </button>
         </div>
-
+        <div style="margin-top:7%" class="plan">
+            <div class="">
+                <a href="result.php" class="styled-button">Cliquez ici</a>
+            </div>
+        </div>
     </div>
 </div>
 
