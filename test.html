@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accordion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 80%;
+            margin: 0 auto; /* Pour centrer le contenu */
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .accordion {
+            border: 0;
+        }
+
+        .card {
+            margin-bottom: 30px;
+            border: 0;
+        }
+
+        .card-header {
+            border: 0;
+            box-shadow: 0 0 20px 0 rgba(213, 213, 213, 0.5);
+            border-radius: 2px;
+            padding: 0;
+        }
+
+        .btn-header-link {
+            color: #fff;
+            display: block;
+            text-align: left;
+            padding: 20px;
+            cursor: pointer;
+            position: relative;
+            transition: background-color 0.3s;
+        }
+
+        .btn-header-link:after {
+            content: "\f107";
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            float: right;
+        }
+
+        .btn-header-link.collapsed:after {
+            content: "\f106";
+        }
+
+        .card-body {
+            display: none;
+            line-height: 30px;
+            padding: 20px;
+            border-radius: 0 0 5px 5px;
+            color: white;
+            font-weight: 600;
+            font-size: 18px; /* Réduit la taille de la police pour mieux s'adapter au contenu */
+        }
+
+        .card-body.show {
+            display: block;
+        }
+
+        /* Couleurs spécifiques */
+        .gray .btn-header-link {
+            background: #999;
+        }
+
+        .green .btn-header-link {
+            background: #5cb85c;
+        }
+
+        .orange .btn-header-link {
+            background: #f0ad4e;
+        }
+
+        .blue .btn-header-link {
+            background: #5bc0de;
+        }
+
+        .gray .card-body {
+            background: #a7a7a7;
+        }
+
+        .green .card-body {
+            background: #71d560;
+        }
+
+        .orange .card-body {
+            background: #fbc068;
+        }
+
+        .blue .card-body {
+            background: #78d2e1;
+        }
+
+        .concern-button {
+            margin-top: 10px;
+            background-color: #fff;
+            color: #333;
+            border: 1px solid #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .concern-button:hover {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="accordion" id="faq">
+    </div>
+</div>
+<script>
+    // ESRS Data
+    const esrsData = [
+        { code: 'ESRS1', name: 'Exigences générales', color: 'gray', content: 'Contenu pour Exigences générales' },
+        { code: 'ESRS2', name: 'Informations générales', color: 'gray', content: 'Contenu pour Informations générales' },
+        { code: 'ESRS E1', name: 'Changement climatique', color: 'green', content: 'ESRS E1 est la première norme du volet environnemental des normes ESRS. Elle a\n' +
+                'pour objet le changement climatique.\n' +
+                '\n' +
+                'Elle recouvre 3 sujets : l\'atténuation du changement climatique, l\'adaptation à\n' +
+                'ses effets via la réduction des émissions de gaz à effet de serre, ainsi que la\n' +
+                'question de l\'énergie.\n' +
+                '\n' +
+                'Pour satisfaire à cet ESRS E1, les entreprises concernées doivent fournir des\n' +
+                'informations complètes sur l\'impact du changement climatique sur leurs\n' +
+                'activités et expliquer comment elles anticipent et s’adaptent au réchauffement\n' +
+                'climatique.\n' +
+                '\n' +
+                'Elles doivent aussi expliquer leur plan d’action pour atteindre un objectif en\n' +
+                'termes d’émissions de gaz à effet de serre compatible avec un scénario à\n' +
+                'maximum + 1,5°C prévu par les Accords de Paris.\n' +
+                '\n' +
+                'Une entreprise qui choisit de ne pas faire figurer le volet climat dans son\n' +
+                'reporting doit justifier que ce sujet ne la concerne pas. En pratique, il sera très\n' +
+                'difficile voire impossible pour les entreprises de ne pas reporter sur le volet\n' +
+                'climat puisque la plupart voire la totalité des activités humaines conduisent à\n' +
+                'émettre des gaz à effet de serre.\n' +
+                '\n' +
+                'ESRS E1 prévoit un ensemble de données qui doivent être publiées par\n' +
+                'l\'entreprise dans son rapport de durabilité. Ces exigences de divulgation\n' +
+                '(disclosure requirements ou « DR ») sont au nombre de 9 et le nombre de points\n' +
+                'de données (indicateurs) est de 220.\n'},
+        { code: 'ESRS E2', name: 'Pollution', color: 'green', content: 'Contenu pour Pollution' },
+        { code: 'ESRS E3', name: 'Ressources aquatiques et marines', color: 'green', content: 'Contenu pour Ressources aquatiques et marines' },
+        { code: 'ESRS E4', name: 'Biodiversité & écosystèmes', color: 'green', content: 'Contenu pour Biodiversité & écosystèmes' },
+        { code: 'ESRS E5', name: 'Utilisation des ressources & économie circulaire', color: 'green', content: 'Contenu pour Utilisation des ressources & économie circulaire' },
+        { code: 'ESRS S1', name: 'Personnel de l’entreprise', color: 'blue', content: 'Contenu pour Personnel de l’entreprise' },
+        { code: 'ESRS S2', name: 'Travailleurs dans la chaîne de valeur', color: 'blue', content: 'Contenu pour Travailleurs dans la chaîne de valeur' },
+        { code: 'ESRS S3', name: 'Communautés affectées', color: 'blue', content: 'Contenu pour Communautés affectées' },
+        { code: 'ESRS S4', name: 'Consommateurs et utilisateurs finaux', color: 'blue', content: 'Contenu pour Consommateurs et utilisateurs finaux' },
+        { code: 'ESRS G1', name: 'Conduite responsable des entreprises', color: 'orange', content: 'Contenu pour Conduite responsable des entreprises' }
+    ];
+
+    // Function to generate accordion sections
+    // Function to toggle concern status
+    function toggleConcern(button, esrs) {
+        esrs.concerned = !esrs.concerned; // Inverse l'état de la propriété concerned
+        updateConcernButton(button, esrs); // Met à jour le texte du bouton
+    }
+
+    // Function to generate accordion sections
+    function generateAccordion() {
+        const accordion = document.getElementById('faq');
+
+        esrsData.forEach(esrs => {
+            const card = document.createElement('div');
+            card.classList.add('card', esrs.color);
+
+            const header = document.createElement('div');
+            header.classList.add('card-header');
+
+            const link = document.createElement('div');
+            link.classList.add('btn-header-link', 'collapsed');
+            link.dataset.toggle = 'collapse';
+            link.dataset.target = `#faq${esrs.code}`;
+            link.setAttribute('aria-expanded', 'false');
+            link.setAttribute('aria-controls', `faq${esrs.code}`);
+            link.textContent = `ESRS ${esrs.code} : ${esrs.name}`;
+
+            const body = document.createElement('div');
+            body.id = `faq${esrs.code}`;
+            body.classList.add('collapse');
+            body.setAttribute('aria-labelledby', `faqhead${esrs.code}`);
+            body.dataset.parent = '#faq';
+
+            const bodyContent = document.createElement('div');
+            bodyContent.classList.add('card-body', esrs.color);
+            bodyContent.textContent = esrs.content;
+
+            const concernButton = document.createElement('button');
+            concernButton.classList.add('concern-button');
+            updateConcernButton(concernButton, esrs); // Met à jour le texte du bouton
+            concernButton.addEventListener('click', () => toggleConcern(concernButton, esrs)); // Utilise toggleConcern avec esrs
+
+            accordion.appendChild(card);
+            card.appendChild(header);
+            header.appendChild(link);
+            card.appendChild(body);
+            body.appendChild(bodyContent);
+            body.appendChild(concernButton); // Ajout du bouton après le contenu
+        });
+
+        // JavaScript for accordion functionality
+        const accItems = document.querySelectorAll('.btn-header-link');
+        accItems.forEach((item) => {
+            item.addEventListener('click', function() {
+                const currentItem = this;
+                const parent = currentItem.closest('.card');
+                const body = parent.querySelector('.card-body');
+
+                accItems.forEach((accItem) => {
+                    if (accItem !== currentItem) {
+                        accItem.classList.remove('collapsed');
+                        const parentNotCurrent = accItem.closest('.card');
+                        const bodyNotCurrent = parentNotCurrent.querySelector('.card-body');
+                        bodyNotCurrent.classList.remove('show');
+                    }
+                });
+
+                currentItem.classList.toggle('collapsed');
+                body.classList.toggle('show');
+            });
+        });
+    }
+
+    // Function to update the concern button text based on the ESRS
+    function updateConcernButton(button, esrs) {
+        const defaultState = esrs.concerned ? 'Concerne' : 'Non Concerne';
+        button.textContent = `${defaultState} par ${esrs.code}`;
+    }
+
+
+
+    // Generate accordion sections
+    generateAccordion();
+</script>
+<div class="container">
+    <a href="Test-Design.php" class="styled-button">Cliquez ici</a>
+</div>
+</body>
+</html>

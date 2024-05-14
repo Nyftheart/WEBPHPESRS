@@ -1,13 +1,14 @@
 <?php
 // Démarrer la session PHP
 session_start();
+
 ?>
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulaire Écologique</title>
+    <title>Formulaire</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -58,19 +59,23 @@ session_start();
 </head>
 <body>
 <div class="container">
-    <h2>Formulaire Écologique</h2>
-    <form method="POST" action="Test-Design.php" onsubmit="return validateForm()">
-        <label for="q1">Combien de fois par semaine utilisez-vous des moyens de transport en commun ?</label>
-        <input type="text" id="q1" name="q1" required>
+    <h2>Formulaire</h2>
+    <form method="POST" action="PreSection.php" onsubmit="return validateForm()">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required>
 
-        <label for="q2">Quelle est votre consommation annuelle approximative d'électricité en kWh ?</label>
-        <input type="text" id="q2" name="q2" required>
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required>
 
-        <label for="q3">Pratiquez-vous le tri sélectif des déchets ?</label>
-        <input type="text" id="q3" name="q3" required>
+        <label for="email">Adresse email :</label>
+        <input type="email" id="email" name="email" required>
 
-        <label for="q4">Combien de litres d'eau utilisez-vous en moyenne par jour ?</label>
-        <input type="text" id="q4" name="q4" required>
+        <label for="entreprise">Entreprise :</label>
+        <input type="text" id="entreprise" name="entreprise">
+
+        <label for="telephone">Numéro de téléphone :</label>
+        <input type="tel" id="telephone" name="telephone" required>
+        <span id="tel-error" style="color: red; display: none;">Veuillez entrer un numéro de téléphone valide (10 chiffres).</span>
 
         <input type="submit" value="Soumettre">
     </form>
@@ -81,10 +86,7 @@ session_start();
         var nom = document.getElementById("nom").value;
         var prenom = document.getElementById("prenom").value;
         var email = document.getElementById("email").value;
-        var q1 = document.getElementById("q1").value;
-        var q2 = document.getElementById("q2").value;
-        var q3 = document.getElementById("q3").value;
-        var q4 = document.getElementById("q4").value;
+        var telephone = document.getElementById("telephone").value;
 
         // Vérifier que le nom et le prénom ne contiennent que des lettres
         var letters = /^[A-Za-z]+$/;
@@ -100,9 +102,10 @@ session_start();
             return false;
         }
 
-        // Vérifier que les réponses aux questions écologiques ne sont pas vides
-        if (q1.trim() === "" || q2.trim() === "" || q3.trim() === "" || q4.trim() === "") {
-            alert("Veuillez répondre à toutes les questions écologiques.");
+        // Vérifier que le numéro de téléphone est composé de 10 chiffres
+        var phonePattern = /^\d{10}$/;
+        if (!telephone.match(phonePattern)) {
+            document.getElementById("tel-error").style.display = "block";
             return false;
         }
 
