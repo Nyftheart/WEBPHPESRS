@@ -194,7 +194,6 @@
     }
 
     // Générer une tuile
-    // Générer une tuile
     function generateTile(id, title, color, content) {
         var planDiv = document.createElement('div');
         planDiv.className = 'plan'; // Convertir la couleur en minuscules
@@ -213,30 +212,56 @@
 
         var entryContentDiv = document.createElement('div');
         entryContentDiv.className = 'entry-content';
-        entryContentDiv.innerHTML = '<p>' + content + '</p>';
-        entryContentDiv.innerHTML = '<ul>' +
-            '<li><strong>1x</strong> option 1</li>' +
-            '<li><strong>2x</strong> option 2</li>' +
-            '<li><strong>3x</strong> option 3</li>' +
-            '<li><strong>Free</strong> option 4</li>' +
-            '</ul>';
 
-        var buttonDiv = document.createElement('div');
-        buttonDiv.className = 'btn';
-        var buttonLink = document.createElement('a');
-        buttonLink.href = '#';
-        buttonLink.id = id;
-        buttonLink.textContent = 'Non Completé';
-        buttonDiv.appendChild(buttonLink);
+        // Récupérer les données du stockage local pour la clé esrs.code
+        var localStorageData = JSON.parse(localStorage.getItem(id));
 
+        if (localStorageData) {
+            // Construire la liste avec les données récupérées du stockage local
+            var listHTML = '<ul>';
+            localStorageData.forEach(function(item) {
+                listHTML += '<li><strong>' + item + '</strong></li>';
+            });
+            listHTML += '</ul>';
+
+            // Assigner la liste à entryContentDiv
+            entryContentDiv.innerHTML = listHTML;
+        } else {
+            // Si aucune donnée n'est trouvée dans le stockage local, afficher un message par défaut
+            entryContentDiv.innerHTML = '<p>Le dossier ' + id + ' n\'a pas encore été complété.</p>';
+        }
+
+        // Ajouter le contenu de la tuile à planInnerDiv
         planInnerDiv.appendChild(entryTitleDiv);
         entryTitleDiv.appendChild(priceDiv);
         planInnerDiv.appendChild(entryContentDiv);
+
+        // Créer le bouton avec l'état correspondant
+        var buttonLink = document.createElement('a');
+        buttonLink.href = 'Test-Design.php?code=' + encodeURIComponent(id);
+        if (localStorageData) {
+            // Si des données sont disponibles, afficher "Complété" et le bouton vert
+            buttonLink.textContent = 'Complété';
+            buttonLink.style.backgroundColor = 'green';
+            buttonLink.style.color = 'white';
+        } else {
+            // Sinon, afficher "Non Complété" et le bouton bleu
+            buttonLink.textContent = 'Non Complété';
+            buttonLink.style.backgroundColor = 'red';
+            buttonLink.style.color = 'white';
+        }
+        var buttonDiv = document.createElement('div');
+        buttonDiv.className = 'btn';
+        buttonDiv.appendChild(buttonLink);
         planInnerDiv.appendChild(buttonDiv);
+
+        // Ajouter planInnerDiv à planDiv
         planDiv.appendChild(planInnerDiv);
 
+        // Ajouter planDiv à l'élément parent
         document.getElementById('price').appendChild(planDiv);
     }
+
 
 
     // Générer les tuiles à partir du localStorage lors du chargement de la page

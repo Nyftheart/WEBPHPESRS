@@ -3,306 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Tiles - Résultats</title>
-    <script src="https://kit.fontawesome.com/0beb06bd15.js" crossorigin="anonymous"></script>
+    <title>Accordion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        @import url(https://fonts.googleapis.com/css?family=Lato:400,700);
-
         body {
-            background: #F2F2F2;
-            padding: 0;
+            font-family: Arial, sans-serif;
             margin: 0;
+            padding: 0;
         }
 
-        #price {
-            text-align: center;
-            justify-content: space-around;
-            display: flex;
-            flex-wrap: wrap;
+        .container {
+            max-width: 80%;
+            margin: 0 auto; /* Pour centrer le contenu */
+            padding: 20px;
         }
 
-        .plan {
-            display: inline-block;
-            margin: 10px 1%;
-            font-family: 'Lato', Arial, sans-serif;
+        .accordion {
+            border: 0;
         }
 
-        .plan-inner {
-            background: #fff;
-            margin: 0 auto;
-            min-width: 280px;
-            max-width: 280px;
-            position:relative;
+        .card {
+            border: 0;
+            box-shadow: 0 0 20px 0 rgba(213, 213, 213, 0.5);
+
+
+            overflow: hidden;
         }
 
-        .entry-title {
-            background: #B0B0B0;
-            height: 140px;
-            position: relative;
-            text-align: center;
-            color: #fff;
+        .card-body {
+            display:flex;
+            justify-content: space-between;
+            line-height: 30px;
+            padding: 20px;
+            border-radius: 5px;
+            color: white;
+            font-weight: 600;
+            font-size: 18px; /* Réduit la taille de la police pour mieux s'adapter au contenu */
+        }
+        .card-body_bis {
+            display:flex;
+            justify-content: space-between;
+            line-height: 30px;
+            padding: 20px;
+
+            color: white;
+            font-weight: 600;
+            font-size: 18px; /* Réduit la taille de la police pour mieux s'adapter au contenu */
+        }
+        /* Couleurs spécifiques */
+        .gray {
+            background: #999;
+        }
+        .gray_bis{
+            background: #a7a7a7;
+        }
+
+        .green {
+            background: #5cb85c;
+        }
+        .green_bis{
+            background: #71d560;
+        }
+
+        .orange {
+            background: #f0ad4e;
+        }
+        .orange_bis{
+            background: #fbc068;
+        }
+
+        .blue {
+            background: #5bc0de;
+        }
+        .blue_bis{
+            background: #78d2e1;
+        }
+        /* Ajoutez cette règle CSS pour masquer la section d'accordéon par défaut */
+        button{
             margin-bottom: 30px;
         }
 
-        .entry-title>h3 {
-            background: #7F7F7F;
-            font-size: 20px;
-            padding: 5px 0;
-            text-transform: uppercase;
-            font-weight: 700;
-            margin: 0;
-        }
 
-        .entry-title .price {
-            position: absolute;
-            bottom: -25px;
-            background: #7F7F7F;
-            height: 95px;
-            width: 95px;
-            margin: 0 auto;
-            left: 0;
-            right: 0;
-            overflow: hidden;
-            border-radius: 50px;
-            border: 5px solid #fff;
-            line-height: 95px;
-            font-size: 23px;
-            font-weight: 700;
-        }
-
-        .price span {
-            position: absolute;
-            font-size: 9px;
-            bottom: -10px;
-            left: 30px;
-            font-weight: 400;
-        }
-
-        .entry-content {
-            color: #323232;
-        }
-
-        .entry-content ul {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            text-align: center;
-        }
-
-        .entry-content li {
-            border-bottom: 1px solid #E5E5E5;
-            padding: 10px 10px;
-        }
-
-        .btn {
-            padding: 3em 0;
-            text-align: center;
-        }
-
-        .btn a {
-            background: red;
-            padding: 10px 30px;
-            color: #fff;
-            text-transform: uppercase;
-            font-weight: 700;
-            text-decoration: none
-        }
-
-        .basic .entry-title {
-            background: #82E0AA;
-        }
-
-        .basic .entry-title > h3 {
-            background: #58D68D;
-        }
-
-        .basic .price {
-            background: #58D68D;
-        }
-
-        .standard .entry-title {
-            background: #4484c1;
-        }
-
-        .standard .entry-title > h3 {
-            background: #3772aa;
-        }
-
-        .standard .price {
-            background: #3772aa;
-        }
-
-        .ultimite .entry-title > h3 {
-            background: #DD4B5E;
-        }
-
-        .ultimite .entry-title {
-            background: #F75C70;
-        }
-
-        .ultimite .price {
-            background: #DD4B5E;
-        }
-
-        .buttonliste {
-            padding: 10px 0;
-        }
-
-        .suivantbutton {
-            background: #4484c1;
-            color: #fff;
-            border: none;
-            padding: 10px 30px;
-            cursor: pointer;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-
-        .toggle-button {
-            position: relative;
-        }
-
-        .toggle-button::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #333;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .toggle-button:hover::after {
-            opacity: 1;
-        }
     </style>
 </head>
 <body>
-<div id="price">
-    <div class="plan">
-        <div class="plan-inner">
-            <div class="entry-title">
-                <h3>Exigences générales</h3>
-                <div class="price">ESRS-1</div>
-            </div>
-            <div class="entry-content">
-                <ul>
-                    <li><strong>1x</strong> option 1</li>
-                    <li><strong>2x</strong> option 2</li>
-                    <li><strong>3x</strong> option 3</li>
-                    <li><strong>Free</strong> option 4</li>
-                </ul>
-                <div id="options">
-                    <ul></ul>
-                    <div class="buttonliste">
-                        <button onclick="toggleOptions('options', ['Option supplémentaire 1', 'Option supplémentaire 2', 'Option supplémentaire 3'])">Voir plus</button>
-                    </div>
-                </div>
-            </div>
-            <div class="btn">
-                <a href="#" id="ESRS-1">Non Concerne</a>
-            </div>
-        </div>
+<div class="container">
+    <div class="accordion" id="faq">
+        <!-- Les sections d'accordéon seront générées ici -->
     </div>
-    <div class="plan">
-        <div class="plan-inner">
-            <div class="entry-title">
-                <h3>Informations générales</h3>
-                <div class="price">ESRS-2</div>
-            </div>
-            <div class="entry-content">
-                <ul>
-                    <li><strong>1x</strong> option 1</li>
-                    <li><strong>2x</strong> option 2</li>
-                    <li><strong>3x</strong> option 3</li>
-                    <li><strong>Free</strong> option 4</li>
-                </ul>
-                <div id="options2">
-                    <ul></ul>
-                    <div class="buttonliste">
-                        <button onclick="toggleOptions('options2', ['Option supplémentaire 1', 'Option supplémentaire 2', 'Option supplémentaire 3'])">Voir plus</button>
-                    </div>
-                </div>
-            </div>
-            <div class="btn">
-                <a href="#" id="ESRS-2">Non Concerne</a>
-            </div>
-        </div>
-    </div>
-    <div class="plan">
-        <div class="plan-inner basic">
-            <div class="entry-title">
-                <h3>Exigences générales</h3>
-                <div class="price">ESRS-E1</div>
-            </div>
-            <div class="entry-content">
-                <ul>
-                    <li><strong>Gouvernance</strong> <span class="tooltip" title="Information sur la gouvernance."><i class="fa-solid fa-circle-info"></i></span></li>
-                    <li><strong>Plan de transition pour l’atténuation du changement climatique</strong> <span class="tooltip" title="Information sur le plan de transition pour l’atténuation du changement climatique."><i class="fa-solid fa-circle-info"></i></span></li>
-                    <li><strong>Politiques liées à l’atténuation du changement climatique et à l'adaptation à celui-ci</strong> <span class="tooltip" title="Information sur les politiques liées à l’atténuation du changement climatique et à l'adaptation à celui-ci."><i class="fa-solid fa-circle-info"></i></span></li>
-                    <li><strong>Actions et ressources en rapport avec les politiques en matière de changement climatique</strong> <span class="tooltip" title="Information sur les actions et ressources en rapport avec les politiques en matière de changement climatique."><i class="fa-solid fa-circle-info"></i></span></li>
-                </ul>
-                <div id="options3">
-                    <ul></ul>
-                    <div class="buttonliste">
-                        <button onclick="toggleOptions('options3', [
-                            { label: 'Cibles liées au changement climatique', tooltip: 'Informations sur les cibles liées au changement climatique.' },
-                            { label: 'Consommation d’énergie et mix énergétique', tooltip: 'Informations sur la consommation d’énergie et le mix énergétique.' },
-                            { label: 'Emissions brutes de gaz à effet de serre', tooltip: 'Informations sur les émissions brutes de gaz à effet de serre.' },
-                            { label: 'Absorption des émissions nettes', tooltip: 'Informations sur l’absorption des émissions nettes.' },
-                            { label: 'Intensité des émissions', tooltip: 'Informations sur l’intensité des émissions.' }
-                        ])">Voir plus</button>
-                    </div>
-                </div>
-            </div>
-            <div class="btn">
-                <a href="#" id="ESRS-E1">Non Concerne</a>
-            </div>
-        </div>
-    </div>
-    <div class="plan">
-        <div class="plan-inner standard">
-            <div class="entry-title">
-                <h3>Informations générales</h3>
-                <div class="price">ESRS-S1</div>
-            </div>
-            <div class="entry-content">
-                <ul>
-                    <li><strong>1x</strong> option 1</li>
-                    <li><strong>2x</strong> option 2</li>
-                    <li><strong>3x</strong> option 3</li>
-                    <li><strong>Free</strong> option 4</li>
-                </ul>
-                <div id="options4">
-                    <ul></ul>
-                    <div class="buttonliste">
-                        <button onclick="toggleOptions('options4', ['Option supplémentaire 1', 'Option supplémentaire 2', 'Option supplémentaire 3'])">Voir plus</button>
-                    </div>
-                </div>
-            </div>
-            <div class="btn">
-                <a href="#" id="ESRS-S1">Non Concerne</a>
-            </div>
-        </div>
-    </div>
+    <button id="redirectionButton" class="styled-button">Cliquez ici pour passer à la prochaine page</button>
 </div>
-
 <script>
-    function toggleOptions(elementId, options) {
-        let optionsContainer = document.getElementById(elementId);
-        let optionsList = optionsContainer.querySelector('ul');
-        optionsList.innerHTML = '';
-        options.forEach(option => {
-            let listItem = document.createElement('li');
-            listItem.innerHTML = option.label ? `${option.label} <span class="tooltip" title="${option.tooltip}"><i class="fa-solid fa-circle-info"></i></span>` : option;
-            optionsList.appendChild(listItem);
+    // ESRS Data
+    let esrsData;
+
+    function generateAccordion() {
+        const accordion = document.getElementById('faq');
+
+        esrsData.forEach(esrs => {
+            esrs.content.forEach(contentItem => { // Boucle à travers la liste content de chaque ESRS
+                const card = document.createElement('div');
+                card.classList.add('card', esrs.color);
+
+                const body = document.createElement('div');
+                body.classList.add('card-body');
+                body.textContent = contentItem.item; // Ajoute le texte de l'élément de contenu à la carte
+
+                const description = document.createElement('div');
+                description.classList.add('card-body_bis', esrs.color + "_bis");
+                description.textContent = contentItem.description; // Ajoute la description à la carte
+                description.style.display = 'none'; // Masque la description par défaut
+
+                const header = document.createElement('div');
+                header.classList.add('card-header');
+
+                const link = document.createElement('div');
+                link.classList.add('btn-header-link', 'collapsed');
+                link.dataset.toggle = 'collapse';
+                link.dataset.target = `#faq${esrs.code}`;
+                link.setAttribute('aria-expanded', 'false');
+                link.setAttribute('aria-controls', `faq${esrs.code}`);
+
+                const icon = document.createElement('i');
+                icon.classList.add('fas', 'fa-chevron-down'); // Assurez-vous que ces classes correspondent à celles utilisées par Font Awesome pour afficher votre icône
+                link.appendChild(icon); // Ajoutez l'icône à votre bouton
+
+                const concernButton = document.createElement('button');
+                concernButton.textContent = 'Non concerne';
+                concernButton.dataset.esrsCode = esrs.code; // Ajoutez cet attribut personnalisé pour stocker le code ESRS
+                concernButton.dataset.sectionTitle = contentItem.item; // Ajoutez un attribut de données pour stocker le titre de la section
+                concernButton.classList.add('concern-button'); // Ajoutez une classe pour identifier facilement les boutons "Concerne/Non concerne"
+
+                body.appendChild(link); // Ajoute le bouton à la carte
+                card.appendChild(body);
+                card.appendChild(description); // Ajoute la description à la carte
+                accordion.appendChild(card); // Ajoute la carte au conteneur de l'accordéon
+                accordion.appendChild(concernButton);
+                // Gérer le clic sur le bouton pour afficher/masquer la description
+                link.addEventListener('click', () => {
+                    if (description.style.display === 'none') {
+                        description.style.display = 'block';
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    } else {
+                        description.style.display = 'none';
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    }
+                });
+                concernButton.addEventListener('click', () => {
+                    if (concernButton.textContent === 'Concerne') {
+                        concernButton.textContent = 'Non concerne';
+                    } else {
+                        concernButton.textContent = 'Concerne';
+                    }
+                });
+            });
         });
-        optionsContainer.style.display = 'block';
     }
+
+
+    // Charger les données JSON
+    fetch('esrsData.json')
+        .then(response => response.json())
+        .then(data => {
+            // Stocker les données JSON dans esrsData
+            esrsData = data;
+
+            // Récupérer le code ESRS depuis l'URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const esrsCode = urlParams.get('code');
+
+            // Filtrer les ESRS en fonction du code de l'URL
+            if (esrsCode) {
+                const filteredESRS = esrsData.filter(esrs => esrs.code === esrsCode);
+
+                // Vérifier si des ESRS ont été trouvés
+                if (filteredESRS.length > 0) {
+                    // Générer les sections d'accordéon avec les ESRS filtrés
+                    esrsData = filteredESRS;
+                    generateAccordion();
+                } else {
+                    console.log('Aucun ESRS correspondant au code trouvé.');
+                }
+            } else {
+                console.log('Aucun code ESRS n\'a été fourni.'); // Afficher un message si aucun code n'a été fourni
+            }
+        })
+        .catch(error => {
+            console.error('Une erreur s\'est produite lors du chargement du fichier JSON :', error);
+        });
+
+
+    // Fonction pour enregistrer le choix dans le stockage local
+    function enregistrerChoixLocalStorage() {
+        // Récupérer tous les boutons "Concerne/Non concerne"
+        var concernButtons = document.querySelectorAll('.concern-button');
+
+        // Créer un objet pour stocker les choix
+        var choicesList = {};
+
+        // Parcourir chaque bouton
+        concernButtons.forEach(function(button) {
+            // Vérifier si le bouton est considéré comme "Concerne"
+            if (button.textContent === 'Concerne') {
+                // Récupérer le code ESRS associé à ce bouton
+                var esrsCode = button.dataset.esrsCode;
+
+                // Récupérer le titre de la section associée à ce bouton
+                var sectionTitle = button.dataset.sectionTitle;
+
+                // Afficher les valeurs récupérées pour le débogage
+                console.log("ESRS Code:", esrsCode);
+                console.log("Section Title:", sectionTitle);
+
+                // Ajouter le choix à l'objet choicesList
+                if (!choicesList[esrsCode]) {
+                    choicesList[esrsCode] = [sectionTitle];
+                } else {
+                    choicesList[esrsCode].push(sectionTitle);
+                }
+            }
+        });
+
+        // Afficher les choix pour le débogage
+        console.log("Choices List:", choicesList);
+
+        // Enregistrer les choix dans le stockage local
+        for (var code in choicesList) {
+            localStorage.setItem(code, JSON.stringify(choicesList[code]));
+        }
+    }
+
+    // Gestionnaire d'événements pour le clic sur le bouton
+    document.getElementById("redirectionButton").addEventListener("click", function() {
+        // Appeler la fonction pour enregistrer les choix dans le stockage local
+        enregistrerChoixLocalStorage();
+
+        // Rediriger vers la prochaine page (remplacez "PAGE_SUIVANTE" par l'URL de votre prochaine page)
+        window.location.href = "result.php";
+    });
+
+
+
+
+
+
+
+
+
+
+
 </script>
+
+
 </body>
 </html>

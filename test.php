@@ -153,7 +153,7 @@
             link.dataset.target = `#faq${esrs.code}`;
             link.setAttribute('aria-expanded', 'false');
             link.setAttribute('aria-controls', `faq${esrs.code}`);
-            link.textContent = `ESRS ${esrs.code} : ${esrs.name}`;
+            link.textContent = `${esrs.code} : ${esrs.name}`;
 
             const body = document.createElement('div');
             body.id = `faq${esrs.code}`;

@@ -1,0 +1,57 @@
+[
+  {
+    "code": "ESRS E1",
+    "name": "Exigences générales",
+    "color": "green",
+    "content": [
+      {
+        "item": "ESRS E1.GOV-3 : Gouvernance",
+        "description": "Description de ESRS E1.GOV-3"
+      },
+      {
+        "item": "OP 2-SBM-3",
+        "description": "Description de OP 2-SBM-3"
+      },
+      {
+        "item": "OP 2-IRO-1 : Gestion des incidences, risques et opportunités",
+        "description": "Description de OP 2-IRO-1"
+      },
+      {
+        "item": "ESRS-E1-1 : Plan de transition pour l’atténuation du changement climatique",
+        "description": "Description de ESRS-E1-1"
+      },
+      {
+        "item": "ESRS-E1-2 : Politiques liées à l’atténuation du changement climatique et à l'adaptation à celui-ci",
+        "description": "Description de ESRS-E1-2"
+      },
+      {
+        "item": "ESRS-E1-3 : Actions et ressources en rapport avec les politiques en matière de changement climatique",
+        "description": "Description de ESRS-E1-3"
+      },
+      {
+        "item": "ESRS-E1-4 : Cibles liées au changement climatique",
+        "description": "Description de ESRS-E1-4"
+      },
+      {
+        "item": "ESRS-E1-5 : Consommation d’énergie et mix énergétique",
+        "description": "Description de ESRS-E1-5"
+      },
+      {
+        "item": "ESRS-E1-6 : Émissions brutes de Gaz à Effet de Serre (GES)",
+        "description": "Description de ESRS-E1-6"
+      },
+      {
+        "item": "ESRS-E1-7 : Projets d'absorption et d’atténuation des GES financés au moyen de crédits carbone",
+        "description": "Description de ESRS-E1-7"
+      },
+      {
+        "item": "ESRS-E1-8 : Tarification interne du carbone",
+        "description": "Description de ESRS-E1-8"
+      },
+      {
+        "item": "ESRS-E1-9 : Incidences financières escomptées des risques physiques et de transition importants et opportunités potentielles liées au changement climatique",
+        "description": "Description de ESRS-E1-9"
+      }
+    ]
+  }
+]
