@@ -97,6 +97,7 @@
             <option value="oui">Oui</option>
             <option value="non">Non</option>
         </select><br>
+        <p id="conditional-message-q4" class="conditional-message" style="display: none;">Si la réponse est NON à la question ci-dessus alors vous n’êtes pas concernés par ESRS E4.</p>
 
         <label for="q5">Les ressources, déchets et leurs recyclages sont-ils un enjeu majeur pour l’entreprise ?</label><br>
         <select id="q5" name="q5" required>
@@ -104,6 +105,7 @@
             <option value="oui">Oui</option>
             <option value="non">Non</option>
         </select><br>
+        <p id="conditional-message-q5" class="conditional-message" style="display: none;">Si la réponse est NON à la question ci-dessus alors vous n’êtes pas concernés par ESRS E5.</p>
 
         <input type="submit" value="Soumettre">
     </form>
@@ -125,6 +127,9 @@
         var q1 = document.getElementById("q1").value;
         var q2 = document.getElementById("q2").value;
         var q3 = document.getElementById("q3").value;
+        var q4 = document.getElementById("q4").value;
+        var q5 = document.getElementById("q5").value;
+
 
         // Ajoutez d'autres variables pour les autres questions ici
 
