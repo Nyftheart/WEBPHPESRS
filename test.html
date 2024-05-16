@@ -122,58 +122,21 @@
 <body>
 <div class="container">
     <div class="accordion" id="faq">
+        <!-- Les sections d'accordéon seront générées ici -->
     </div>
 </div>
 <script>
     // ESRS Data
-    const esrsData = [
-        { code: 'ESRS1', name: 'Exigences générales', color: 'gray', content: 'Contenu pour Exigences générales' },
-        { code: 'ESRS2', name: 'Informations générales', color: 'gray', content: 'Contenu pour Informations générales' },
-        { code: 'ESRS E1', name: 'Changement climatique', color: 'green', content: 'ESRS E1 est la première norme du volet environnemental des normes ESRS. Elle a\n' +
-                'pour objet le changement climatique.\n' +
-                '\n' +
-                'Elle recouvre 3 sujets : l\'atténuation du changement climatique, l\'adaptation à\n' +
-                'ses effets via la réduction des émissions de gaz à effet de serre, ainsi que la\n' +
-                'question de l\'énergie.\n' +
-                '\n' +
-                'Pour satisfaire à cet ESRS E1, les entreprises concernées doivent fournir des\n' +
-                'informations complètes sur l\'impact du changement climatique sur leurs\n' +
-                'activités et expliquer comment elles anticipent et s’adaptent au réchauffement\n' +
-                'climatique.\n' +
-                '\n' +
-                'Elles doivent aussi expliquer leur plan d’action pour atteindre un objectif en\n' +
-                'termes d’émissions de gaz à effet de serre compatible avec un scénario à\n' +
-                'maximum + 1,5°C prévu par les Accords de Paris.\n' +
-                '\n' +
-                'Une entreprise qui choisit de ne pas faire figurer le volet climat dans son\n' +
-                'reporting doit justifier que ce sujet ne la concerne pas. En pratique, il sera très\n' +
-                'difficile voire impossible pour les entreprises de ne pas reporter sur le volet\n' +
-                'climat puisque la plupart voire la totalité des activités humaines conduisent à\n' +
-                'émettre des gaz à effet de serre.\n' +
-                '\n' +
-                'ESRS E1 prévoit un ensemble de données qui doivent être publiées par\n' +
-                'l\'entreprise dans son rapport de durabilité. Ces exigences de divulgation\n' +
-                '(disclosure requirements ou « DR ») sont au nombre de 9 et le nombre de points\n' +
-                'de données (indicateurs) est de 220.\n'},
-        { code: 'ESRS E2', name: 'Pollution', color: 'green', content: 'Contenu pour Pollution' },
-        { code: 'ESRS E3', name: 'Ressources aquatiques et marines', color: 'green', content: 'Contenu pour Ressources aquatiques et marines' },
-        { code: 'ESRS E4', name: 'Biodiversité & écosystèmes', color: 'green', content: 'Contenu pour Biodiversité & écosystèmes' },
-        { code: 'ESRS E5', name: 'Utilisation des ressources & économie circulaire', color: 'green', content: 'Contenu pour Utilisation des ressources & économie circulaire' },
-        { code: 'ESRS S1', name: 'Personnel de l’entreprise', color: 'blue', content: 'Contenu pour Personnel de l’entreprise' },
-        { code: 'ESRS S2', name: 'Travailleurs dans la chaîne de valeur', color: 'blue', content: 'Contenu pour Travailleurs dans la chaîne de valeur' },
-        { code: 'ESRS S3', name: 'Communautés affectées', color: 'blue', content: 'Contenu pour Communautés affectées' },
-        { code: 'ESRS S4', name: 'Consommateurs et utilisateurs finaux', color: 'blue', content: 'Contenu pour Consommateurs et utilisateurs finaux' },
-        { code: 'ESRS G1', name: 'Conduite responsable des entreprises', color: 'orange', content: 'Contenu pour Conduite responsable des entreprises' }
-    ];
+    // ESRS Data
+    let esrsData;
 
-    // Function to generate accordion sections
-    // Function to toggle concern status
+    // Fonction pour inverser l'état concerné d'un ESRS
     function toggleConcern(button, esrs) {
         esrs.concerned = !esrs.concerned; // Inverse l'état de la propriété concerned
         updateConcernButton(button, esrs); // Met à jour le texte du bouton
     }
 
-    // Function to generate accordion sections
+    // Fonction pour générer les sections d'accordéon
     function generateAccordion() {
         const accordion = document.getElementById('faq');
 
@@ -212,10 +175,10 @@
             header.appendChild(link);
             card.appendChild(body);
             body.appendChild(bodyContent);
-            body.appendChild(concernButton); // Ajout du bouton après le contenu
+            body.appendChild(concernButton); // Ajoute le bouton après le contenu
         });
 
-        // JavaScript for accordion functionality
+        // JavaScript pour la fonctionnalité de l'accordéon
         const accItems = document.querySelectorAll('.btn-header-link');
         accItems.forEach((item) => {
             item.addEventListener('click', function() {
@@ -238,19 +201,42 @@
         });
     }
 
-    // Function to update the concern button text based on the ESRS
+    // Fonction pour mettre à jour le texte du bouton concernant l'ESRS
     function updateConcernButton(button, esrs) {
         const defaultState = esrs.concerned ? 'Concerne' : 'Non Concerne';
         button.textContent = `${defaultState} par ${esrs.code}`;
     }
 
+    // Charger les données JSON
+    fetch('Data.json')
+        .then(response => response.json())
+        .then(data => {
+            // Stocker les données JSON dans esrsData
+            esrsData = data;
+            // Générer les sections d'accordéon après avoir chargé les données
+            generateAccordion();
+        })
+        .catch(error => {
+            console.error('Une erreur s\'est produite lors du chargement du fichier JSON :', error);
+        });
 
-
-    // Generate accordion sections
-    generateAccordion();
 </script>
 <div class="container">
-    <a href="Test-Design.php" class="styled-button">Cliquez ici</a>
+    <!-- Bouton de redirection vers la prochaine page -->
+    <button id="redirectionButton" class="styled-button">Cliquez ici pour passer à la prochaine page</button>
 </div>
+<script>
+    // Récupérer les ESRS concernés et stocker localement, puis rediriger vers la prochaine page
+    document.getElementById('redirectionButton').addEventListener('click', function(event) {
+        // Filtrer les ESRS concernés
+        const esrsConcernes = esrsData.filter(esrs => esrs.concerned);
+
+        // Stocker les ESRS concernés localement
+        localStorage.setItem('esrsConcernes', JSON.stringify(esrsConcernes));
+
+        // Rediriger vers la prochaine page
+        window.location.href = 'result.php';
+    });
+</script>
 </body>
 </html>
