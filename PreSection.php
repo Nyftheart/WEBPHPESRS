@@ -66,7 +66,7 @@
 <body>
 <div class="container">
     <h2>Formulaire Écologique</h2>
-    <form method="POST" action="test.html" onsubmit="return validateForm()">
+    <form method="POST" action="test.php" onsubmit="return validateForm()">
         <label for="q1">L’entreprise produit-elle ou utilise-t-elle des substances toxiques ?</label><br>
         <select id="q1" name="q1" required onchange="showConditionalMessage('q1', this.value)">
             <option value="">Sélectionner</option>
