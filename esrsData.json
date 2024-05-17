@@ -53,5 +53,108 @@
         "description": "Description de ESRS-E1-9"
       }
     ]
+  },
+
+  {
+    "code": "ESRS S1",
+    "name": "Personnel de l’entreprise",
+    "color": "blue",
+    "content": [
+      {
+        "item": "ESRS-S1-1 : Politique liée aux effectifs de\nl’entreprise",
+        "description": "L'entreprise décrit ici les politiques mises en œuvre pour identifier comment ses\nactivités affectent son personnel propre. Il peut s'agir d'impacts négatifs ou\npositifs, réels ou potentiels. Elle indique également comment elle gère ces\nimpacts ainsi que les opportunités et risques financiers qui en découlent pour\nelle.\n\nElle publie donc, par exemple, les procédures mises en place pour prévenir les\naccidents du travail, lutter contre la discrimination ou favoriser l'inclusion et la\ndiversité."
+      },
+      {
+        "item": "ESRS-S1-2 : Processus d'interaction au sujet des\nincidences avec les effectifs de l'entreprise et\nleurs représentants",
+        "description": "Description de OP 2-SBM-3"
+      },
+      {
+        "item": "ESRS-S1-3 : Processus pour remédier aux\nrépercussions négatives et canaux permettant\naux propres travailleurs de soulever des\npréoccupations",
+        "description": "Description de OP 2-IRO-1"
+      },
+      {
+        "item": "ESRS-S1-4 : Prendre des mesures ayant des\nrépercussions importantes sur ses salariés et\nles approches visant à atténuer les risques\nimportants et à saisir les opportunités\nimportantes liées à ses salariés, et l’efficacité\nde ces mesures",
+        "description": "Description de ESRS-E1-1"
+      },
+      {
+        "item": "ESRS-S1-5 : Cibles liées à la gestion des\nrépercussions négatives importantes, à\nl’avancement des répercussions positives et à\nla gestion des risques et des opportunités\nsignificatifs",
+        "description": "Description de ESRS-E1-2"
+      },
+      {
+        "item": "ESRS-S1-6 : Caractéristiques des employés de\nl’entreprise",
+        "description": "Description de ESRS-E1-3"
+      },
+      {
+        "item": "ESRS-S1-7 : Caractéristiques des travailleurs\nnon employés de l’entreprise",
+        "description": "Description de ESRS-E1-4"
+      },
+      {
+        "item": "ESRS-S1-8 : Couverture des négociations\ncollectives et dialogue social",
+        "description": "Description de ESRS-E1-5"
+      },
+      {
+        "item": "ESRS-S1-9 : Indicateurs de diversité",
+        "description": "Description de ESRS-E1-6"
+      },
+      {
+        "item": "ESRS-S1-10 : Salaires adéquats",
+        "description": "Description de ESRS-E1-7"
+      },
+      {
+        "item": "ESRS-S1-11 : Protection sociale",
+        "description": "Description de ESRS-E1-8"
+      },
+      {
+        "item": "ESRS-S1-12 : Personnes Handicapées",
+        "description": "Description de ESRS-E1-8"
+      },
+      {
+        "item": "ESRS-S1-13 : Indicateurs de formation et de\ndéveloppement des compétences",
+        "description": "Description de ESRS-E1-8"
+      },
+      {
+        "item": "ESRS-S1-14 : Indicateurs de santé et de sécurité",
+        "description": "Description de ESRS-E1-8"
+      },
+      {
+        "item": "ESRS-S1-15 : Indicateurs d’équilibre vie\nprofessionnelle / vie personnelle",
+        "description": "Description de ESRS-E1-8"
+      },
+      {
+        "item": "ESRS-S1-16 : Indicateurs de rémunération\n(écart de rémunération et rémunération\ntotale)",
+        "description": "Description de ESRS-E1-8"
+      },
+      {
+        "item": "ESRS-S1-17 : Incidents, plaintes et graves\nrépercussions et incidents liés aux droits de la\npersonne",
+        "description": "Description de ESRS-E1-9"
+      }
+    ]
+  },
+  {
+    "code": "ESRS G1",
+    "name": "Conduite responsable des entreprises",
+    "color": "orange",
+    "content": [
+      {
+        "item": "ESRS-G1-1 : Plan de transition pour\nl’atténuation du changement climatique",
+        "description": "Description de ESRS E1.GOV-3"
+      },
+      {
+        "item": "ESRS-G1-2 : Gestion des relations avec les\nfournisseurs",
+        "description": "Description de OP 2-SBM-3"
+      },
+      {
+        "item": "ESRS-G1-3 : Prévention et détection de la\ncorruption ou des pots-de-vin",
+        "description": "Description de OP 2-IRO-1"
+      },
+      {
+        "item": "ESRS-G1-4 : Incidents confirmés de corruption\nou de pots-de-vin",
+        "description": "Description de ESRS-E1-1"
+      },
+      {
+        "item": "ESRS-G1-6 : Pratiques de paiement",
+        "description": "Description de ESRS-E1-2"
+      }
+    ]
   }
 ]
