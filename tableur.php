@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Justification de la Matérialité</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <style>
     body {
         font-family: Arial, sans-serif;
         margin: 0;
-        padding: 0;
+        padding: 20px;
         box-sizing: border-box;
     }
 
@@ -19,157 +20,120 @@
         padding: 20px;
     }
 
-    .header {
-        display: flex;
-        justify-content: space-around;
-        background-color: #f0f0f0;
-        padding: 10px;
-        border: 1px solid #ccc;
-    }
-
-    .section {
-        text-align: center;
-    }
-
-    .title {
-        font-weight: bold;
-        background-color: #f4a460;
-        padding: 5px;
-    }
-
-    .content {
-        background-color: #d8bfd8;
-        padding: 5px;
-    }
-
-    .gauges {
-        display: flex;
-        justify-content: space-around;
+    table {
+        width: 100%;
+        border-collapse: collapse;
         margin: 20px 0;
-        flex-wrap: wrap;
+    }
+
+    th, td {
+        border: 1px solid #ccc;
+        text-align: center;
+        padding: 10px;
+    }
+
+    th {
+        background-color: #f0f0f0;
+    }
+
+    thead th {
+        background-color: #d8bfd8;
     }
 
     .gauge {
         width: 100px;
         height: 100px;
-        position: relative;
-    }
-
-    .result {
-        width: 100px;
-        height: 50px;
-        margin: 10px;
-    }
-
-    .result-yellow {
-        background-color: yellow;
-    }
-
-    .result-green {
-        background-color: green;
-    }
-
-    /* Gauge styles */
-    .gauge .fill, .gauge .cover {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    .gauge .fill {
-        clip: rect(0, 50px, 100px, 0);
-        background-color: #3498db;
-    }
-
-    .gauge .cover {
-        clip: rect(0, 100px, 100px, 50px);
-        background-color: #eee;
-    }
-
-    .gauge .inside {
-        width: 80px;
-        height: 80px;
-        background-color: white;
-        border-radius: 50%;
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        text-align: center;
-        line-height: 80px;
-        font-weight: bold;
     }
 
 </style>
 <body>
 <div class="container">
-    <div class="header">
-        <div class="section">
-            <div class="title">IMPACT NÉGATIF</div>
-            <div class="content">
-                <div>AMPLEUR</div>
-                <div>ÉTENDUE</div>
-                <div>CARACTÈRE IRRÉMÉDIABLE</div>
-            </div>
-        </div>
-        <div class="section">
-            <div class="title">JUSTIFICATION DE LA MATÉRIALITÉ</div>
-            <div class="content">
-                <div>IMPACT POSITIF</div>
-                <div>Résultat de matérialité</div>
-                <div>50% ou plus => oui</div>
-            </div>
-        </div>
-        <div class="section">
-            <div class="title">RISQUES ET OPPORTUNITÉS FINANCIÈRES</div>
-            <div class="content">
-                <div>Résultat si >20% => oui</div>
-            </div>
-        </div>
-    </div>
-    <div class="gauges">
-        <!-- Gauges -->
-        <div class="gauge" data-value="20"></div>
-        <div class="gauge" data-value="30"></div>
-        <div class="gauge" data-value="10"></div>
-        <div class="gauge" data-value="0"></div>
-        <div class="gauge" data-value="50"></div>
-        <div class="gauge" data-value="70"></div>
-        <div class="gauge" data-value="0"></div>
-        <div class="gauge" data-value="0"></div>
-        <div class="gauge" data-value="40"></div>
-        <div class="gauge" data-value="0"></div>
-    </div>
-    <div class="results">
-        <div class="result result-yellow"></div>
-        <div class="result result-green"></div>
-        <div class="result result-yellow"></div>
-        <div class="result result-green"></div>
-    </div>
+    <table>
+        <thead>
+        <tr>
+            <th colspan="3">IMPACT NÉGATIF</th>
+            <th colspan="2" rowspan="2">JUSTIFICATION DE LA MATÉRIALITÉ</th>
+            <th rowspan="2">RISQUES ET OPPORTUNITÉS FINANCIÈRES</th>
+        </tr>
+        <tr>
+            <th>AMPLEUR</th>
+            <th>ÉTENDUE</th>
+            <th>CARACTÈRE IRRÉMÉDIABLE</th>
+            <th>AMPLEUR</th>
+            <th>ÉTENDUE</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><canvas id="gauge1" class="gauge"></canvas></td>
+            <td><canvas id="gauge2" class="gauge"></canvas></td>
+            <td><canvas id="gauge3" class="gauge"></canvas></td>
+            <td><canvas id="gauge4" class="gauge"></canvas></td>
+            <td><canvas id="gauge5" class="gauge"></canvas></td>
+            <td><canvas id="gauge6" class="gauge"></canvas></td>
+        </tr>
+        <tr>
+            <td><canvas id="gauge7" class="gauge"></canvas></td>
+            <td><canvas id="gauge8" class="gauge"></canvas></td>
+            <td><canvas id="gauge9" class="gauge"></canvas></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="3"></td>
+            <td style="background-color: yellow;"></td>
+            <td style="background-color: green;"></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        var gauges = document.querySelectorAll('.gauge');
+        const gaugeConfigs = [
+            { id: 'gauge1', value: 20 },
+            { id: 'gauge2', value: 30 },
+            { id: 'gauge3', value: 10 },
+            { id: 'gauge4', value: 0 },
+            { id: 'gauge5', value: 50 },
+            { id: 'gauge6', value: 70 },
+            { id: 'gauge7', value: 0 },
+            { id: 'gauge8', value: 40 },
+            { id: 'gauge9', value: 0 }
+        ];
 
-        gauges.forEach(function(gauge) {
-            var value = gauge.getAttribute('data-value');
-            var angle = value * 1.8; // Convert percentage to degrees
-            var fill = document.createElement('div');
-            fill.className = 'fill';
-            fill.style.transform = 'rotate(' + angle + 'deg)';
-
-            var cover = document.createElement('div');
-            cover.className = 'cover';
-
-            var inside = document.createElement('div');
-            inside.className = 'inside';
-            inside.textContent = value + '%';
-
-            gauge.appendChild(fill);
-            gauge.appendChild(cover);
-            gauge.appendChild(inside);
+        gaugeConfigs.forEach(config => {
+            const ctx = document.getElementById(config.id).getContext('2d');
+            new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    datasets: [{
+                        data: [config.value, 100 - config.value],
+                        backgroundColor: ['#3498db', '#eee'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    rotation: 1 * Math.PI,
+                    circumference: 1 * Math.PI,
+                    cutoutPercentage: 70,
+                    tooltips: { enabled: false },
+                    hover: { mode: null },
+                    plugins: {
+                        doughnutlabel: {
+                            labels: [{
+                                text: `${config.value}%`,
+                                font: {
+                                    size: 20,
+                                    weight: 'bold'
+                                },
+                                color: '#000'
+                            }]
+                        }
+                    }
+                }
+            });
         });
     });
 
