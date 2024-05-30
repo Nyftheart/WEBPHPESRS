@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Justification de la Matérialité</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+<body>
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -41,12 +40,52 @@
     }
 
     .gauge {
+        width: 100%;
+        height: 20px;
+        background-color: #eee;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .gauge::after {
+        content: '';
+        display: block;
+        height: 100%;
+        background-color: #3498db;
+        width: 0;
+        border-radius: 10px;
+        transition: width 0.5s;
+    }
+
+    .gauge[data-value="20"]::after { width: 20%; }
+    .gauge[data-value="30"]::after { width: 30%; }
+    .gauge[data-value="10"]::after { width: 10%; }
+    .gauge[data-value="0"]::after { width: 0%; }
+    .gauge[data-value="50"]::after { width: 50%; }
+    .gauge[data-value="70"]::after { width: 70%; }
+    .gauge[data-value="40"]::after { width: 40%; }
+
+    .results {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .result {
         width: 100px;
-        height: 100px;
+        height: 50px;
+        margin: 10px;
+    }
+
+    .result-yellow {
+        background-color: yellow;
+    }
+
+    .result-green {
+        background-color: green;
     }
 
 </style>
-<body>
 <div class="container">
     <table>
         <thead>
@@ -65,17 +104,17 @@
         </thead>
         <tbody>
         <tr>
-            <td><canvas id="gauge1" class="gauge"></canvas></td>
-            <td><canvas id="gauge2" class="gauge"></canvas></td>
-            <td><canvas id="gauge3" class="gauge"></canvas></td>
-            <td><canvas id="gauge4" class="gauge"></canvas></td>
-            <td><canvas id="gauge5" class="gauge"></canvas></td>
-            <td><canvas id="gauge6" class="gauge"></canvas></td>
+            <td><div class="gauge" data-value="20"></div></td>
+            <td><div class="gauge" data-value="30"></div></td>
+            <td><div class="gauge" data-value="10"></div></td>
+            <td><div class="gauge" data-value="0"></div></td>
+            <td><div class="gauge" data-value="50"></div></td>
+            <td><div class="gauge" data-value="70"></div></td>
         </tr>
         <tr>
-            <td><canvas id="gauge7" class="gauge"></canvas></td>
-            <td><canvas id="gauge8" class="gauge"></canvas></td>
-            <td><canvas id="gauge9" class="gauge"></canvas></td>
+            <td><div class="gauge" data-value="0"></div></td>
+            <td><div class="gauge" data-value="0"></div></td>
+            <td><div class="gauge" data-value="40"></div></td>
             <td></td>
             <td></td>
             <td></td>
@@ -89,6 +128,9 @@
         </tbody>
     </table>
 </div>
+</body>
+</html>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const gaugeConfigs = [
