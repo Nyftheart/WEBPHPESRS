@@ -28,6 +28,28 @@
         .slider {
             width: 100%;
         }
+        /* Définition des classes de couleur pour les jauges */
+        .low {
+            background-color: #ff6666; /* Rouge */
+        }
+        .medium {
+            background-color: #ffff66; /* Jaune */
+        }
+        .high {
+            background-color: #66ff66; /* Vert */
+        }
+        #impact1-row{
+            background-color: #58D68D;
+        }
+        #impact2-row{
+            background-color: #58D68D;
+        }
+        #impact3-row{
+            background-color: #58D68D;
+        }
+        .dynamic-row{
+            background-color: lightgreen;
+        }
     </style>
     <script>
         function addRow(impactValue, insertAfterId) {
@@ -35,7 +57,7 @@
             var insertAfterRow = document.getElementById(insertAfterId);
             var rowIndex = insertAfterRow.rowIndex;
             var row = table.insertRow(rowIndex + 1);
-
+            row.classList.add('dynamic-row');
             var cellName = row.insertCell(0);
             cellName.innerHTML = impactValue.toUpperCase();
 
@@ -72,14 +94,46 @@
             }
             row.cells[6].querySelector("input").addEventListener("input", updateGreaterThan20Result);
 
+            // Appel de la fonction pour mettre à jour la couleur de la jauge
+            var sliders = row.querySelectorAll('input[type="range"]');
+            sliders.forEach(function(slider) {
+                updateSliderColor(slider);
+                slider.addEventListener('input', function() {
+                    updateSliderColor(this);
+                });
+            });
+
             updateMaterialityResult();
             updateGreaterThan20Result();
         }
+
 
         function addSelectedRow(selectorId, selectId) {
             var impactValue = document.getElementById(selectId).value;
             if (impactValue) addRow(impactValue, selectorId + "-row");
         }
+
+        function updateSliderColor(slider) {
+            var value = parseInt(slider.value);
+            slider.className = 'slider';
+            if (value <= 25) {
+                slider.classList.add('low');
+            } else if (value <= 75) {
+                slider.classList.add('medium');
+            } else {
+                slider.classList.add('high');
+            }
+        }
+
+        window.onload = function() {
+            var sliders = document.querySelectorAll('input[type="range"]');
+            sliders.forEach(function(slider) {
+                slider.addEventListener('input', function() {
+                    updateSliderColor(this);
+                });
+                updateSliderColor(slider);
+            });
+        };
     </script>
 </head>
 <body>
@@ -115,7 +169,6 @@
                     <option value="Technologie">Technologie</option>
                     <option value="Marché">Marché</option>
                     <option value="Réputation">Réputation</option>
-
                 </select>
                 <br>
                 <button type="button" onclick="addSelectedRow('impact1', 'impact1')">Ajouter</button>
@@ -170,3 +223,4 @@
 </form>
 </body>
 </html>
+
