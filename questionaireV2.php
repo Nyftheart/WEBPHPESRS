@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         exit;
     } else {
         header("Location: questionaireV2.php?step=$step");
+        echo "<script>console.log('Step: $step');</script>";
         exit;
     }
 }
