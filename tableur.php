@@ -36,8 +36,7 @@
             var row = table.insertRow(-1);
 
             var cellName = row.insertCell(0);
-            cellName.innerHTML = document.getElementById("temperature").value.toUpperCase();
-
+            cellName.innerHTML = temperatureValue.toUpperCase();
 
             for (var i = 1; i < 8; i++) {
                 var cell = row.insertCell(i);
@@ -79,25 +78,9 @@
             row.cells[6].querySelector("input").addEventListener("input", updateGreaterThan20Result);
         }
 
-        // Fonction pour mettre à jour l'impact en fonction du choix de la liste
-        function updateImpact() {
-            var selectValue = document.getElementById("temperature").value;
-            var impactCell = document.querySelector(".subheader");
-            impactCell.innerHTML = selectValue.toUpperCase();
-        }
     </script>
 </head>
 <body>
-
-<form>
-    <label for="temperature">Sélectionnez une température :</label>
-    <select id="temperature" onchange="updateImpact()">
-        <option value="Température">Température</option>
-        <option value="EAU">EAU</option>
-        <option value="AIR">AIR</option>
-    </select>
-    <button type="button" onclick="addRow()">Ajouter</button>
-</form>
 
 <table id="data-table">
     <tr>
@@ -116,6 +99,24 @@
         <td>ÉTENDUE</td>
         <td>CARACTÈRE IRRÉMÉDIABLE</td>
         <td>AMPLEUR</td>
+    </tr>
+    <tr>
+        <td>
+            <form>
+                <label for="temperature">Sélectionnez un impact :</label>
+                <select id="temperature" onchange="updateImpact()">
+                    <option value="Température">Température</option>
+                    <option value="EAU">EAU</option>
+                    <option value="AIR">AIR</option>
+                </select>
+                <br>
+                <button type="button" onclick="addRow()">Ajouter</button>
+            </form>
+        </td>
+        <td colspan="4"></td>
+        <td>❌</td>
+        <td></td>
+        <td>❌</td>
     </tr>
 </table>
 
