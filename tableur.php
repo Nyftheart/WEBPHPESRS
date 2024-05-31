@@ -30,13 +30,14 @@
         }
     </style>
     <script>
-        function addRow() {
-            var temperatureValue = document.getElementById("temperature").value;
+        function addRow(impactValue, insertAfterId) {
             var table = document.getElementById("data-table");
-            var row = table.insertRow(-1);
+            var insertAfterRow = document.getElementById(insertAfterId);
+            var rowIndex = insertAfterRow.rowIndex;
+            var row = table.insertRow(rowIndex + 1);
 
             var cellName = row.insertCell(0);
-            cellName.innerHTML = temperatureValue.toUpperCase();
+            cellName.innerHTML = impactValue.toUpperCase();
 
             for (var i = 1; i < 8; i++) {
                 var cell = row.insertCell(i);
@@ -53,9 +54,7 @@
                     materialityCell.innerHTML = '❌';
                 } else {
                     materialityCell.innerHTML = '✅';
-                    updateFirstRowResults();
                 }
-
             }
 
             function updateGreaterThan20Result() {
@@ -66,7 +65,6 @@
                 } else {
                     resultCell.innerHTML = '❌';
                 }
-                updateFirstRowResults();
             }
 
             for (var i = 1; i < 5; i++) {
@@ -74,46 +72,13 @@
             }
             row.cells[6].querySelector("input").addEventListener("input", updateGreaterThan20Result);
 
-            // Trigger the update functions initially to set the correct initial states
             updateMaterialityResult();
             updateGreaterThan20Result();
         }
 
-        function updateFirstRowResults() {
-            var table = document.getElementById("data-table");
-            var materialityResult = false;
-            var financialResult = false;
-
-            // Parcours de toutes les lignes sauf les deux premières (titres)
-            for (var i = 2; i < table.rows.length; i++) {
-                // Vérifie si une cellule de résultat de matérialité est à '✅'
-                if (table.rows[i].cells[5].innerHTML === '✅') {
-                    materialityResult = true;
-                    break; // Sortie de la boucle dès qu'une cellule est trouvée à '✅'
-                }
-            }
-
-            // Parcours de toutes les lignes sauf les deux premières (titres)
-            for (var i = 2; i < table.rows.length; i++) {
-                // Vérifie si une cellule de résultat financier est à '✅'
-                if (table.rows[i].cells[7].innerHTML === '✅') {
-                    financialResult = true;
-                    break; // Sortie de la boucle dès qu'une cellule est trouvée à '✅'
-                }
-            }
-
-            // Met à jour les cellules de la première ligne en fonction des résultats obtenus
-            var firstRowMaterialityCell = table.rows[1].cells[5];
-            var firstRowFinancialCell = table.rows[1].cells[7];
-            firstRowMaterialityCell.innerHTML = materialityResult ? '✅' : '❌';
-            firstRowFinancialCell.innerHTML = financialResult ? '✅' : '❌';
-        }
-
-
-        function updateImpact() {
-            var selectValue = document.getElementById("temperature").value;
-            var impactCell = document.querySelector(".subheader");
-            impactCell.innerHTML = selectValue.toUpperCase();
+        function addSelectedRow(selectorId, selectId) {
+            var impactValue = document.getElementById(selectId).value;
+            if (impactValue) addRow(impactValue, selectorId + "-row");
         }
     </script>
 </head>
@@ -137,25 +102,71 @@
         <td>CARACTÈRE IRRÉMÉDIABLE</td>
         <td>AMPLEUR</td>
     </tr>
-    <tr>
+    <tr id="impact1-row">
         <td>
             <form>
-                <label for="temperature">Sélectionnez un impact :</label>
-                <select id="temperature" onchange="updateImpact()">
+                <label for="impact1">Adaptation au changement climatique Risques et opportunités liés :</label>
+                <select id="impact1">
                     <option value="Température">Température</option>
-                    <option value="EAU">EAU</option>
-                    <option value="AIR">AIR</option>
+                    <option value="Vent">Vent</option>
+                    <option value="Eau">Eau</option>
+                    <option value="Masses solides">Masses solides</option>
+                    <option value="Politique et juridique">Politique et juridique</option>
+                    <option value="Technologie">Technologie</option>
+                    <option value="Marché">Marché</option>
+                    <option value="Réputation">Réputation</option>
+
                 </select>
                 <br>
-                <button type="button" onclick="addRow()">Ajouter</button>
+                <button type="button" onclick="addSelectedRow('impact1', 'impact1')">Ajouter</button>
             </form>
         </td>
         <td colspan="4"></td>
-        <td>❌</td>
         <td></td>
-        <td>❌</td>
+        <td></td>
+        <td></td>
     </tr>
-</table>
+    <tr id="impact2-row">
+        <td>
+            <form>
+                <label for="impact2">Sélectionnez un autre impact :</label>
+                <select id="impact2">
+                    <option value="Scope 1">Scope 1</option>
+                    <option value="Scope 2">Scope 2</option>
+                    <option value="Scope 3">Scope 3</option>
+                </select>
+                <br>
+                <button type="button" onclick="addSelectedRow('impact2', 'impact2')">Ajouter</button>
+            </form>
+        </td>
+        <td colspan="4"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr id="impact3-row">
+        <td>
+            <form>
+                <label for="impact3">Sélectionnez un autre impact :</label>
+                <select id="impact3">
+                    <option value="sources fossiles">sources fossiles</option>
+                    <option value="sources nucléaires">sources nucléaires</option>
+                    <option value="sources renouvelables">sources renouvelables</option>
+                </select>
+                <br>
+                <button type="button" onclick="addSelectedRow('impact3', 'impact3')">Ajouter</button>
+            </form>
+        </td>
+        <td colspan="4"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
 
+</table>
+<form action="Sept1.php" method="post">
+    <!-- Vous pouvez ajouter d'autres champs dans le formulaire si nécessaire -->
+    <input type="submit" value="Valider">
+</form>
 </body>
 </html>
