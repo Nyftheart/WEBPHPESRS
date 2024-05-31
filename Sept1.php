@@ -215,6 +215,10 @@
     <div>
         <p>Nombre d'ESRS oranges : <span id="orange-count"></span></p>
     </div>
+    <form action="result.php" method="post">
+        <!-- Vous pouvez ajouter d'autres champs dans le formulaire si nécessaire -->
+        <input type="submit" value="Valider">
+    </form>
 </div>
 <div id="price"></div>
 <div class="progress" id="progress"></div>
