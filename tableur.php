@@ -43,13 +43,9 @@
                 cell.innerHTML = '<input type="range" min="0" max="100" value="50" step="25" class="slider">';
             }
 
-            // Supprimer le contenu de la cellule de résultat financier
-            row.cells[5].innerHTML = "";
-            row.cells[7].innerHTML = "";
             row.cells[5].innerHTML = '❌';
             row.cells[7].innerHTML = '❌';
 
-            // Fonction pour mettre à jour le résultat de matérialité
             function updateMaterialityResult() {
                 var cells = [1, 2, 3, 4].map(index => parseInt(row.cells[index].querySelector("input").value));
                 var materialityCell = row.cells[5];
@@ -57,10 +53,11 @@
                     materialityCell.innerHTML = '❌';
                 } else {
                     materialityCell.innerHTML = '✅';
+                    updateFirstRowResults();
                 }
+
             }
 
-            // Fonction pour mettre à jour le résultat si >20%
             function updateGreaterThan20Result() {
                 var value = parseInt(row.cells[6].querySelector("input").value);
                 var resultCell = row.cells[7];
@@ -69,15 +66,55 @@
                 } else {
                     resultCell.innerHTML = '❌';
                 }
+                updateFirstRowResults();
             }
 
-            // Appeler les fonctions pour mettre à jour les résultats lorsque les curseurs sont déplacés
             for (var i = 1; i < 5; i++) {
                 row.cells[i].querySelector("input").addEventListener("input", updateMaterialityResult);
             }
             row.cells[6].querySelector("input").addEventListener("input", updateGreaterThan20Result);
+
+            // Trigger the update functions initially to set the correct initial states
+            updateMaterialityResult();
+            updateGreaterThan20Result();
         }
 
+        function updateFirstRowResults() {
+            var table = document.getElementById("data-table");
+            var materialityResult = false;
+            var financialResult = false;
+
+            // Parcours de toutes les lignes sauf les deux premières (titres)
+            for (var i = 2; i < table.rows.length; i++) {
+                // Vérifie si une cellule de résultat de matérialité est à '✅'
+                if (table.rows[i].cells[5].innerHTML === '✅') {
+                    materialityResult = true;
+                    break; // Sortie de la boucle dès qu'une cellule est trouvée à '✅'
+                }
+            }
+
+            // Parcours de toutes les lignes sauf les deux premières (titres)
+            for (var i = 2; i < table.rows.length; i++) {
+                // Vérifie si une cellule de résultat financier est à '✅'
+                if (table.rows[i].cells[7].innerHTML === '✅') {
+                    financialResult = true;
+                    break; // Sortie de la boucle dès qu'une cellule est trouvée à '✅'
+                }
+            }
+
+            // Met à jour les cellules de la première ligne en fonction des résultats obtenus
+            var firstRowMaterialityCell = table.rows[1].cells[5];
+            var firstRowFinancialCell = table.rows[1].cells[7];
+            firstRowMaterialityCell.innerHTML = materialityResult ? '✅' : '❌';
+            firstRowFinancialCell.innerHTML = financialResult ? '✅' : '❌';
+        }
+
+
+        function updateImpact() {
+            var selectValue = document.getElementById("temperature").value;
+            var impactCell = document.querySelector(".subheader");
+            impactCell.innerHTML = selectValue.toUpperCase();
+        }
     </script>
 </head>
 <body>
