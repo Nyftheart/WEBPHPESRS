@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Tableau Justification de la Matérialité</title>
+
+
     <style>
         table {
             width: 100%;
@@ -52,6 +54,67 @@
         }
     </style>
     <script>
+        // Fonction pour récupérer le paramètre "code" de l'URL
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Récupération de la valeur du paramètre "code"
+        var code = getParameterByName('code');
+
+        fetch('data.json')
+            .then(response => response.json()) // Convertir la réponse en JSON
+            .then(data => {
+                // Parcourir les données pour trouver l'entrée correspondant au code spécifié
+                var entry = data.find(item => item.code === code);
+                if (entry) {
+                    // Ajouter le champ "concerned" avec la valeur true à l'objet entry
+                    entry.concerned = true;
+
+                    console.log("Code:", entry.code);
+                    console.log("Nom:", entry.name);
+                    console.log("Couleur:", entry.color);
+                    console.log("Contenu:", entry.content);
+
+                    // Écouteur d'événement pour le bouton de validation
+                    document.querySelector('input[type="submit"]').addEventListener('click', function(event) {
+                        // Vérifier si l'emoji ✅ est présent sur la page HTML
+                        var checkMarkPresent = document.querySelector('body').innerHTML.includes('✅');
+
+                        // Si l'emoji ✅ est présent, récupérer la liste actuelle depuis le LocalStorage
+                        if (checkMarkPresent) {
+                            var listeActuelle = JSON.parse(localStorage.getItem('esrsConcernesSept2')) || [];
+                            // Ajouter la nouvelle entrée à la liste
+                            listeActuelle.push(entry);
+                            // Réenregistrer la liste mise à jour dans le LocalStorage
+                            localStorage.setItem('esrsConcernesSept2', JSON.stringify(listeActuelle));
+                            console.log("Données ajoutées à la liste dans le LocalStorage.");
+                        } else {
+                            // Si l'emoji ✅ n'est pas présent, enregistrer les données dans le LocalStorage avec la clé "useless"
+                            var uselessData = JSON.parse(localStorage.getItem('useless')) || [];
+                            uselessData.push(entry);
+                            localStorage.setItem('useless', JSON.stringify(uselessData));
+                            console.log("Données ajoutées à la liste 'useless' dans le LocalStorage.");
+                            // Ne pas empêcher la soumission du formulaire
+                        }
+                    });
+                } else {
+                    console.log("Aucune entrée trouvée pour le code:", code);
+                }
+            })
+            .catch(error => console.error('Erreur lors de la récupération des données :', error)); // Gérer les erreurs
+
+
+
+
+
+        // Fonction pour ajouter une nouvelle ligne dans le tableau
         function addRow(impactValue, insertAfterId) {
             var table = document.getElementById("data-table");
             var insertAfterRow = document.getElementById(insertAfterId);
@@ -107,33 +170,13 @@
             updateGreaterThan20Result();
         }
 
-
+        // Fonction pour ajouter une ligne sélectionnée
         function addSelectedRow(selectorId, selectId) {
             var impactValue = document.getElementById(selectId).value;
             if (impactValue) addRow(impactValue, selectorId + "-row");
         }
 
-        function updateSliderColor(slider) {
-            var value = parseInt(slider.value);
-            slider.className = 'slider';
-            if (value <= 25) {
-                slider.classList.add('low');
-            } else if (value <= 75) {
-                slider.classList.add('medium');
-            } else {
-                slider.classList.add('high');
-            }
-        }
 
-        window.onload = function() {
-            var sliders = document.querySelectorAll('input[type="range"]');
-            sliders.forEach(function(slider) {
-                slider.addEventListener('input', function() {
-                    updateSliderColor(this);
-                });
-                updateSliderColor(slider);
-            });
-        };
     </script>
 </head>
 <body>

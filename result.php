@@ -222,7 +222,7 @@
 <script>
     // Récupérer les données du localStorage et générer les tuiles correspondantes
     function generateTilesFromLocalStorage() {
-        var esrsData = JSON.parse(localStorage.getItem('esrsConcernes'));
+        var esrsData = JSON.parse(localStorage.getItem('esrsConcernesSept2'));
 
         if (esrsData) {
             esrsData.forEach(function(esrs) {
