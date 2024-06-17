@@ -97,9 +97,7 @@
 </head>
 <body>
 <header>
-    <div class="back-button">&#x21A9;</div>
     <div class="logo">ESRS Environnement</div>
-    <div class="user-icon">&#x1F464;</div>
 </header>
 <main>
     <div class="card" id="ESRS E1">
