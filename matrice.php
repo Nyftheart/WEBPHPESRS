@@ -207,7 +207,7 @@
         const code = urlParams.get('code');
 
         // Define the keys for valeur 1 and valeur 2
-        const valeur1Keys = ['negatif-ampleur', 'negatif-etendu', 'positif-ampleur', 'positif-caractere'];
+        const valeur1Keys = ['negatif-ampleur', 'negatif-etendu', 'positif-ampleur', 'negatif-caractere', 'positif-etendu'];
         const valeur2Keys = ['financiers-activite', 'financiers-opportunites', 'financiers-patrimoine'];
 
         // Function to retrieve the data from local storage and populate the legend

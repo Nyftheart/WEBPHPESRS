@@ -82,11 +82,12 @@
 
 <table id="data-table">
     <tr>
+        <th></th>
         <th colspan="10" class="header">JUSTIFICATION DE LA MATÉRIALITÉ</th>
     </tr>
     <tr>
         <th rowspan="2"></th>
-        <th colspan="2" class="subheader">IMPACT NÉGATIF</th>
+        <th colspan="3" class="subheader">IMPACT NÉGATIF</th>
         <th colspan="2" class="subheader">IMPACT POSITIF</th>
         <th rowspan="2" class="result">Résultat de la matérialité d'impact</th>
         <th colspan="2" class="subheader2">Effets financiers attendus des risques</th>
@@ -98,6 +99,7 @@
         <td>ÉTENDUE</td>
         <td>CARACTÈRE IRRÉMÉDIABLE</td>
         <td>AMPLEUR</td>
+        <td>ÉTENDUE</td>
         <td>PATRIMOINE</td>
         <td>ACTIVITE</td>
     </tr>
@@ -137,8 +139,9 @@
             <td>${data.text}</td>
             <td><input type="range" min="0" max="100" value="${data['negatif-ampleur']}" step="25" class="slider" id="negatif-ampleur-${index}" name="negatif-ampleur" onchange="updateImpactResult(${index})"></td>
             <td><input type="range" min="0" max="100" value="${data['negatif-etendu']}" step="25" class="slider" id="negatif-etendu-${index}" name="negatif-etendu" onchange="updateImpactResult(${index})"></td>
-            <td><input type="range" min="0" max="100" value="${data['positif-caractere']}" step="25" class="slider" id="positif-caractere-${index}" name="positif-caractere" onchange="updateImpactResult(${index})"></td>
+            <td><input type="range" min="0" max="100" value="${data['negatif-caractere']}" step="25" class="slider" id="negatif-caractere-${index}" name="negatif-caractere" onchange="updateImpactResult(${index})"></td>
             <td><input type="range" min="0" max="100" value="${data['positif-ampleur']}" step="25" class="slider" id="positif-ampleur-${index}" name="positif-ampleur" onchange="updateImpactResult(${index})"></td>
+            <td><input type="range" min="0" max="100" value="${data['positif-etendu']}" step="25" class="slider" id="positif-etendu-${index}" name="positif-etendu" onchange="updateImpactResult(${index})"></td>
             <td id="result-impact-${index}">${resultImpact}</td>
             <td><input type="range" min="0" max="100" value="${data['financiers-patrimoine']}" step="25" class="slider" id="financiers-patrimoine-${index}" name="financiers-patrimoine" onchange="updateImpactResult2(${index})"></td>
             <td><input type="range" min="0" max="100" value="${data['financiers-activite']}" step="25" class="slider" id="financiers-activite-${index}" name="financiers-activite" onchange="updateImpactResult2(${index})"></td>
@@ -171,10 +174,11 @@
     function updateImpactResult(index) {
         const negatifAmpleur = document.getElementById(`negatif-ampleur-${index}`).value;
         const negatifEtendu = document.getElementById(`negatif-etendu-${index}`).value;
-        const positifCaractere = document.getElementById(`positif-caractere-${index}`).value;
+        const positifCaractere = document.getElementById(`negatif-caractere-${index}`).value;
         const positifAmpleur = document.getElementById(`positif-ampleur-${index}`).value;
+        const positifEtendu = document.getElementById(`positif-etendu-${index}`).value;
 
-        const resultImpact = (negatifAmpleur > 50 || negatifEtendu > 50 || positifCaractere > 50 || positifAmpleur > 50) ? '✅' : '❌';
+        const resultImpact = (negatifAmpleur > 50 || negatifEtendu > 50 || positifCaractere > 50 || positifAmpleur > 50 || positifEtendu > 50) ? '✅' : '❌';
         document.getElementById(`result-impact-${index}`).textContent = resultImpact;
     }
     function updateImpactResult2(index) {
