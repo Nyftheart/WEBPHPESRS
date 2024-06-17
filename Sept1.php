@@ -196,7 +196,7 @@
                         <a href="#" id="restitutions">Restitutions <img src="images/img_4.png" style="height: 30px"></a>
                         <ul class="sub-menu" id="subMenuRestitutions" style="display: none;">
                             <li><a href="Tuile.php?code=ESRS%20E">Voir les tuiles</a></li>
-                            <li><a href="Matrice.php?code=ESRS%20E">Voir la matrice</a></li>
+                            <li><a href="matrice.php?code=ESRS%20E">Voir la matrice</a></li>
                         </ul>
                     </li>
                 </ul>
