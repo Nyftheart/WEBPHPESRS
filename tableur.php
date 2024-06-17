@@ -87,8 +87,8 @@
     </tr>
     <tr>
         <th rowspan="2"></th>
-        <th colspan="3" class="subheader">IMPACT NÉGATIF</th>
-        <th colspan="2" class="subheader">IMPACT POSITIF</th>
+        <th colspan="3" class="subheader">MATERIALITE D'IMPACT NÉGATIF</th>
+        <th colspan="2" class="subheader">MATERIALITE D'IMPACT POSITIF</th>
         <th rowspan="2" class="result">Résultat de la matérialité d'impact</th>
         <th colspan="2" class="subheader2">Effets financiers attendus des risques</th>
         <th rowspan="2" class="risk-opportunity">Effets financiers attendus des opportunités</th>
