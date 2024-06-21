@@ -30,7 +30,7 @@
     body {
         margin: 0;
         font-family: Arial, sans-serif;
-        background-color: #ffffff;
+        background-color: #e7f5ef70;
     }
 
     .container {

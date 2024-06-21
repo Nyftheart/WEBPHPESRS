@@ -35,7 +35,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #2ecc71;
+            background-color: #e7f5ef70;
         }
 
         header {
@@ -61,12 +61,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: calc(100vh - 70px);
+            margin-top: 5%;
         }
 
         .matrix-container {
             display: flex;
             align-items: center;
+            justify-content: end;
+            padding-right: 25px;
         }
 
         .matrix {
@@ -91,14 +93,14 @@
         }
 
         .x-axis {
-            top: 420px;
-            left: 29%;
+            top: 600px;
+            left: 33%;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(4, 100px);
-            grid-template-rows: repeat(4, 95.5px);
+            grid-template-columns: repeat(4, 140px);
+            grid-template-rows: repeat(4, 139.5px);
             gap: 5px;
             border: 2px solid #000;
             position: relative;
@@ -110,7 +112,7 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            height: 95px;
+            height: 100%;
             margin-bottom: 3px;
             overflow: hidden;
         }
@@ -134,6 +136,7 @@
         .item8::before { background-color: #1E90FF; }
 
         .legend {
+            max-width: 30%;
             padding: 10px;
             margin-left: 20px;
             background-color: white;
@@ -186,7 +189,12 @@
         <img src="./images/v312_47.png" alt="Logo" class="logo">
     </div>
 </header>
+<h1 style="margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;">Matrix de matérialité </h1>
 <main>
+
     <div class="matrix-container">
         <div class="matrix">
             <div class="axis-label y-axis">Matérialité d'impact</div>

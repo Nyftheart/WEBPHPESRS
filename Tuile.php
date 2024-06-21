@@ -33,10 +33,12 @@
         }
         body {
             font-family: Arial, sans-serif;
-            background-color: #2D6A4F;
+            background-color: #e7f5ef70;
             margin: 0;
             padding: 0;
             color: #333;
+
+
         }
 
         header {
@@ -67,7 +69,10 @@
             flex-wrap: wrap;
             justify-content: center;
             padding: 2em;
-            gap: 1em;
+            padding-top: 130px;
+            gap: 4em;
+            max-width: 1000px;
+            margin: auto;
         }
 
         .card {

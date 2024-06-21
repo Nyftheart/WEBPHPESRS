@@ -9,7 +9,7 @@
         @import url(https://fonts.googleapis.com/css?family=Lato:400,700);
 
         body {
-            background: #F2F2F2;
+            background: #e7f5ef70;
             padding: 0;
             margin: 0;
             position: relative; /* Pour que la boîte des statistiques soit relative à la page */
