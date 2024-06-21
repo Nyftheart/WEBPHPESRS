@@ -1,284 +1,275 @@
 <!DOCTYPE html>
-<html lang="en">
+<style>
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #F5F5DC;
+        padding: 50px 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+    .header .logo-container {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .header img.logo {
+        height: 90px;
+    }
+    .header .icons {
+        display: flex;
+        gap: 20px;
+        margin-left: auto;
+    }
+    .header .icons img {
+        height: 60px;
+        cursor: pointer;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #ffffff;
+    }
+
+    .container {
+        display: flex;
+        padding-top: 130px;
+    }
+
+    .left-section, .right-section {
+        padding: 20px;
+    }
+
+    .left-section {
+        flex: 1;
+        background-color: #ffffff;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 10%;
+        margin-right: 5%;
+    }
+
+    .left-section h1 {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    .left-section p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .btn-start, .btn-video {
+        display: block;
+        margin-bottom: 10px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .btn-start {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .btn-video {
+        background-color: white;
+        color: #2c4b8e;
+        border: 1px solid #2c4b8e;
+    }
+
+    .right-section {
+
+        border-radius: 30px;
+        margin: auto;
+        height: 60%;
+        flex: 1;
+        background-color: #319082;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px;
+        margin-right: 10%;
+    }
+
+    .right-section h2 {
+        padding-bottom: 20px;
+        font-size: 24px;
+        margin:auto;
+    }
+
+    .demo-form{
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 18px;
+        max-width: 400px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+        min-width: 160PX;
+    }
+    .special-form{
+        width: 100%;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-group input, .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #dcdbdb;
+        color: white;
+    }
+
+    .phone-input {
+        display: flex;
+        align-items: center;
+        background-color: #dcdbdb;
+    }
+
+    .flag-icon {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+
+
+    .form-note {
+        font-size: 12px;
+        margin: 20px 0;
+    }
+
+    .form-note a {
+        color: #28a745;
+        text-decoration: none;
+    }
+
+    .btn-submit {
+        width: 100%;
+        padding: 10px;
+        background-color: white;
+        color: black;
+        border: 1px solid #28a745;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .btn-submit:hover {
+        background-color: #28a745;
+        color: white;
+    }
+    .checkbox-group {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .checkbox-group input {
+        margin-right: 10px;
+    }
+
+    .checkbox-group label {
+        flex: 1;
+    }
+
+    .checkbox-group a {
+        color: #28a745;
+        text-decoration: none;
+    }
+
+
+</style>
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi-Step Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 500px;
-        }
-
-        h2 {
-            font-size: 1.5em;
-            margin-bottom: 1em;
-        }
-
-        .option {
-            margin-bottom: 1em;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-        }
-
-        .option input {
-            display: none;
-        }
-
-        .option label {
-            padding: 10px;
-            background-color: #e0f7fa;
-            border: 2px solid transparent;
-            border-radius: 4px;
-            width: 100%;
-            cursor: pointer;
-            font-size: 1em;
-            transition: background-color 0.3s, border-color 0.3s;
-        }
-
-        .option input:checked + label {
-            background-color: #b2ebf2;
-            border-color: #00bcd4;
-        }
-
-        .options-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .option {
-            flex: 1 1 calc(50% - 10px);
-        }
-
-        label {
-            display: block;
-            margin-top: 1em;
-            font-size: 1em;
-        }
-
-        input[type="text"], input[type="email"] {
-            width: calc(100% - 22px);
-            padding: 10px;
-            margin-top: 0.5em;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            background-color: #6200ea;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 1em;
-            cursor: pointer;
-            margin-top: 1em;
-        }
-
-        button:hover {
-            background-color: #3700b3;
-        }
-
-    </style>
+    <title>Le Bilan Carbone</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+<header class="header">
+    <div class="logo-container">
+        <img src="./images/v312_47.png" alt="Logo" class="logo">
+    </div>
+</header>
+
 <body>
-
 <div class="container">
-    <form id="multiStepForm">
-        <!-- Étape 1 -->
-        <div id="typeStep">
-            <h2>1. Bienvenue chez ETIPLANET 🌎 Vous êtes :</h2>
-                <div class="option">
-                    <input type="radio" id="TPE" name="type" value="TPE">
-                    <label for="TPE">TPE (1 - 9 Collaborateurs)</label>
+    <div class="left-section">
+        <h1>Des ESRG précis et intuitif pour votre entreprise</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam assumenda beatae consequuntur, corporis deleniti dicta ea esse et eum explicabo ipsa, iste perferendis qui quidem quo repellat sit voluptatum.</p>
+        <button class="btn-start">Contactez nous</button>
+    </div>
+    <div class="right-section">
+        <h2>Accedez à votre test</h2>
+        <form id="demo-form" class="demo-form" action="Sept1.php" method="POST">
+                <div class="form-group">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" name="prenom" placeholder="Livia">
                 </div>
-                <div class="option">
-                    <input type="radio" id="PME" name="type" value="PME">
-                    <label for="PME">PME (10 - 249 Collaborateurs)</label>
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" placeholder="Siphon">
                 </div>
-                <div class="option">
-                    <input type="radio" id="ETI" name="type" value="ETI">
-                    <label for="ETI">ETI (250 - 5000 Collaborateurs)</label>
-                </div>
-                <div class="option">
-                    <input type="radio" id="Grands Groupes" name="type" value="Grands Groupes">
-                    <label for="Grands Groupes">Grands Groupes ( >5000 Collaborateurs)</label>
-                </div>
-            <button type="button" id="nextButton">Next</button>
-        </div>
-
-        <!-- Étape 2 -->
-        <div id="sectorStep" style="display: none;">
-            <h2>2. 🤩 Super ! Quelle est votre secteur d'activité ?</h2>
-            <div class="options-container">
-                <div class="option">
-                    <input type="radio" id="A" name="sector" value="Construction & Immobilier">
-                    <label for="A">Construction & Immobilier</label>
-                </div>
-                <div class="option">
-                    <input type="radio" id="B" name="sector" value="Conseil & Service">
-                    <label for="B">Conseil & Service</label>
-                </div>
-                <div class="option">
-                    <input type="radio" id="C" name="sector" value="Énergie & Environnement">
-                    <label for="C">Énergie & Environnement</label>
-                </div>
-                <div class="option">
-                    <input type="radio" id="D" name="sector" value="Événement & Tourisme">
-                    <label for="D">Événement & Tourisme</label>
-                </div>
-                <div class="option">
-                    <input type="radio" id="E" name="sector" value="Finance">
-                    <label for="E">Finance</label>
-                </div>
-                <div class="option">
-                    <input type="radio" id="F" name="sector" value="Agroalimentaire">
-                    <label for="F">Agroalimentaire</label>
-                </div>
-                <div class="option">
-                    <input type="radio" id="G" name="sector" value="Santé">
-                    <label for="G">Santé</label>
-                </div>
-                <div class="option">
-                    <input type="radio" id="H" name="sector" value="Assurance">
-                    <label for="H">Assurance</label>
-                </div>
-                <div class="option">
-                    <input type="radio" id="I" name="sector" value="Logistique & Mobilité">
-                    <label for="I">Logistique & Mobilité</label>
-                </div>
-                <div class="option">
-                    <input type="radio" id="J" name="sector" value="Industrie">
-                    <label for="J">Industrie</label>
-                </div>
-                <div class="option">
-                    <input type="radio" id="K" name="sector" value="Média & Communication">
-                    <label for="K">Média & Communication</label>
-                </div>
-                <div class="option">
-                    <input type="radio" id="L" name="sector" value="Service Publique & Éducation">
-                    <label for="L">Service Publique & Éducation</label>
-                </div>
-                <div class="option">
-                    <input type="radio" id="M" name="sector" value="Retail & E-Commerce">
-                    <label for="M">Retail & E-Commerce</label>
-                </div>
-                <div class="option">
-                    <input type="radio" id="N" name="sector" value="Technologie & IT">
-                    <label for="N">Technologie & IT</label>
+            <div class="form-group special-form">
+                <label for="email">Email professionnel</label>
+                <input type="email" id="email" name="email" placeholder="ex: john@mail.com">
+            </div>
+            <div class="form-group">
+                <label for="telephone">Téléphone</label>
+                <div class="phone-input">
+                    <span class="flag-icon">🇫🇷</span>
+                    <input type="tel" id="telephone" name="telephone" placeholder="123456789">
                 </div>
             </div>
-            <button type="button" id="nextButton2">Next</button>
-        </div>
-
-        <!-- Étape 3 -->
-        <div id="detailsStep" style="display: none;">
-            <h2>3. Entrez vos détails</h2>
-            <label for="name">Nom:</label>
-            <input type="text" id="name" name="name"><br>
-            <label for="surname">Prénom:</label>
-            <input type="text" id="surname" name="surname"><br>
-            <button type="button" id="nextButton3">Next</button>
-        </div>
-
-        <div id="contacStep" style="display: none;">
-            <h2>3. Entrez vos contact</h2>
-            <label for="name">Email:</label>
-            <input type="text" id="Email" name="Email"><br>
-            <label for="surname">Numéro de téléphone:</label>
-            <input type="text" id="Numéro" name="Numéro"><br>
-            <button type="button" id="nextButton4">Next</button>
-        </div>
-
-        <!-- Ajoutez d'autres étapes ici -->
-
-        <!-- Étape finale -->
-        <div id="confirmationStep" style="display: none;">
-            <h2>Acceptez les conditions</h2>
-            <div class="option">
-                <input type="checkbox" id="acceptConditions" name="acceptConditions" required>
-                <label for="acceptConditions">J'accepte les <a href="#">conditions d'utilisation</a></label>
+            <div class="form-group">
+                <label for="entreprise">Entreprise</label>
+                <input type="text" id="entreprise" name="entreprise" placeholder="ex: Greenly">
             </div>
-            <button type="button" id="submitButton">Submit</button>
-            <!-- Ajoutez d'autres champs de confirmation ici -->
-        </div>
-    </form>
+            <div class="form-group">
+                <label for="employees">Nombre d'employés</label>
+                <select id="employees" name="employees">
+                    <option value="" disabled selected>-</option>
+                    <option value="1-10">1-10</option>
+                    <option value="11-50">11-50</option>
+                    <option value="51-200">51-200</option>
+                    <option value="201-500">201-500</option>
+                    <option value="501+">501+</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="secteur">Secteur</label>
+                <select id="secteur" name="secteur">
+                    <option value="" disabled selected>-</option>
+                    <option value="tech">Technologie</option>
+                    <option value="finance">Finance</option>
+                    <option value="industrie">Industrie</option>
+                    <option value="sante">Santé</option>
+                    <option value="autre">Autre</option>
+                </select>
+            </div>
+            <div class=" checkbox-group">
+                <input type="checkbox" id="consent" name="consent" required>
+                <label for="consent">J’accepte que mes informations personnelles saisies soient utilisées par Greenly SAS à des fins de prospection commerciale. Pour plus d’information, cliquez <a href="#">here</a>.</label>
+            </div><button type="submit" class="btn-submit">Découvrir la suite</button>
+        </form>
+    </div>
 </div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const typeStep = document.getElementById('typeStep');
-        const sectorStep = document.getElementById('sectorStep');
-        const detailsStep = document.getElementById('detailsStep');
-        const contacStep = document.getElementById('contacStep');
-        const confirmationStep = document.getElementById('confirmationStep');
-        const nextButton = document.getElementById('nextButton');
-        const nextButton2 = document.getElementById('nextButton2');
-        const nextButton3 = document.getElementById('nextButton3');
-        const nextButton4 = document.getElementById('nextButton4');
-        const submitButton = document.getElementById('submitButton'); // Bouton "Submit" à l'étape de confirmation
-        const form = document.getElementById('multiStepForm');
-
-        nextButton.addEventListener('click', function () {
-            typeStep.style.display = 'none';
-            sectorStep.style.display = 'block';
-        });
-
-        nextButton2.addEventListener('click', function () {
-            sectorStep.style.display = 'none';
-            detailsStep.style.display = 'block';
-        });
-
-        nextButton3.addEventListener('click', function () {
-            detailsStep.style.display = 'none';
-            contacStep.style.display = 'block';
-        });
-        nextButton4.addEventListener('click', function () {
-            contacStep.style.display = 'none';
-            confirmationStep.style.display = 'block';
-        });
-
-        submitButton.addEventListener('click', function () {
-            // Effectuer la redirection vers la page PHP après la soumission du formulaire
-            window.location.href = 'Sept1.php'; // Assurez-vous que le chemin est correct
-        });
-
-        form.addEventListener('submit', function (event) {
-            event.preventDefault();
-            // Récupérer et afficher les données du formulaire
-            const formData = new FormData(this);
-            const formValues = {};
-            for (const [key, value] of formData.entries()) {
-                formValues[key] = value;
-            }
-            document.getElementById('typeConfirmation').textContent = formValues['type'];
-            document.getElementById('sectorConfirmation').textContent = formValues['sector'];
-            document.getElementById('nameConfirmation').textContent = formValues['name'];
-            document.getElementById('surnameConfirmation').textContent = formValues['surname'];
-        });
-    });
-
-
-
-</script>
-
 </body>
 </html>

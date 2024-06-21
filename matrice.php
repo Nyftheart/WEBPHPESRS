@@ -5,6 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matérialité</title>
     <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #F5F5DC;
+            padding: 50px 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .header .logo-container {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .header img.logo {
+            height: 90px;
+        }
+        .header .icons {
+            display: flex;
+            gap: 20px;
+            margin-left: auto;
+        }
+        .header .icons img {
+            height: 60px;
+            cursor: pointer;
+        }
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -155,10 +181,9 @@
     </style>
 </head>
 <body>
-<header>
-    <img src="logo.png" alt="Logo" class="logo">
-    <div class="profile-icon">
-        <!-- Icône de profil -->
+<header class="header">
+    <div class="logo-container">
+        <img src="./images/v312_47.png" alt="Logo" class="logo">
     </div>
 </header>
 <main>
