@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Tableau Justification de la Matérialité</title>
@@ -163,6 +164,67 @@
         .validate-button:hover {
             background-color: #45a049; /* Fond vert plus foncé au survol */
         }
+
+        .modal-content {
+            font-size: 30px;
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            position: relative;
+            border-radius: 10px; /* Ajout de coins arrondis */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajout d'une ombre */
+        }
+
+        .modal-content button {
+            background-color: #4CAF50; /* Fond vert */
+            border: none; /* Retire les bordures */
+            color: white; /* Texte blanc */
+            padding: 10px 20px; /* Ajoute du padding aux boutons */
+            text-align: center; /* Centre le texte */
+            text-decoration: none; /* Retire le soulignement */
+            display: inline-block; /* Affiche en ligne */
+            font-size: 16px; /* Taille de la police */
+            cursor: pointer; /* Curseur */
+            margin-top: 10px; /* Marge en haut des boutons */
+            border-radius: 5px; /* Coins arrondis */
+        }
+
+        .modal-content button:hover {
+            background-color: #45a049; /* Fond vert plus foncé au survol */
+        }
+        .tooltip {
+
+            text-align: left;
+            position: absolute;
+            display: none;
+            background-color: #caf4ca;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            margin: auto;
+            width: 600px; /* Ajustez la largeur selon votre contenu */
+        }
+
+        .tooltip-content {
+            color: #333;
+            font-size: 18px;
+        }
+
+        .tooltip-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .tooltip-content ul li {
+            margin-bottom: 5px;
+        }
+
     </style>
 </head>
 <header class="header">
@@ -188,7 +250,8 @@
         <th rowspan="2" class="result">Résultat de la matérialité financière</th>
     </tr>
     <tr style="border-bottom: 1px black solid; border-right: white 1px solid;" class="submenu">
-        <td style="background-color: #BADFCF">AMPLEUR <sup><img src="images/img.png" style="height: 20px"></sup></td>
+        <td style="background-color: #BADFCF; cursor: pointer;" data-tooltip="show">AMPLEUR <sup><img src="images/img.png" style="height: 20px"></sup></td>
+
         <td style="background-color: #BADFCF">ÉTENDUE</td>
         <td style="background-color: #BADFCF">CARACTÈRE IRRÉMÉDIABLE</td>
         <td style="background-color: #BADFCF">AMPLEUR</td>
@@ -454,6 +517,6 @@
 
 
 </script>
-
+<script src="tableur.js"></script>
 </body>
 </html>
