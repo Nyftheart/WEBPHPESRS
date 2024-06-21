@@ -3,39 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <title>Tableau Justification de la Matérialité</title>
-
     <style>
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #F5F5DC;
+            padding: 50px 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            margin-bottom: 50px;
+        }
+        .header .logo-container {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .header img.logo {
+            height: 90px;
+        }
+        .header .icons {
+            display: flex;
+            gap: 20px;
+            margin-left: auto;
+        }
+        .header .icons img {
+            height: 60px;
+            cursor: pointer;
+        }
         table {
+            top: 100px;
             width: 100%;
             border-collapse: collapse;
         }
         th, td {
-            border: 1px solid black;
             padding: 5px;
             text-align: center;
         }
         th {
-            background-color: #f2f2f2;
+            background-color: #ffffff;
         }
-        .header {
-            background-color: #ffcc99;
+        .header-table {
+            background-color: #309168;
+            color: white;
         }
         .subheader {
             background-color: #ff9999;
+            border-bottom: white 1px solid;
+            border-right: white 1px solid;
         }
         .result, .risk-opportunity, .financial-result {
-            background-color: #cc99ff;
-        }
-        .slider {
-            width: 100%;
         }
         .subheader2 {
+            border-bottom: white 1px solid;
+            border-right: white 1px solid;
             background-color: #cc99ff;
         }
         .dynamic-row {
             background-color: lightgreen;
         }
-        /* Style de la popup */
+        .gauge-container {
+            margin: auto;
+            max-width: 104px;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .gauge {
+            display: flex;
+            border-radius: 25px;
+            overflow: hidden;
+            border: 2px solid black;
+            width: 100px;
+            height: 20px;
+        }
+        .gauge-segment {
+            flex: 1;
+            height: 100%;
+            cursor: pointer;
+        }
+        .green {
+            background-color: #8cd98c;
+        }
+        .yellow {
+            background-color: #ffff99;
+        }
+        .orange {
+            background-color: #ffd966;
+        }
+        .red {
+            background-color: #ff6666;
+        }
+        .triangle {
+            position: absolute;
+            top: 25px;
+            width: 0;
+            height: 0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 12px solid black;
+            transform: translateX(-50%) rotate(0deg);
+        }
         .modal {
             display: none;
             position: fixed;
@@ -48,8 +116,6 @@
             background-color: rgb(0,0,0);
             background-color: rgba(0,0,0,0.4);
         }
-
-        /* Contenu de la popup */
         .modal-content {
             background-color: #fefefe;
             margin: 15% auto;
@@ -60,56 +126,82 @@
             text-align: center;
             position: relative;
         }
-
-        /* Bouton pour fermer la popup */
         .close {
             color: #aaa;
             float: right;
             font-size: 28px;
             font-weight: bold;
         }
-
         .close:hover,
         .close:focus {
             color: black;
             text-decoration: none;
             cursor: pointer;
         }
+        .rowinter{
+            border-bottom: 1px black solid;
+        }
+        .submenu td{
+            border-right: white 1px solid;
+        }
+        .validate-button {
+            margin-top: 2%;
+            margin-left: 85%;
+            background-color: #4CAF50; /* Fond vert */
+            border: none; /* Retire les bordures */
+            color: white; /* Texte blanc */
+            padding: 15px 32px; /* Ajoute du padding */
+            text-align: center; /* Centre le texte */
+            text-decoration: none; /* Retire le soulignement */
+            display: inline-block; /* Affiche en ligne */
+            font-size: 16px; /* Augmente la taille de la police */
+            cursor: pointer; /* Change le curseur au survol */
+            font-family: 'Arial', sans-serif; /* Police */
+            border-radius: 5px; /* Coins arrondis */
+        }
 
+        .validate-button:hover {
+            background-color: #45a049; /* Fond vert plus foncé au survol */
+        }
     </style>
 </head>
+<header class="header">
+    <div class="logo-container">
+        <img src="./images/v312_47.png" alt="Logo" class="logo">
+    </div>
+</header>
+
 <body>
 
 <table id="data-table">
     <tr>
-        <th></th>
-        <th colspan="10" class="header">JUSTIFICATION DE LA MATÉRIALITÉ</th>
+        <th style="border: none"></th>
+        <th colspan="10" class="header-table">JUSTIFICATION DE LA MATÉRIALITÉ</th>
     </tr>
-    <tr>
-        <th rowspan="2"></th>
-        <th colspan="3" class="subheader">MATERIALITE D'IMPACT NÉGATIF</th>
-        <th colspan="2" class="subheader">MATERIALITE D'IMPACT POSITIF</th>
+    <tr style="border-bottom: white">
+        <th rowspan="2" style="border: none"></th>
+        <th colspan="3" class="subheader" style="background-color: #BADFCF;">MATERIALITE D'IMPACT NÉGATIF</th>
+        <th colspan="2" class="subheader" style="background-color: #BADFCF">MATERIALITE D'IMPACT POSITIF</th>
         <th rowspan="2" class="result">Résultat de la matérialité d'impact</th>
-        <th colspan="2" class="subheader2">Effets financiers attendus des risques</th>
-        <th rowspan="2" class="risk-opportunity">Effets financiers attendus des opportunités</th>
-        <th rowspan="2" class="financial-result">Résultat de la matérialité financière</th>
+        <th colspan="2" class="subheader2" style="background-color: #D1E1DB">Effets financiers attendus des risques</th>
+        <th rowspan="2" class="risk-opportunity" style="background-color: #D1E1DB">Effets financiers attendus des opportunités</th>
+        <th rowspan="2" class="result">Résultat de la matérialité financière</th>
     </tr>
-    <tr>
-        <td>AMPLEUR <sup><img src="images/img.png" style="height: 20px"></sup></td>
-        <td>ÉTENDUE</td>
-        <td>CARACTÈRE IRRÉMÉDIABLE</td>
-        <td>AMPLEUR</td>
-        <td>ÉTENDUE</td>
-        <td>PATRIMOINE</td>
-        <td>ACTIVITE</td>
+    <tr style="border-bottom: 1px black solid; border-right: white 1px solid;" class="submenu">
+        <td style="background-color: #BADFCF">AMPLEUR <sup><img src="images/img.png" style="height: 20px"></sup></td>
+        <td style="background-color: #BADFCF">ÉTENDUE</td>
+        <td style="background-color: #BADFCF">CARACTÈRE IRRÉMÉDIABLE</td>
+        <td style="background-color: #BADFCF">AMPLEUR</td>
+        <td style="background-color: #BADFCF">ÉTENDUE</td>
+        <td style="background-color: #D1E1DB">PATRIMOINE</td>
+        <td style="background-color: #D1E1DB">ACTIVITE</td>
     </tr>
     <tbody id="table-body">
     <!-- Les lignes de données seront générées ici -->
     </tbody>
 </table>
 
-<button onclick="getAllSliderValues()">Récupérer toutes les valeurs</button>
-
+<button onclick="" id="saveButton" class="validate-button">VALIDER</button>
 
 <div id="myModal" class="modal">
     <div class="modal-content">
@@ -120,7 +212,6 @@
 </div>
 
 <script>
-    // Fonction pour extraire les paramètres de l'URL
     function getUrlParameter(name) {
         name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
         var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
@@ -128,32 +219,45 @@
         return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
     }
 
-    // Fonction pour créer et insérer des lignes de tableau
+    function createGauge(id) {
+        return `
+        <div class="gauge-container" id="container-${id}" >
+            <div class="gauge" id="gauge-${id}">
+                <div class="gauge-segment green" data-value="25"></div>
+                <div class="gauge-segment yellow" data-value="50"></div>
+                <div class="gauge-segment orange" data-value="75"></div>
+                <div class="gauge-segment red" data-value="100"></div>
+            </div>
+            <div class="triangle" id="triangle-${id}"></div>
+        </div>
+    `;
+    }
+
     function createTableRow(data, index) {
         const row = document.createElement('tr');
         row.id = `impact${index + 1}-row`;
+        row.className = "rowinter"
 
         const resultImpact = (data['negatif-ampleur'] > 50 || data['negatif-etendu'] > 50 || data['positif-caractere'] > 50 || data['positif-ampleur'] > 50) ? '✅' : '❌';
 
         const columns = `
-            <td>${data.text}</td>
-            <td><input type="range" min="0" max="100" value="${data['negatif-ampleur']}" step="25" class="slider" id="negatif-ampleur-${index}" name="negatif-ampleur" onchange="updateImpactResult(${index})"></td>
-            <td><input type="range" min="0" max="100" value="${data['negatif-etendu']}" step="25" class="slider" id="negatif-etendu-${index}" name="negatif-etendu" onchange="updateImpactResult(${index})"></td>
-            <td><input type="range" min="0" max="100" value="${data['negatif-caractere']}" step="25" class="slider" id="negatif-caractere-${index}" name="negatif-caractere" onchange="updateImpactResult(${index})"></td>
-            <td><input type="range" min="0" max="100" value="${data['positif-ampleur']}" step="25" class="slider" id="positif-ampleur-${index}" name="positif-ampleur" onchange="updateImpactResult(${index})"></td>
-            <td><input type="range" min="0" max="100" value="${data['positif-etendu']}" step="25" class="slider" id="positif-etendu-${index}" name="positif-etendu" onchange="updateImpactResult(${index})"></td>
-            <td id="result-impact-${index}">${resultImpact}</td>
-            <td><input type="range" min="0" max="100" value="${data['financiers-patrimoine']}" step="25" class="slider" id="financiers-patrimoine-${index}" name="financiers-patrimoine" onchange="updateImpactResult2(${index})"></td>
-            <td><input type="range" min="0" max="100" value="${data['financiers-activite']}" step="25" class="slider" id="financiers-activite-${index}" name="financiers-activite" onchange="updateImpactResult2(${index})"></td>
-            <td><input type="range" min="0" max="100" value="${data['financiers-opportunites']}" step="25" class="slider" id="financiers-opportunites-${index}" name="financiers-opportunites" onchange="updateImpactResult2(${index})"></td>
-            <td id="result2-impact-${index}">${resultImpact}</td>
-        `;
+        <td style="border: none; border-bottom: solid 1px black; background-color: #309168; color: white">${data.text}</td>
+        <td>${createGauge(`negatif-ampleur-${index}`)}</td>
+        <td>${createGauge(`negatif-etendu-${index}`)}</td>
+        <td>${createGauge(`negatif-caractere-${index}`)}</td>
+        <td>${createGauge(`positif-ampleur-${index}`)}</td>
+        <td>${createGauge(`positif-etendu-${index}`)}</td>
+        <td id="result-impact-${index}">${resultImpact}</td>
+        <td>${createGauge(`financiers-patrimoine-${index}`)}</td>
+        <td>${createGauge(`financiers-activite-${index}`)}</td>
+        <td>${createGauge(`financiers-opportunites-${index}`)}</td>
+        <td id="result2-impact-${index}">${resultImpact}</td>
+    `;
 
         row.innerHTML = columns;
         return row;
     }
 
-    // Fonction pour charger les données JSON et générer le tableau
     function loadTableData() {
         const codeParam = getUrlParameter('code');
 
@@ -166,104 +270,94 @@
                     const row = createTableRow(item, index);
                     tableBody.appendChild(row);
                 });
+
+                // Initialiser les jauges après avoir ajouté les lignes au tableau
+                initializeGauges();
             })
             .catch(error => console.error('Erreur lors du chargement des données JSON:', error));
     }
 
-    // Fonction pour mettre à jour dynamiquement le résultat de la matérialité d'impact
-    function updateImpactResult(index) {
-        const negatifAmpleur = document.getElementById(`negatif-ampleur-${index}`).value;
-        const negatifEtendu = document.getElementById(`negatif-etendu-${index}`).value;
-        const positifCaractere = document.getElementById(`negatif-caractere-${index}`).value;
-        const positifAmpleur = document.getElementById(`positif-ampleur-${index}`).value;
-        const positifEtendu = document.getElementById(`positif-etendu-${index}`).value;
+    function initializeGauges() {
+        document.querySelectorAll('.gauge-container').forEach((gaugeContainer) => {
+            const segments = gaugeContainer.querySelectorAll('.gauge-segment');
+            const triangle = gaugeContainer.querySelector('.triangle');
+            const id = gaugeContainer.id.split('-')[1];
 
-        const resultImpact = (negatifAmpleur > 50 || negatifEtendu > 50 || positifCaractere > 50 || positifAmpleur > 50 || positifEtendu > 50) ? '✅' : '❌';
-        document.getElementById(`result-impact-${index}`).textContent = resultImpact;
-    }
-    function updateImpactResult2(index) {
-        const financierspatrimoine = document.getElementById(`financiers-patrimoine-${index}`).value;
-        const financiersactivite = document.getElementById(`financiers-activite-${index}`).value;
-        const financiersopportunite = document.getElementById(`financiers-opportunites-${index}`).value;
+            function setPosition(index) {
+                const segmentWidth = gaugeContainer.clientWidth / segments.length;
+                const newLeft = segmentWidth * (index + 0.5); // Position the triangle in the center of the segment
+                triangle.style.left = `${newLeft}px`;
+                triangle.dataset.value = segments[index].dataset.value;
+                updateResults();
+            }
 
-        const resultImpact2 = (financierspatrimoine > 50 || financiersactivite > 50 || financiersopportunite > 50) ? '✅' : '❌';
-        document.getElementById(`result2-impact-${index}`).textContent = resultImpact2;
-    }
-
-    // Fonction pour enregistrer les données dans le local storage
-    function saveToLocalStorage(key, data) {
-        localStorage.setItem(key, JSON.stringify(data));
-    }
-
-    // Fonction pour récupérer les valeurs des sliders
-    function getAllSliderValues() {
-        const rows = document.querySelectorAll('#data-table tr[id^="impact"]');
-        const allData = [];
-        const codeParam = getUrlParameter('code');
-
-        rows.forEach(function(row, index) {
-            const text = row.cells[0].textContent.trim();
-            const sliders = row.querySelectorAll('.slider');
-            const sliderData = {};
-
-            sliders.forEach(function(slider) {
-                const name = slider.name;
-                const value = slider.value;
-                sliderData[name] = value;
+            segments.forEach((segment, index) => {
+                segment.addEventListener('click', () => {
+                    setPosition(index);
+                });
             });
 
-            const resultImpact = document.getElementById(`result-impact-${index}`).textContent;
-            const resultImpact2 = document.getElementById(`result2-impact-${index}`).textContent;
-
-            allData.push({ code: codeParam, text: text, sliders: sliderData, resultImpact: resultImpact, resultImpact2: resultImpact2 });
+            // Set default position to the first segment (green)
+            setPosition(0);
         });
 
-        console.log("Données de tous les sliders et code :", allData);
-
-        // Enregistrer les données dans le local storage
-        saveToLocalStorage(codeParam, allData);
-        window.location.href = 'Sept1.php';
+        updateResults(); // Initial call to set the correct initial state
     }
-    // Fonction pour afficher la popup
+
+    function updateResults() {
+        const rows = document.querySelectorAll('#data-table tr[id^="impact"]');
+        rows.forEach((row, rowIndex) => {
+            const gauges = row.querySelectorAll('.gauge-container .triangle');
+            let resultImpactValid = false;
+            let resultImpact2Valid = false;
+
+            gauges.forEach((triangle) => {
+                const value = parseInt(triangle.dataset.value, 10);
+
+                if (value > 50) {
+                    const id = triangle.id.split('-')[1];
+                    if (id.includes('negatif') || id.includes('positif')) {
+                        resultImpactValid = true;
+                    } else {
+                        resultImpact2Valid = true;
+                    }
+                }
+            });
+
+            document.getElementById(`result-impact-${rowIndex}`).textContent = resultImpactValid ? '✅' : '❌';
+            document.getElementById(`result2-impact-${rowIndex}`).textContent = resultImpact2Valid ? '✅' : '❌';
+        });
+    }
+
     function showModal() {
         var modal = document.getElementById("myModal");
         modal.style.display = "block";
     }
 
-    // Fonction pour masquer la popup
     function hideModal() {
         var modal = document.getElementById("myModal");
         modal.style.display = "none";
     }
 
-    // Gestionnaire d'événement pour le bouton de confirmation
     document.getElementById("confirmButton").onclick = function() {
-        hideModal(); // Cacher la popup
-        loadTableData(); // Charger les données et générer le tableau
+        hideModal();
+        loadTableData();
     };
 
-    // Gestionnaire d'événement pour le bouton d'annulation
-    function saveAndRedirect(data) {
-        const codeParam = getUrlParameter('code');
-        localStorage.setItem(codeParam, JSON.stringify(data));
-        window.location.href = 'Sept1.php'; // Redirection vers une autre page
-    }
-
-    // Gestionnaire d'événement pour le bouton d'annulation
     document.getElementById("cancelButton").onclick = function() {
-        hideModal(); // Cacher la popup
+        hideModal();
 
         const rows = document.querySelectorAll('#data-table tr[id^="impact"]');
         const allData = [];
 
         rows.forEach(function(row, index) {
             const text = row.cells[0].textContent.trim();
-            const sliders = row.querySelectorAll('.slider');
+            const sliders = row.querySelectorAll('.gauge-container .triangle');
             const sliderData = {};
 
             sliders.forEach(function(slider) {
-                const name = slider.name;
-                const value = slider.value;
+                const name = slider.id.split('-')[0];
+                const value = parseInt(slider.dataset.value, 10);
                 sliderData[name] = value;
             });
 
@@ -273,9 +367,9 @@
             allData.push({ text: text, sliders: sliderData, resultImpact: resultImpact, resultImpact2: resultImpact2 });
         });
 
-        saveAndRedirect(allData); // Appel de la fonction pour sauvegarder les données
+        saveAndRedirect(allData);
     };
-    // Fonction pour charger la question à partir du fichier JSON en utilisant le code de l'URL
+
     function loadQuestionFromJSON() {
         const codeParam = getUrlParameter('code');
 
@@ -285,7 +379,7 @@
                 const question = data.find(item => item.code === codeParam);
                 if (question) {
                     document.getElementById('questionText').textContent = question.question;
-                    showModal(); // Afficher la popup seulement si la question est trouvée
+                    showModal();
                 } else {
                     console.error(`Question non trouvée pour le code : ${codeParam}`);
                     loadTableData();
@@ -293,13 +387,72 @@
             })
             .catch(error => {
                 console.error('Erreur lors du chargement de la question JSON:', error);
-                // Afficher un message d'erreur dans la console ou gérer l'erreur selon vos besoins
             });
     }
 
+    document.addEventListener('DOMContentLoaded', (event) => {
+        loadQuestionFromJSON();
+    });
 
-    // Afficher la popup dès le chargement de la page
-    loadQuestionFromJSON();
+    function getAllSliderValues() {
+        const rows = document.querySelectorAll('#data-table tr[id^="impact"]');
+        const allData = [];
+
+        rows.forEach((row, index) => {
+            const text = row.cells[0].textContent.trim();
+
+            // Obtenir les valeurs des sliders
+            const sliders = {};
+            sliders['negatif-ampleur'] = getSliderValue(`negatif-ampleur-${index}`);
+            sliders['negatif-etendu'] = getSliderValue(`negatif-etendu-${index}`);
+            sliders['negatif-caractere'] = getSliderValue(`negatif-caractere-${index}`);
+            sliders['positif-ampleur'] = getSliderValue(`positif-ampleur-${index}`);
+            sliders['positif-etendu'] = getSliderValue(`positif-etendu-${index}`);
+            sliders['financiers-patrimoine'] = getSliderValue(`financiers-patrimoine-${index}`);
+            sliders['financiers-activite'] = getSliderValue(`financiers-activite-${index}`);
+            sliders['financiers-opportunites'] = getSliderValue(`financiers-opportunites-${index}`);
+
+            // Obtenir les résultats d'impact
+            const resultImpact = document.getElementById(`result-impact-${index}`).textContent;
+            const resultImpact2 = document.getElementById(`result2-impact-${index}`).textContent;
+
+            // Créer un objet contenant toutes les données de la ligne
+            const rowData = {
+                code: getUrlParameter('code'), // Supposons que vous récupérez le code à partir de l'URL
+                text: text,
+                sliders: sliders,
+                resultImpact: resultImpact,
+                resultImpact2: resultImpact2
+            };
+
+            allData.push(rowData); // Ajouter cet objet à la liste des données
+        });
+
+        return allData; // Retourner le tableau d'objets contenant toutes les données
+    }
+
+    // Fonction pour récupérer la valeur d'une jauge spécifique
+    function getSliderValue(id) {
+        const triangle = document.getElementById(`triangle-${id}`);
+        return triangle.dataset.value || ""; // Renvoie la valeur du dataset ou une chaîne vide par défaut
+    }
+
+
+
+    function saveAndRedirect(data) {
+        const codeParam = getUrlParameter('code');
+        localStorage.setItem(codeParam, JSON.stringify(data));
+        window.location.href = 'Sept1.php';
+    }
+
+    // Example usage of getAllSliderValues function
+    document.getElementById("saveButton").onclick = function() {
+        const allData = getAllSliderValues();
+        saveAndRedirect(allData);
+        window.location.href = 'Sept1.php';
+    };
+
+
 </script>
 
 </body>
