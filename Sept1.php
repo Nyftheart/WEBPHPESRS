@@ -226,8 +226,14 @@
             </div>
             <div class="card-body">
                 <ul>
-                    <li>ESRS G1: Personnel de l'entreprise <img src="images/img_1.png" style="height: 30px"></li>
-                    <li>Restitution <img src="images/img_1.png" style="height: 30px"></li>
+                    <li id="ESRS G1"><a href="tableur.php?code=ESRS%20G1" >ESRS G1: Personnel de l'entreprise <img src="images/img_1.png" style="height: 30px"></a></li>
+                    <li>
+                    <a href="#" id="restitutions">Restitutions <img src="images/img_4.png" style="height: 30px"></a>
+                    <ul class="sub-menu" id="subMenuRestitutions" style="display: none;">
+                        <li><a href="Tuile.php?code=ESRS%20G">Voir les tuiles</a></li>
+                        <li><a href="matrice.php?code=ESRS%20G">Voir la matrice</a></li>
+                    </ul>
+                    </li>
                 </ul>
                 <div class="not-completed-text">Non Complété</div>
             </div>

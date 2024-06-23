@@ -6,5 +6,13 @@
   {
     "code": "ESRS E2",
     "question": "Estimez-vous que la pollution constitue ou constituera un enjeu majeur pour votre entreprise?"
+  },
+  {
+    "code": "ESRS E4",
+    "question": "Biodiversité & écosystèmes\n\nQuelle est le nombre de salariés de l’entreprise? < 750 salariés\n\nSi >750 salariés\n\nEstimez-vous que l’activité de l’entreprise entraine une modification de la biodiversité et des\nécosystèmes constitue ou constituera un enjeu majeur pour votre entreprise?"
+  },
+  {
+    "code": "ESRS E5",
+    "question": "ESRS E5 : Utilisation des ressources & économie circulaire\n\nEstimez-vous que l’économie circulaire constitue ou constituera un enjeu majeur pour votre entreprise?"
   }
 ]

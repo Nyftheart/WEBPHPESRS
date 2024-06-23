@@ -212,9 +212,16 @@
         }
 
         .tooltip-content {
-            color: #333;
-            font-size: 18px;
+            display: none;
+            position: absolute;
+            background-color: #caf4ca;
+            border: 1px solid #ccc;
+            padding: 10px;
+            z-index: 1000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            white-space: pre-line; /* Allow line breaks */
         }
+
 
         .tooltip-content ul {
             list-style-type: none;
@@ -246,19 +253,21 @@
         <th colspan="2" class="subheader" style="background-color: #BADFCF">MATERIALITE D'IMPACT POSITIF</th>
         <th rowspan="2" class="result">Résultat de la matérialité d'impact</th>
         <th colspan="2" class="subheader2" style="background-color: #D1E1DB">Effets financiers attendus des risques</th>
-        <th rowspan="2" class="risk-opportunity" style="background-color: #D1E1DB">Effets financiers attendus des opportunités</th>
+        <th rowspan="2" class="risk-opportunity" style="background-color: #D1E1DB; cursor: pointer;" data-tooltip="show" data-tooltip-content="Évaluation des effets financiers sur des économies de coûts futures, taille du marché lié aux opportunités identifiées :<br>🟩 Peu ou pas d’impact<br>🟨 Impact modéré<br>🟧 Impact significatif<br>🟥 Impact majeur">Effets financiers attendus des opportunités <sup><img src="images/img.png" style="height: 20px"></sup></th>
         <th rowspan="2" class="result">Résultat de la matérialité financière</th>
     </tr>
     <tr style="border-bottom: 1px black solid; border-right: white 1px solid;" class="submenu">
-        <td style="background-color: #BADFCF; cursor: pointer;" data-tooltip="show">AMPLEUR <sup><img src="images/img.png" style="height: 20px"></sup></td>
-
-        <td style="background-color: #BADFCF">ÉTENDUE</td>
-        <td style="background-color: #BADFCF">CARACTÈRE IRRÉMÉDIABLE</td>
-        <td style="background-color: #BADFCF">AMPLEUR</td>
-        <td style="background-color: #BADFCF">ÉTENDUE</td>
-        <td style="background-color: #D1E1DB">PATRIMOINE</td>
-        <td style="background-color: #D1E1DB">ACTIVITE</td>
+        <td style="background-color: #BADFCF; cursor: pointer;" data-tooltip="show" data-tooltip-content="Importance de l’impact négatif sur les personnes ou l’environnement :<br>🟩 Peu ou pas d’impact<br>🟨 Impact visible mais modéré sur les ressources naturelles<br>🟧 Impact significatif sur la qualité/quantité des ressources naturelles affectées<br>🟥 Forte dégradation des ressources naturelles">AMPLEUR <sup><img src="images/img.png" style="height: 20px"></sup></td>
+        <td style="background-color: #BADFCF; cursor: pointer;" data-tooltip="show" data-tooltip-content="Dans quelle mesure les impacts négatifs sont répandus :<br>🟩 Impact très localisé<br>🟨 Impact régional<br>🟧 Impact national<br>🟥 Impact multi-pays">ÉTENDUE <sup><img src="images/img.png" style="height: 20px"></sup></td>
+        <td style="background-color: #BADFCF; cursor: pointer;" data-tooltip="show" data-tooltip-content="Si et dans quelle mesure les impacts négatifs peuvent être réparés :<br>🟩 Impact non significatif<br>🟨 Impact nécessitant peu de ressources pour y remédier (humaines, technologiques, financières, ...)<br>🟧 Impact nécessitant de ressources importantes pour y remédier<br>🟥 Impact définitif">CARACTÈRE IRRÉMÉDIABLE <sup><img src="images/img.png" style="height: 20px"></sup></td>
+        <td style="background-color: #BADFCF; cursor: pointer;" data-tooltip="show" data-tooltip-content="Dans quelle mesure les impacts positifs sont répandus :<br>🟩 Impact très localisé<br>🟨 Impact régional<br>🟧 Impact national<br>🟥 Impact multi-pays">AMPLEUR POSITIVE <sup><img src="images/img.png" style="height: 20px"></sup></td>
+        <td style="background-color: #BADFCF; cursor: pointer;" data-tooltip="show" data-tooltip-content="Bénéfice lié à l’impact positif sur les personnes ou l’environnement :<br>🟩 Peu ou pas d’impact<br>🟨 Impact visible mais modéré sur les ressources naturelles<br>🟧 Impact significatif sur la qualité/quantité des ressources naturelles affectées<br>🟥 Forte dégradation des ressources naturelles">ÉTENDUE POSITIVE <sup><img src="images/img.png" style="height: 20px"></sup></td>
+        <td style="background-color: #D1E1DB; cursor: pointer;" data-tooltip="show" data-tooltip-content="Évaluation des effets financiers sur la part du chiffre d'affaires et la localisation des activités exposées :<br>🟩 Peu ou pas d’impact<br>🟨 Impact modéré<br>🟧 Impact significatif<br>🟥 Impact majeur">EFFETS FINANCIERS <sup><img src="images/img.png" style="height: 20px"></sup></td>
+        <td style="background-color: #D1E1DB; cursor: pointer;" data-tooltip="show" data-tooltip-content="Évaluation des effets financiers potentiels sur la part et la localisation des actifs exposés, classification des actifs par classe d'efficacité énergétique, sorties de ressources futures :<br>🟩 Peu ou pas d’impact<br>🟨 Impact modéré<br>🟧 Impact significatif<br>🟥 Impact majeur">LOCALISATION DES ACTIFS <sup><img src="images/img.png" style="height: 20px"></sup></td>
     </tr>
+
+
+
     <tbody id="table-body">
     <!-- Les lignes de données seront générées ici -->
     </tbody>
