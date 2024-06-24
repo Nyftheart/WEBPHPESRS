@@ -214,6 +214,7 @@
 <header class="header">
     <div class="logo-container">
         <img src="./images/v312_47.png" alt="Logo" class="logo">
+        <img src="./images/title_ecriture.png" alt="Logo" class="logo">
     </div>
 </header>
 
