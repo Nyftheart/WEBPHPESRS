@@ -95,7 +95,8 @@
         }
 
         button {
-            display: block;
+            display: flex;
+            justify-content: center;
             width: 100%;
             margin: 0.5em 0;
             padding: 0.5em;
@@ -103,6 +104,7 @@
             border-radius: 4px;
             font-size: 1em;
             cursor: pointer;
+
         }
 
         button.concerned {
@@ -124,6 +126,12 @@
             background-color: #D00000;
             color: white;
         }
+        .headerText{
+            align-items: center;
+            margin : auto;
+            min-height: 130px;
+            max-height: 130px;
+        }
     </style>
 </head>
 <body>
@@ -134,32 +142,42 @@
 </header>
 <main>
     <div class="card" id="ESRS E1">
-        <h2>CHANGEMENT CLIMATIQUE</h2>
-        <p>(ESRS E1)</p>
+        <div class="headerText">
+            <h2>CHANGEMENT CLIMATIQUE</h2>
+            <p>(ESRS E1)</p>
+        </div>
         <button class="not-concerned">Non Concerné</button>
         <button class="completed">Complété</button>
     </div>
     <div class="card" id="ESRS E2">
+        <div class="headerText">
         <h2>POLLUTION</h2>
         <p>(ESRS E2)</p>
+        </div>
         <button class="not-concerned">Non Concerné</button>
         <button class="completed">Complété</button>
     </div>
     <div class="card" id="ESRS E3">
+        <div class="headerText">
         <h2>RESSOURCES AQUATIQUES ET MARINES</h2>
         <p>(ESRS E3)</p>
+        </div>
         <button class="not-concerned">Non Concerné</button>
         <button class="completed">Complété</button>
     </div>
     <div class="card" id="ESRS E4">
+        <div class="headerText">
         <h2>BIODIVERSITE & ECOSYSTEME</h2>
         <p>(ESRS E4)</p>
+        </div>
         <button class="not-concerned">Non Concerné</button>
         <button class="completed">Complété</button>
     </div>
     <div class="card" id="ESRS E5">
+        <div class="headerText">
         <h2>UTILISATION DES RESSOURCES & ÉCONOMIE CIRCULAIRE</h2>
         <p>(ESRS E5)</p>
+        </div>
         <button class="not-concerned">Non Concerné</button>
         <button class="completed">Complété</button>
     </div>
