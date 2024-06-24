@@ -69,7 +69,7 @@
             flex-wrap: wrap;
             justify-content: center;
             padding: 2em;
-            padding-top: 130px;
+            padding-top: 50px;
             gap: 4em;
             max-width: 1000px;
             margin: auto;
@@ -140,7 +140,9 @@
         <img src="./images/v312_47.png" alt="Logo" class="logo">
     </div>
 </header>
+<h1 style="display: flex; justify-content: center; margin: auto; margin-top:25px;" >Liste des ESRS consernées en fonction de vos enjeux</h1>
 <main>
+
     <div class="card" id="ESRS E1">
         <div class="headerText">
             <h2>CHANGEMENT CLIMATIQUE</h2>
