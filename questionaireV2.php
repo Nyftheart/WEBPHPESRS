@@ -34,6 +34,7 @@
     }
 
     .container {
+
         display: flex;
         padding-top: 30px;
     }
@@ -43,6 +44,7 @@
     }
 
     .left-section {
+        border-radius: 30px;
         flex: 1;
         background-color: #ffffff;
         color: black;
