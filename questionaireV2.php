@@ -245,22 +245,22 @@
                 <label for="employees">Nombre d'employés</label>
                 <select id="employees" name="employees">
                     <option value="" disabled selected>-</option>
-                    <option value="1-10">1-10</option>
-                    <option value="11-50">11-50</option>
-                    <option value="51-200">51-200</option>
-                    <option value="201-500">201-500</option>
-                    <option value="501+">501+</option>
+                    <option value="1-10" style="font-weight: 700">1-10</option>
+                    <option value="11-50" style="font-weight: 700">11-50</option>
+                    <option value="51-200" style="font-weight: 700">51-200</option>
+                    <option value="201-500" style="font-weight: 700">201-500</option>
+                    <option value="501+" style="font-weight: 700">501+</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="secteur">Secteur</label>
                 <select id="secteur" name="secteur">
-                    <option value="" disabled selected>-</option>
-                    <option value="tech">Technologie</option>
-                    <option value="finance">Finance</option>
-                    <option value="industrie">Industrie</option>
-                    <option value="sante">Santé</option>
-                    <option value="autre">Autre</option>
+                    <option value="" disabled selected style="font-weight: 700">-</option>
+                    <option value="tech" style="font-weight: 700">Technologie</option>
+                    <option value="finance" style="font-weight: 700">Finance</option>
+                    <option value="industrie" style="font-weight: 700">Industrie</option>
+                    <option value="sante" style="font-weight: 700">Santé</option>
+                    <option value="autre" style="font-weight: 700">Autre</option>
                 </select>
             </div>
             <div class=" checkbox-group">
