@@ -195,6 +195,12 @@
         text-decoration: none;
     }
 
+    .questionaireimage{
+        width: 60%;
+        margin: auto;
+        justify-content: center;
+
+    }
 
 </style>
 <html lang="fr">
@@ -212,9 +218,15 @@
 <body>
 <div class="container">
     <div class="left-section">
-        <h1>Des ESRG précis et intuitif pour votre entreprise</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam assumenda beatae consequuntur, corporis deleniti dicta ea esse et eum explicabo ipsa, iste perferendis qui quidem quo repellat sit voluptatum.</p>
-        <button class="btn-start">Réservez votre démo</button>
+        <img src="./images/questimg.png" alt="img" class="questionaireimage">
+        <p style="color: gray">Vous souhaitez essayer librement notre solution:</p>
+        <div style="line-height: 10px">
+            <p>✔️ Identifier vos ESRS pertinentes en fonction de vos enjeux</p>
+            <p>✔️ Evaluer la matérialité pour déterminer vos enjeux de durabilité</p>
+            <p>✔️ Générer votre matrice de matérialité</p>
+            <p>✔️ Récupérer, <b>sans engagement</b>, vos données à l’issue de votre test</p>
+        </div>
+
     </div>
     <div class="right-section">
         <form id="demo-form" class="demo-form" action="Sept1.php" method="POST">
