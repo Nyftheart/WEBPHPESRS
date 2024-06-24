@@ -175,6 +175,7 @@
     </div>
     <div class="icons">
         <img src="./images/img.png" alt="Info Icon" id="info-icon">
+        <a href="https://panel-esrs.vercel.app/">Pannel Gestion</a>
     </div>
 </header>
 
