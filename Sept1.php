@@ -210,13 +210,19 @@
             </div>
             <div class="card-body">
                 <ul>
-                    <li>ESRS S1: Personnel de l'entreprise <img src="images/img_1.png" style="height: 30px"></li>
-                    <li>ESRS S2: Travailleurs dans la chaîne de valeur <img src="images/img_1.png" style="height: 30px"></li>
-                    <li>ESRS S3: Communauté affectées <img src="images/img_1.png" style="height: 30px"></li>
-                    <li>ESRS S4: Consommateurs et utilisateurs finaux <img src="images/img_1.png" style="height: 30px"></li>
-                    <li>Restitution <img src="images/img_1.png" style="height: 30px"></li>
+                    <li id="ESRS S1"><a href="tableur.php?code=ESRS%20S1">ESRS S1: Personnel de l'entreprise <img src="images/img_1.png" style="height: 30px"></a></li>
+                    <li id="ESRS S2"><a href="tableur.php?code=ESRS%20S2">ESRS S2: Travailleurs dans la chaîne de valeur <img src="images/img_1.png" style="height: 30px"></a></li>
+                    <li id="ESRS S3"><a href="tableur.php?code=ESRS%20S3">ESRS S3: Communauté affectées <img src="images/img_1.png" style="height: 30px"></a></li>
+                    <li id="ESRS S4"><a href="tableur.php?code=ESRS%20S4">ESRS S4: Consommateurs et utilisateurs finaux <img src="images/img_1.png" style="height: 30px"></a></li>
+                    <li>
+                        <a href="#" id="restitutions-social">Restitutions <img src="images/img_4.png" style="height: 30px"></a>
+                        <ul class="sub-menu" id="subMenuRestitutionsSocial" style="display: none;">
+                            <li><a href="Tuile.php?code=ESRS%20S">Voir les tuiles</a></li>
+                            <li><a href="matrice.php?code=ESRS%20S">Voir la matrice</a></li>
+                        </ul>
+                    </li>
                 </ul>
-                <div class="not-completed-text">Non Complété</div>
+
             </div>
         </div>
         <div class="card">
@@ -226,15 +232,16 @@
             </div>
             <div class="card-body">
                 <ul>
-                    <li id="ESRS G1"><a href="tableur.php?code=ESRS%20G1" >ESRS G1: Personnel de l'entreprise <img src="images/img_1.png" style="height: 30px"></a></li>
+                    <li id="ESRS G1"><a href="tableur.php?code=ESRS%20G1">ESRS G1: Personnel de l'entreprise <img src="images/img_1.png" style="height: 30px"></a></li>
                     <li>
-                    <a href="#" id="restitutions">Restitutions <img src="images/img_4.png" style="height: 30px"></a>
-                    <ul class="sub-menu" id="subMenuRestitutions" style="display: none;">
-                        <li><a href="Tuile.php?code=ESRS%20G">Voir les tuiles</a></li>
-                        <li><a href="matrice.php?code=ESRS%20G">Voir la matrice</a></li>
-                    </ul>
+                        <a href="#" id="restitutions-gouvernance">Restitutions <img src="images/img_4.png" style="height: 30px"></a>
+                        <ul class="sub-menu" id="subMenuRestitutionsGouvernance" style="display: none;">
+                            <li><a href="Tuile.php?code=ESRS%20G">Voir les tuiles</a></li>
+                            <li><a href="matrice.php?code=ESRS%20G">Voir la matrice</a></li>
+                        </ul>
                     </li>
                 </ul>
+
                 <div class="not-completed-text">Non Complété</div>
             </div>
         </div>
@@ -256,89 +263,97 @@
 </div>
 
 <script>
-    document.getElementById("info-icon").addEventListener("click", function() {
-        document.getElementById("popup").style.display = "block";
-    });
-
-    document.getElementById("close-popup").addEventListener("click", function() {
-        document.getElementById("popup").style.display = "none";
-    });
-
-    window.addEventListener("click", function(event) {
-        if (event.target == document.getElementById("popup")) {
-            document.getElementById("popup").style.display = "none";
-        }
-    });
     document.addEventListener('DOMContentLoaded', function() {
         // Récupération des clés du local storage
         const keys = Object.keys(localStorage);
 
-        // Liste des sections ESRS
-        const sectionsESRS = ['ESRS E1', 'ESRS E2', 'ESRS E3', 'ESRS E4', 'ESRS E5', "ESRS G1"];
+        // Vérification si au moins une section ESRS est présente dans le local storage pour chaque type
+        const auMoinsUneESRS_E = keys.some(key => key.startsWith('ESRS E'));
+        const auMoinsUneESRS_S = keys.some(key => key.startsWith('ESRS S'));
+        const auMoinsUneESRS_G = keys.some(key => key.startsWith('ESRS G'));
 
-        // Vérification si toutes les sections ESRS sont présentes dans le local storage
-        const toutesPresentes = sectionsESRS.every(section => keys.includes(section));
+        // Fonction pour gérer l'affichage des sous-menus de restitution
+        function toggleSubMenu(restitutionLi, subMenuRestitutions, auMoinsUneESRS) {
+            if (auMoinsUneESRS) {
+                subMenuRestitutions.style.display = (subMenuRestitutions.style.display === 'block') ? 'none' : 'block';
+            }
+        }
 
-        // Variable pour simuler si une section est validée
-        const sectionValidee = keys.some(key => key.startsWith('ESRS'));
+        // Sélection des éléments "Restitutions" et des sous-menus correspondants pour chaque type
+        const restitutionLiEnvironnement = document.querySelector('#restitutions');
+        const subMenuRestitutionsEnvironnement = document.querySelector('#subMenuRestitutions');
 
-        // Parcours des éléments <li> de la liste
-        const lis = document.querySelectorAll('.card-body ul li');
-        lis.forEach(li => {
-            const id = li.getAttribute('id'); // Récupération de l'ID de l'élément <li>
-            if (keys.includes(id)) { // Vérification si l'ID correspond à une clé du local storage
-                // Remplacement de l'image par img_2.png
+        const restitutionLiSocial = document.querySelector('#restitutions-social');
+        const subMenuRestitutionsSocial = document.querySelector('#subMenuRestitutionsSocial');
+
+        const restitutionLiGouvernance = document.querySelector('#restitutions-gouvernance');
+        const subMenuRestitutionsGouvernance = document.querySelector('#subMenuRestitutionsGouvernance');
+
+        // Initialisation de l'affichage des sous-menus en fonction de la présence des sections ESRS
+        if (!auMoinsUneESRS_E) {
+            subMenuRestitutionsEnvironnement.style.display = 'none';
+        }
+        if (!auMoinsUneESRS_S) {
+            subMenuRestitutionsSocial.style.display = 'none';
+        }
+        if (!auMoinsUneESRS_G) {
+            subMenuRestitutionsGouvernance.style.display = 'none';
+        }
+
+        // Ajout d'un écouteur d'événements au clic sur "Restitutions" pour chaque type
+        restitutionLiEnvironnement.addEventListener('click', function(e) {
+            e.preventDefault(); // Empêche le comportement par défaut du lien
+            toggleSubMenu(restitutionLiEnvironnement, subMenuRestitutionsEnvironnement, auMoinsUneESRS_E);
+        });
+
+        restitutionLiSocial.addEventListener('click', function(e) {
+            e.preventDefault(); // Empêche le comportement par défaut du lien
+            toggleSubMenu(restitutionLiSocial, subMenuRestitutionsSocial, auMoinsUneESRS_S);
+        });
+
+        restitutionLiGouvernance.addEventListener('click', function(e) {
+            e.preventDefault(); // Empêche le comportement par défaut du lien
+            toggleSubMenu(restitutionLiGouvernance, subMenuRestitutionsGouvernance, auMoinsUneESRS_G);
+        });
+
+        // Mise à jour des icônes de restitution en fonction des sections validées
+        const sectionsESRS = ['ESRS E1', 'ESRS E2', 'ESRS E3', 'ESRS E4', 'ESRS E5', 'ESRS S1', 'ESRS S2', 'ESRS S3', 'ESRS S4', 'ESRS G1'];
+
+        sectionsESRS.forEach(section => {
+            const li = document.getElementById(section);
+            if (li && keys.includes(section)) {
                 const img = li.querySelector('img');
                 if (img) {
-                    img.src = 'images/img_2.png';
+                    img.src = 'images/img_2.png'; // Met à jour l'icône pour indiquer que la section est complétée
                 }
             }
         });
 
-        // Changement de l'image de restitution si une section est validée
-        const restitutionImg = document.querySelector('#restitutions img');
-        if (sectionValidee) {
-            restitutionImg.src = 'images/img_3.png';
+        // Mise à jour de l'icône de restitution pour enviroment si au moins une section est validée
+        const restitutionImgEnviroment = document.querySelector('#restitutions img');
+        if (auMoinsUneESRS_E) {
+            restitutionImgEnviroment.src = 'images/img_3.png'; // Met à jour l'icône de restitution pour Social
         }
 
-        // Sélection du texte de statut
+        const restitutionImgSocial = document.querySelector('#restitutions-social img');
+        if (auMoinsUneESRS_S) {
+            restitutionImgSocial.src = 'images/img_3.png'; // Met à jour l'icône de restitution pour Social
+        }
+
+        // Mise à jour de l'icône de restitution pour Gouvernance si au moins une section est validée
+        const restitutionImgGouvernance = document.querySelector('#restitutions-gouvernance img');
+        if (auMoinsUneESRS_G) {
+            restitutionImgGouvernance.src = 'images/img_3.png'; // Met à jour l'icône de restitution pour Gouvernance
+        }
+
+        // Mise à jour du statut global en fonction de toutes les sections validées
         const statusText = document.querySelector('.not-completed-text');
-
-        // Changement du texte de statut en fonction de la présence des sections ESRS
-        if (toutesPresentes) {
+        if (keys.length === sectionsESRS.length && keys.every(key => sectionsESRS.includes(key))) {
             statusText.textContent = 'Complété';
-            statusText.classList.remove('not-completed-text'); // Retrait de la classe not-completed-text
-            statusText.classList.add('completed-text'); // Ajout de la classe completed-text pour le style
+            statusText.classList.remove('not-completed-text');
+            statusText.classList.add('completed-text');
         }
     });
-    document.addEventListener('DOMContentLoaded', function() {
-        // Récupération des clés du local storage
-        const keys = Object.keys(localStorage);
-
-        // Vérification si au moins une section ESRS est présente dans le local storage
-        const auMoinsUneESRS = keys.some(key => key.startsWith('ESRS'));
-
-        // Sélection de l'élément "Restitutions" et du sous-menu correspondant
-        const restitutionLi = document.querySelector('#restitutions');
-        const subMenuRestitutions = document.querySelector('#subMenuRestitutions');
-
-        // Si aucune section ESRS n'est présente, cacher le sous-menu
-        if (!auMoinsUneESRS) {
-            subMenuRestitutions.style.display = 'none';
-        }
-
-        // Ajout d'un écouteur d'événements au clic sur "Restitutions"
-        restitutionLi.addEventListener('click', function(e) {
-            e.preventDefault(); // Empêche le comportement par défaut du lien
-            // Afficher ou cacher le sous-menu seulement si au moins une section ESRS est présente
-            if (auMoinsUneESRS) {
-                subMenuRestitutions.style.display = (subMenuRestitutions.style.display === 'block') ? 'none' : 'block';
-            }
-        });
-
-
-    });
-
 
 
 </script>
