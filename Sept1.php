@@ -222,7 +222,7 @@
                         </ul>
                     </li>
                 </ul>
-
+                <div class="not-completed-text">Non Complété</div>
             </div>
         </div>
         <div class="card">
