@@ -76,7 +76,7 @@
         }
 
         .card {
-            background-color: #B7E4C7;
+            background-color: #79d0dd;
             border-radius: 8px;
             padding: 1.5em;
             width: 200px;
@@ -138,6 +138,7 @@
 <header class="header">
     <div class="logo-container">
         <img src="./images/v312_47.png" alt="Logo" class="logo">
+        <img src="./images/title_ecriture.png" alt="Logo" class="logo">
     </div>
 </header>
 <h1 style="display: flex; justify-content: center; margin: auto; margin-top:25px;" >Liste des ESRS concernées en fonction de vos enjeux</h1>
