@@ -1,7 +1,7 @@
 [
   {
     "code": "ESRS E1",
-    "text": "1 - Inventaire des impacts sur le climat Parts des émissions de Gaz à Effet de Serre",
+    "text": "Inventaire des impacts sur le climat Parts des émissions de Gaz à Effet de Serre",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -15,7 +15,7 @@
   },
   {
     "code": "ESRS E1",
-    "text": "2 - Inventaire des impacts sur le climat Parts dans la consommation d'énergie liée aux opérations propres",
+    "text": "Inventaire des impacts sur le climat Parts dans la consommation d'énergie liée aux opérations propres",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -29,7 +29,7 @@
   },
   {
     "code": "ESRS E1",
-    "text": "3 - Exposition à des risques physiques (liés aux impacts physiques du changement climatique)",
+    "text": "Exposition à des risques physiques (liés aux impacts physiques du changement climatique)",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -43,7 +43,7 @@
   },
   {
     "code": "ESRS E1",
-    "text": "4 - Exposition à des risques et opportunités de transition (liés à la transition vers une économie à plus faibles émissions de CO 2)",
+    "text": "Exposition à des risques et opportunités de transition (liés à la transition vers une économie à plus faibles émissions de CO 2)",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -57,7 +57,7 @@
   },
   {
     "code": "ESRS E2",
-    "text": "5- Inventaire des impacts liés à la pollution Polluants atmosphériques",
+    "text": "Inventaire des impacts liés à la pollution Polluants atmosphériques",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -71,7 +71,7 @@
   },
   {
     "code": "ESRS E2",
-    "text": "6 - Inventaire des impacts liés à la pollution Pollution de l'eau",
+    "text": "Inventaire des impacts liés à la pollution Pollution de l'eau",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -85,7 +85,7 @@
   },
   {
     "code": "ESRS E2",
-    "text": "7 - Inventaire des impacts liés à la pollution Pollution des sols",
+    "text": "Inventaire des impacts liés à la pollution Pollution des sols",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -99,7 +99,7 @@
   },
   {
     "code": "ESRS E2",
-    "text": "8 - Inventaire des impacts liés à la pollution Pollution par les plastiques et microplastiques",
+    "text": "Inventaire des impacts liés à la pollution Pollution par les plastiques et microplastiques",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -113,7 +113,7 @@
   },
   {
     "code": "ESRS E2",
-    "text": "9 - Inventaire des impacts liés à la pollution Introduction et propagation d'espèces exotiques envahissantes (volontaire et involontaire)",
+    "text": "Inventaire des impacts liés à la pollution Introduction et propagation d'espèces exotiques envahissantes (volontaire et involontaire)",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -127,7 +127,7 @@
   },
   {
     "code": "ESRS E2",
-    "text": "10 - Exposition à des risques physiques (liés aux impacts liés à la pollution)",
+    "text": "Exposition à des risques physiques (liés aux impacts liés à la pollution)",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -141,7 +141,7 @@
   },
   {
     "code": "ESRS E2",
-    "text": "11 - Exposition à des risques et opportunités de transition (liés à la transition vers une économie moins polluante)",
+    "text": "Exposition à des risques et opportunités de transition (liés à la transition vers une économie moins polluante)",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",

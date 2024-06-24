@@ -135,7 +135,7 @@
         border: none;
         border-radius: 5px;
         background-color: #dcdbdb;
-        color: white;
+        color: black;
     }
 
     .phone-input {
@@ -145,6 +145,7 @@
     }
 
     .flag-icon {
+        color: #000;
         margin-right: 10px;
         margin-left: 10px;
     }
@@ -202,7 +203,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Le Bilan Carbone</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <header class="header">
     <div class="logo-container">
@@ -218,7 +218,7 @@
         <button class="btn-start">Contactez nous</button>
     </div>
     <div class="right-section">
-        <h2>Accedez à votre test</h2>
+        <h2>Accedé à l'évaluation de l'outil</h2>
         <form id="demo-form" class="demo-form" action="Sept1.php" method="POST">
                 <div class="form-group">
                     <label for="prenom">Prénom</label>
@@ -267,7 +267,7 @@
             </div>
             <div class=" checkbox-group">
                 <input type="checkbox" id="consent" name="consent" required>
-                <label for="consent">J’accepte que mes informations personnelles saisies soient utilisées par Greenly SAS à des fins de prospection commerciale. Pour plus d’information, cliquez <a href="#">here</a>.</label>
+                <label for="consent">J’accepte que mes informations personnelles saisies soient utilisées par Etiplanet à des fins de prospection commerciale. Pour plus d’information, cliquez <a href="#">here</a>.</label>
             </div><button type="submit" class="btn-submit">Découvrir la suite</button>
         </form>
     </div>
