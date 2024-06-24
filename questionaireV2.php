@@ -116,7 +116,6 @@
     }
 
     .form-group {
-        margin-bottom: 15px;
         min-width: 160PX;
     }
     .special-form{
@@ -233,7 +232,7 @@
             </div>
             <div class="form-group">
                 <label for="telephone">Téléphone</label>
-                <div class="phone-input">
+                <div class="phone-input" style="max-width: 190px">
                     <span class="flag-icon">🇫🇷</span>
                     <input type="tel" id="telephone" name="telephone" placeholder="123456789">
                 </div>
