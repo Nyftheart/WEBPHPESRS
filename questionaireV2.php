@@ -240,7 +240,7 @@
             </div>
             <div class="form-group">
                 <label for="entreprise">Entreprise</label>
-                <input type="text" id="entreprise" name="entreprise" placeholder="ex: Greenly">
+                <input type="text" id="entreprise" name="entreprise" placeholder="ex: Etiplanet">
             </div>
             <div class="form-group">
                 <label for="employees">Nombre d'employés</label>
