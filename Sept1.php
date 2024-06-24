@@ -180,7 +180,7 @@
 
 <div class="container">
     <div class="cards">
-        <div class="card">
+        <div class="card environnementsec">
             <div class="card-header environnement">
                 <h2>Environnement</h2>
                 <div class="status">ESRS</div>
@@ -203,7 +203,7 @@
                 <div class="not-completed-text">Non Complété</div>
             </div>
         </div>
-        <div class="card">
+        <div class="card socialsec">
             <div class="card-header social">
                 <h2>Social</h2>
                 <div class="status">ESRS</div>
@@ -225,7 +225,7 @@
                 <div class="not-completed-text">Non Complété</div>
             </div>
         </div>
-        <div class="card">
+        <div class="card gouvernancesec">
             <div class="card-header gouvernance">
                 <h2>Gouvernance</h2>
                 <div class="status">ESRS</div>
@@ -346,12 +346,60 @@
             restitutionImgGouvernance.src = 'images/img_3.png'; // Met à jour l'icône de restitution pour Gouvernance
         }
 
-        // Mise à jour du statut global en fonction de toutes les sections validées
-        const statusText = document.querySelector('.not-completed-text');
-        if (keys.length === sectionsESRS.length && keys.every(key => sectionsESRS.includes(key))) {
-            statusText.textContent = 'Complété';
-            statusText.classList.remove('not-completed-text');
-            statusText.classList.add('completed-text');
+        const colonnesESRS = [
+            ['ESRS E1', 'ESRS E2', 'ESRS E3', 'ESRS E4', 'ESRS E5'], // Colonnes E
+            ['ESRS S1', 'ESRS S2', 'ESRS S3', 'ESRS S4'], // Colonnes S
+            ['ESRS G1'] // Colonnes G
+        ];
+
+        // Fonction pour vérifier si toutes les sections d'une colonne sont présentes
+        function estColonneComplete(colonneESRS) {
+            return colonneESRS.every(section => keys.includes(section));
+        }
+
+        // Sélection des éléments de texte à mettre à jour pour chaque colonne
+        const statusTextColonneE = document.querySelector('.environnementsec .not-completed-text');
+        const statusTextColonneS = document.querySelector('.socialsec .not-completed-text');
+        const statusTextColonneG = document.querySelector('.gouvernancesec .not-completed-text');
+        console.log("ok test");
+        // Vérifiez que les éléments existent avant de les mettre à jour
+        if (statusTextColonneE) {
+            console.log("ok element");
+            if (estColonneComplete(colonnesESRS[0])) {
+                console.log("ok ESRS ");
+                statusTextColonneE.textContent = 'Complété';
+                statusTextColonneE.classList.remove('not-completed-text');
+                statusTextColonneE.classList.add('completed-text');
+            } else {
+                console.log("ok ESRS ");
+                statusTextColonneE.textContent = 'Non Complété';
+                statusTextColonneE.classList.add('not-completed-text');
+                statusTextColonneE.classList.remove('completed-text');
+            }
+        }
+
+        if (statusTextColonneS) {
+            if (estColonneComplete(colonnesESRS[1])) {
+                statusTextColonneS.textContent = 'Complété';
+                statusTextColonneS.classList.remove('not-completed-text');
+                statusTextColonneS.classList.add('completed-text');
+            } else {
+                statusTextColonneS.textContent = 'Non Complété';
+                statusTextColonneS.classList.add('not-completed-text');
+                statusTextColonneS.classList.remove('completed-text');
+            }
+        }
+
+        if (statusTextColonneG) {
+            if (estColonneComplete(colonnesESRS[2])) {
+                statusTextColonneG.textContent = 'Complété';
+                statusTextColonneG.classList.remove('not-completed-text');
+                statusTextColonneG.classList.add('completed-text');
+            } else {
+                statusTextColonneG.textContent = 'Non Complété';
+                statusTextColonneG.classList.add('not-completed-text');
+                statusTextColonneG.classList.remove('completed-text');
+            }
         }
     });
 
