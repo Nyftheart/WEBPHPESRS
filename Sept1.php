@@ -217,7 +217,7 @@
                     <li>
                         <a href="#" id="restitutions-social">Restitutions <img src="images/img_4.png" style="height: 30px"></a>
                         <ul class="sub-menu" id="subMenuRestitutionsSocial" style="display: none;">
-                            <li><a href="Tuile.php?code=ESRS%20S">Voir le statut des ESRS</a></li>
+                            <li><a href="Tuile2.php?code=ESRS%20S">Voir le statut des ESRS</a></li>
                             <li><a href="matrice.php?code=ESRS%20S">Voir la matrice de matérialité</a></li>
                         </ul>
                     </li>
@@ -236,7 +236,7 @@
                     <li>
                         <a href="#" id="restitutions-gouvernance">Restitutions <img src="images/img_4.png" style="height: 30px"></a>
                         <ul class="sub-menu" id="subMenuRestitutionsGouvernance" style="display: none;">
-                            <li><a href="Tuile.php?code=ESRS%20G">Voir le statut des ESRS</a></li>
+                            <li><a href="Tuile3.php?code=ESRS%20G">Voir le statut des ESRS</a></li>
                             <li><a href="matrice.php?code=ESRS%20G">Voir la matrice de matérialité</a></li>
                         </ul>
                     </li>
