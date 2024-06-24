@@ -190,8 +190,8 @@
                 <ul>
                     <li id="ESRS E1"><a href="tableur.php?code=ESRS%20E1" >E1: Changement Climatique <img src="images/img_1.png" style="height: 30px"></a></li>
                     <li id="ESRS E2"><a href="tableur.php?code=ESRS%20E2" >E2: Pollution <img src="images/img_1.png" style="height: 30px"></a></li>
-                    <li id="ESRS E3"><a href="tableur.php?code=ESRS%20E3" >E3: Ressources aquatiques & marines <img src="images/img_1.png" style="height: 30px"></a></li>
-                    <li id="ESRS E4"><a href="tableur.php?code=ESRS%20E4" >E4: Biodiversité & Écosystèmes <img src="images/img_1.png" style="height: 30px"></a></li>
+                    <li id="ESRS E3"><a href="tableur.php?code=ESRS%20E3" >E3: Ressources aquatiques & marines <img src="images/img_4.png" style="height: 30px"></a></li>
+                    <li id="ESRS E4"><a href="#" >E4: Biodiversité & Écosystèmes <img src="images/img_1.png" style="height: 30px"></a></li>
                     <li id="ESRS E5"><a href="tableur.php?code=ESRS%20E5" >E5: Utilisation des ressources & économie circulaire <img src="images/img_1.png" style="height: 30px"></a></li>
                     <li>
                         <a href="#" id="restitutions">Restitutions <img src="images/img_4.png" style="height: 30px"></a>
