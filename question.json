@@ -14,5 +14,17 @@
   {
     "code": "ESRS E5",
     "question": "ESRS E5 : Utilisation des ressources & économie circulaire\n\nEstimez-vous que l’économie circulaire constitue ou constituera un enjeu majeur pour votre entreprise?"
+  },
+  {
+    "code": "ESRS G1",
+    "question": "ESRS G1 : Pollution\n\nEstimez-vous que l’influence politique et le lobbying constituent ou constitueront un enjeu majeur pour votre entreprise?"
+  },
+  {
+    "code": "ESRS S3",
+    "question": "ESRS S3 : Communautés affectées\n\nEstimez-vous que les impacts économiques, sociales, politiques, etc., sur les populations locales constituent ou\nconstitueront un enjeu majeur pour votre entreprise?"
+  },
+  {
+    "code": "ESRS S4",
+    "question": "ESRS S4 : Consommateurs et utilisateurs finaux\n\nL’entreprise a-t-elle des consommateurs et/ou des utilisateurs finaux?"
   }
 ]
