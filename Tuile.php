@@ -140,7 +140,7 @@
         <img src="./images/v312_47.png" alt="Logo" class="logo">
     </div>
 </header>
-<h1 style="display: flex; justify-content: center; margin: auto; margin-top:25px;" >Liste des ESRS consernées en fonction de vos enjeux</h1>
+<h1 style="display: flex; justify-content: center; margin: auto; margin-top:25px;" >Liste des ESRS concernées en fonction de vos enjeux</h1>
 <main>
 
     <div class="card" id="ESRS E1">
