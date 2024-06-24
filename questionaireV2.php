@@ -215,10 +215,9 @@
     <div class="left-section">
         <h1>Des ESRG précis et intuitif pour votre entreprise</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam assumenda beatae consequuntur, corporis deleniti dicta ea esse et eum explicabo ipsa, iste perferendis qui quidem quo repellat sit voluptatum.</p>
-        <button class="btn-start">Contactez nous</button>
+        <button class="btn-start">Réservez votre démo</button>
     </div>
     <div class="right-section">
-        <h2>Accéder à l'évaluation de l'outil</h2>
         <form id="demo-form" class="demo-form" action="Sept1.php" method="POST">
                 <div class="form-group">
                     <label for="prenom">Prénom</label>
