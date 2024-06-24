@@ -35,7 +35,7 @@
 
     .container {
         display: flex;
-        padding-top: 130px;
+        padding-top: 30px;
     }
 
     .left-section, .right-section {
@@ -89,6 +89,7 @@
         border-radius: 30px;
         margin: auto;
         height: 60%;
+        max-height: 600px;
         flex: 1;
         background-color: #319082;
         color: white;
