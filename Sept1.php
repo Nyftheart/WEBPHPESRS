@@ -16,7 +16,7 @@
             justify-content: space-between;
             align-items: center;
             background-color: #F5F5DC;
-            padding: 50px 20px;
+            padding: 30px 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             position: relative;
         }
@@ -26,7 +26,7 @@
             transform: translateX(-50%);
         }
         .header img.logo {
-            height: 125px;
+            height: 90px;
         }
         .header .icons {
             display: flex;
