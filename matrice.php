@@ -192,7 +192,7 @@
 <h1 style="margin: auto;
     display: flex;
     justify-content: center;
-    margin-top: 50px;">Matrix de matérialité </h1>
+    margin-top: 50px;">Matrice de matérialité </h1>
 <main>
 
     <div class="matrix-container">

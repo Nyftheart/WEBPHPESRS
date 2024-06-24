@@ -195,8 +195,8 @@
                     <li>
                         <a href="#" id="restitutions">Restitutions <img src="images/img_4.png" style="height: 30px"></a>
                         <ul class="sub-menu" id="subMenuRestitutions" style="display: none;">
-                            <li><a href="Tuile.php?code=ESRS%20E">Voir les tuiles</a></li>
-                            <li><a href="matrice.php?code=ESRS%20E">Voir la matrice</a></li>
+                            <li><a href="Tuile.php?code=ESRS%20E">Voir le statut des ESRS</a></li>
+                            <li><a href="matrice.php?code=ESRS%20E">Voir la matrice de matérialité</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -217,8 +217,8 @@
                     <li>
                         <a href="#" id="restitutions-social">Restitutions <img src="images/img_4.png" style="height: 30px"></a>
                         <ul class="sub-menu" id="subMenuRestitutionsSocial" style="display: none;">
-                            <li><a href="Tuile.php?code=ESRS%20S">Voir les tuiles</a></li>
-                            <li><a href="matrice.php?code=ESRS%20S">Voir la matrice</a></li>
+                            <li><a href="Tuile.php?code=ESRS%20S">Voir le statut des ESRS</a></li>
+                            <li><a href="matrice.php?code=ESRS%20S">Voir la matrice de matérialité</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -236,8 +236,8 @@
                     <li>
                         <a href="#" id="restitutions-gouvernance">Restitutions <img src="images/img_4.png" style="height: 30px"></a>
                         <ul class="sub-menu" id="subMenuRestitutionsGouvernance" style="display: none;">
-                            <li><a href="Tuile.php?code=ESRS%20G">Voir les tuiles</a></li>
-                            <li><a href="matrice.php?code=ESRS%20G">Voir la matrice</a></li>
+                            <li><a href="Tuile.php?code=ESRS%20G">Voir le statut des ESRS</a></li>
+                            <li><a href="matrice.php?code=ESRS%20G">Voir la matrice de matérialité</a></li>
                         </ul>
                     </li>
                 </ul>
