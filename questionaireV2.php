@@ -191,7 +191,7 @@
     }
 
     .checkbox-group a {
-        color: #28a745;
+        color: #b3fbbd;
         text-decoration: none;
     }
 
@@ -265,7 +265,7 @@
             </div>
             <div class=" checkbox-group">
                 <input type="checkbox" id="consent" name="consent" required>
-                <label for="consent">J’accepte que mes informations personnelles saisies soient utilisées par Etiplanet à des fins de prospection commerciale. Pour plus d’information, cliquez <a href="#">here</a>.</label>
+                <label for="consent">J’accepte que mes informations personnelles saisies soient utilisées par Etiplanet à des fins de prospection commerciale. Pour plus d’information, cliquez <a href="#">ici</a>.</label>
             </div><button type="submit" class="btn-submit">Découvrir la suite</button>
         </form>
     </div>
