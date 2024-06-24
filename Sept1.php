@@ -274,7 +274,7 @@
         const keys = Object.keys(localStorage);
 
         // Liste des sections ESRS
-        const sectionsESRS = ['ESRS E1', 'ESRS E2', 'ESRS E3', 'ESRS E4', 'ESRS E5'];
+        const sectionsESRS = ['ESRS E1', 'ESRS E2', 'ESRS E3', 'ESRS E4', 'ESRS E5', "ESRS G1"];
 
         // Vérification si toutes les sections ESRS sont présentes dans le local storage
         const toutesPresentes = sectionsESRS.every(section => keys.includes(section));
