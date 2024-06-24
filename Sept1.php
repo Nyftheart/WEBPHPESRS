@@ -210,10 +210,10 @@
             </div>
             <div class="card-body">
                 <ul>
-                    <li id="ESRS S1"><a href="tableur.php?code=ESRS%20S1">ESRS S1: Personnel de l'entreprise <img src="images/img_1.png" style="height: 30px"></a></li>
-                    <li id="ESRS S2"><a href="tableur.php?code=ESRS%20S2">ESRS S2: Travailleurs dans la chaîne de valeur <img src="images/img_1.png" style="height: 30px"></a></li>
-                    <li id="ESRS S3"><a href="tableur.php?code=ESRS%20S3">ESRS S3: Communauté affectées <img src="images/img_1.png" style="height: 30px"></a></li>
-                    <li id="ESRS S4"><a href="tableur.php?code=ESRS%20S4">ESRS S4: Consommateurs et utilisateurs finaux <img src="images/img_1.png" style="height: 30px"></a></li>
+                    <li id="ESRS S1"><a href="tableur.php?code=ESRS%20S1">S1: Personnel de l'entreprise <img src="images/img_1.png" style="height: 30px"></a></li>
+                    <li id="ESRS S2"><a href="tableur.php?code=ESRS%20S2">S2: Travailleurs dans la chaîne de valeur <img src="images/img_1.png" style="height: 30px"></a></li>
+                    <li id="ESRS S3"><a href="tableur.php?code=ESRS%20S3">S3: Communauté affectées <img src="images/img_1.png" style="height: 30px"></a></li>
+                    <li id="ESRS S4"><a href="tableur.php?code=ESRS%20S4">S4: Consommateurs et utilisateurs finaux <img src="images/img_1.png" style="height: 30px"></a></li>
                     <li>
                         <a href="#" id="restitutions-social">Restitutions <img src="images/img_4.png" style="height: 30px"></a>
                         <ul class="sub-menu" id="subMenuRestitutionsSocial" style="display: none;">
@@ -232,7 +232,7 @@
             </div>
             <div class="card-body">
                 <ul>
-                    <li id="ESRS G1"><a href="tableur.php?code=ESRS%20G1">ESRS G1: Personnel de l'entreprise <img src="images/img_1.png" style="height: 30px"></a></li>
+                    <li id="ESRS G1"><a href="tableur.php?code=ESRS%20G1">G1: Personnel de l'entreprise <img src="images/img_1.png" style="height: 30px"></a></li>
                     <li>
                         <a href="#" id="restitutions-gouvernance">Restitutions <img src="images/img_4.png" style="height: 30px"></a>
                         <ul class="sub-menu" id="subMenuRestitutionsGouvernance" style="display: none;">
