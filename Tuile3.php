@@ -147,7 +147,7 @@
 
     <div class="card" id="ESRS G1">
         <div class="headerText">
-            <h2>Personnel de l'entreprise</h2>
+            <h2>Conduite des Affaires</h2>
             <p>(ESRS G1)</p>
         </div>
         <button class="not-concerned">Non Concerné</button>
