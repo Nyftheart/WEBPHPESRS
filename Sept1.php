@@ -251,10 +251,10 @@
 </div>
 
 <!-- Popup HTML -->
-<div class="popup" id="popup">
+<div class="popup" id="info-popup">
     <div class="popup-header">
         <h2>Informations</h2>
-        <span id="close-popup">&times;</span>
+        <span id="popup-close">&times;</span>
     </div>
     <div class="popup-content">
         <p><img src="./images/img_2.png" alt="Check Icon" style="height: 30px"> Complété</p>
@@ -403,6 +403,25 @@
                 statusTextColonneG.classList.remove('completed-text');
             }
         }
+        const infoIcon = document.getElementById('info-icon');
+        const infoPopup = document.getElementById('info-popup');
+        const popupClose = document.getElementById('popup-close');
+
+        // Fonction pour afficher la popup
+        function showPopup() {
+            infoPopup.style.display = 'block';
+        }
+
+        // Fonction pour masquer la popup
+        function hidePopup() {
+            infoPopup.style.display = 'none';
+        }
+
+        // Ajouter un écouteur d'événement pour ouvrir la popup lorsque l'utilisateur clique sur l'icône
+        infoIcon.addEventListener('click', showPopup);
+
+        // Ajouter un écouteur d'événement pour fermer la popup lorsque l'utilisateur clique sur le "x"
+        popupClose.addEventListener('click', hidePopup);
     });
 
 
