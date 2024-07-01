@@ -8,14 +8,17 @@
     "question": "Estimez-vous que la pollution constitue ou constituera un enjeu majeur pour votre entreprise?"
   },
   {
+    "code": "ESRS E3",
+    "question": "Estimez-vous que l'utilisation de l'eau (hors usage domestique) ou l’extraction/utilisation des ressources marines\n(sable, gravier, produits de la mer, …) constitue ou constituera un enjeu majeur pour votre entreprise?"
+  },
+  {
     "code": "ESRS E4",
-    "question": "Biodiversité & écosystèmes\n\nQuelle est le nombre de salariés de l’entreprise? < 750 salariés\n\nSi >750 salariés\n\nEstimez-vous que l’activité de l’entreprise entraine une modification de la biodiversité et des\nécosystèmes constitue ou constituera un enjeu majeur pour votre entreprise?"
+    "question": "Estimez-vous que l’activité de l’entreprise entraine une modification de la biodiversité et des\nécosystèmes constitue ou constituera un enjeu majeur pour votre entreprise?"
   },
   {
     "code": "ESRS E5",
     "question": "ESRS E5 : Utilisation des ressources & économie circulaire\n\nEstimez-vous que l’économie circulaire constitue ou constituera un enjeu majeur pour votre entreprise?"
   },
-
   {
     "code": "ESRS S3",
     "question": "ESRS S3 : Communautés affectées\n\nEstimez-vous que les impacts économiques, sociales, politiques, etc., sur les populations locales constituent ou\nconstitueront un enjeu majeur pour votre entreprise?"
