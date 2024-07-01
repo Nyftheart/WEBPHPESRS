@@ -9,11 +9,11 @@
   },
   {
     "code": "ESRS E3",
-    "question": "Estimez-vous que l'utilisation de l'eau (hors usage domestique) ou l’extraction/utilisation des ressources marines\n(sable, gravier, produits de la mer, …) constitue ou constituera un enjeu majeur pour votre entreprise?"
+    "question": "Estimez-vous que l'utilisation de l'eau (hors usage domestique) ou l’extraction/utilisation des ressources marines\n(sable, gravier, produits de la mer, …) constitue ou constituera un enjeu majeur pour votre entreprise ?"
   },
   {
     "code": "ESRS E4",
-    "question": "Estimez-vous que l’activité de l’entreprise entraine une modification de la biodiversité et des\nécosystèmes constitue ou constituera un enjeu majeur pour votre entreprise?"
+    "question": "Estimez-vous que l’activité de l’entreprise entraine une modification de la biodiversité et des\nécosystèmes constitue ou constituera un enjeu majeur pour votre entreprise ? (Si vous êtes moins de 750 collaborateurs, vous n'êtes pas concernés par cette ESRS.)"
   },
   {
     "code": "ESRS E5",

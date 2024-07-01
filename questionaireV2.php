@@ -264,8 +264,8 @@
                     <option value="1-10" style="font-weight: 700">1-10</option>
                     <option value="11-50" style="font-weight: 700">11-50</option>
                     <option value="51-200" style="font-weight: 700">51-200</option>
-                    <option value="201-500" style="font-weight: 700">201-500</option>
-                    <option value="501+" style="font-weight: 700">501+</option>
+                    <option value="201-750" style="font-weight: 700">201-750</option>
+                    <option value="750+" style="font-weight: 700">750+</option>
                 </select>
             </div>
             <div class="form-group">
