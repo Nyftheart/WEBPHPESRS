@@ -140,6 +140,7 @@
             cursor: pointer;
         }
         .rowinter{
+            height: 75px;
             border-bottom: 1px black solid;
         }
         .submenu td{
@@ -222,6 +223,17 @@
             white-space: pre-line; /* Allow line breaks */
         }
 
+        .tooltip-content2 {
+            display: flex;
+            position: absolute;
+            background-color: #caf4ca;
+            border: 1px solid #ccc;
+            padding: 10px;
+            z-index: 1000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            white-space: pre-line; /* Allow line breaks */
+        }
+
 
         .tooltip-content ul {
             list-style-type: none;
@@ -246,7 +258,11 @@
 <table id="data-table">
     <tr>
         <th style="border: none"></th>
-        <th colspan="10" class="header-table">JUSTIFICATION DE LA MATÉRIALITÉ</th>
+        <th colspan="10" class="header-table">
+            JUSTIFICATION DE LA MATÉRIALITÉ
+            <sup id="info-button" style="cursor: pointer;">I</sup>
+        </th>
+
     </tr>
     <tr style="border-bottom: white">
         <th rowspan="2" style="border: none"></th>
@@ -258,12 +274,12 @@
         <th rowspan="2" class="result">Résultat de la matérialité financière</th>
     </tr>
     <tr style="border-bottom: 1px black solid; border-right: white 1px solid;" class="submenu">
-        <td style="background-color: #BADFCF; cursor: pointer;" data-tooltip="show" data-tooltip-content="Importance de l’impact négatif sur les personnes ou l’environnement :<br>🟩 Peu ou pas d’impact<br>🟨 Impact visible mais modéré sur les ressources naturelles<br>🟧 Impact significatif sur la qualité/quantité des ressources naturelles affectées<br>🟥 Forte dégradation des ressources naturelles">AMPLEUR <br><sup><img src="images/img.png" style="height: 20px"></sup></td>
+        <td style="background-color: #BADFCF; cursor: pointer;" data-tooltip="show" data-tooltip-content="Importance de l’impact négatif sur les personnes ou l’environnement :<br>🟩 Peu ou pas d’impact<br>🟨 Impact visible mais modéré <br>🟧 Impact significatif<br>🟥 Forte dégradation">AMPLEUR <br><sup><img src="images/img.png" style="height: 20px"></sup></td>
         <td style="background-color: #BADFCF; cursor: pointer;" data-tooltip="show" data-tooltip-content="Dans quelle mesure les impacts négatifs sont répandus :<br>🟩 Impact très localisé<br>🟨 Impact régional<br>🟧 Impact national<br>🟥 Impact multi-pays">ÉTENDUE <br><sup><img src="images/img.png" style="height: 20px"></sup></td>
         <td style="background-color: #BADFCF; cursor: pointer;" data-tooltip="show" data-tooltip-content="Si et dans quelle mesure les impacts négatifs peuvent être réparés :<br>🟩 Impact non significatif<br>🟨 Impact nécessitant peu de ressources pour y remédier (humaines, technologiques, financières, ...)<br>🟧 Impact nécessitant de ressources importantes pour y remédier<br>🟥 Impact définitif">CARACTÈRE IRRÉMÉDIABLE <br><sup><img src="images/img.png" style="height: 20px"></sup></td>
         <td style="background-color: #BADFCF; cursor: pointer;" data-tooltip="show" data-tooltip-content="Dans quelle mesure les impacts positifs sont répandus :<br>🟩 Impact très localisé<br>🟨 Impact régional<br>🟧 Impact national<br>🟥 Impact multi-pays">AMPLEUR POSITIVE <br><sup><img src="images/img.png" style="height: 20px"></sup></td>
-        <td style="background-color: #BADFCF; cursor: pointer;" data-tooltip="show" data-tooltip-content="Bénéfice lié à l’impact positif sur les personnes ou l’environnement :<br>🟩 Peu ou pas d’impact<br>🟨 Impact visible mais modéré sur les ressources naturelles<br>🟧 Impact significatif sur la qualité/quantité des ressources naturelles affectées<br>🟥 Forte dégradation des ressources naturelles">ÉTENDUE POSITIVE <br><sup><img src="images/img.png" style="height: 20px"></sup></td>
-        <td style="background-color: #D1E1DB; cursor: pointer;" data-tooltip="show" data-tooltip-content="Évaluation des effets financiers sur la part du chiffre d'affaires et la localisation des activités exposées :<br>🟩 Peu ou pas d’impact<br>🟨 Impact modéré<br>🟧 Impact significatif<br>🟥 Impact majeur">EFFETS FINANCIERS <sup><img src="images/img.png" style="height: 20px"></sup></td>
+        <td style="background-color: #BADFCF; cursor: pointer;" data-tooltip="show" data-tooltip-content="Bénéfice lié à l’impact positif sur les personnes ou l’environnement :<br>🟩 Peu ou pas d’impact<br>🟨 Impact visible mais modéré <br>🟧 Impact significatif <br>🟥 Forte dégradation ">ÉTENDUE POSITIVE <br><sup><img src="images/img.png" style="height: 20px"></sup></td>
+        <td style="background-color: #D1E1DB; cursor: pointer;" data-tooltip="show" data-tooltip-content="Évaluation des effets financiers, avérés ou potentiels, sur les actifs exposés ou sur les sorties de ressources futures (incidences sur le patrimoine et la situation financière) :<br>🟩 Peu ou pas d’impact<br>🟨 Impact modéré<br>🟧 Impact significatif<br>🟥 Impact majeur">EFFETS FINANCIERS <sup><img src="images/img.png" style="height: 20px"></sup></td>
         <td style="background-color: #D1E1DB; cursor: pointer;" data-tooltip="show" data-tooltip-content="Évaluation des effets financiers potentiels sur la part et la localisation des actifs exposés, classification des actifs par classe d'efficacité énergétique, sorties de ressources futures :<br>🟩 Peu ou pas d’impact<br>🟨 Impact modéré<br>🟧 Impact significatif<br>🟥 Impact majeur">LOCALISATION DES ACTIFS <br><sup><img src="images/img.png" style="height: 20px"></sup></td>
     </tr>
 
@@ -273,6 +289,11 @@
     <!-- Les lignes de données seront générées ici -->
     </tbody>
 </table>
+
+
+<div id="info-tooltip" class="tooltip">
+    <p id="info-tooltip-content"></p>
+</div>
 
 <button onclick="" id="saveButton" class="validate-button">VALIDER</button>
 
@@ -285,13 +306,61 @@
 </div>
 
 <script>
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+        setupInfoTooltip();
+    });
+
+    function setupInfoTooltip() {
+        const infoButton = document.getElementById('info-button');
+        const tooltip = document.getElementById('info-tooltip');
+        const tooltipContent = document.getElementById('info-tooltip-content');
+
+        if (!infoButton || !tooltip || !tooltipContent) {
+            console.error('Elements not found in the DOM');
+            return;
+        }
+
+        infoButton.addEventListener('click', () => {
+            const codeParam = getUrlParameter('code');
+            console.log(`Fetching info for code: ${codeParam}`);
+            fetch('info.json')
+                .then(response => response.json())
+                .then(data => {
+                    const info = data.find(item => item.code === codeParam);
+                    if (info) {
+                        console.log('Info content:', info.content);  // Vérifiez le contenu ici
+                        tooltipContent.innerHTML = info.content;
+                        showTooltip(infoButton, tooltip);
+                    } else {
+                        tooltipContent.innerHTML = "Aucune information disponible pour ce code.";
+                    }
+                    showTooltip(infoButton, tooltip);
+                })
+                .catch(error => console.error('Erreur lors du chargement des données JSON:', error));
+        });
+
+        document.addEventListener('click', (event) => {
+            if (!tooltip.contains(event.target) && event.target !== infoButton) {
+                tooltip.style.display = 'none';
+            }
+        });
+    }
+
+    function showTooltip(button, tooltip) {
+        const rect = button.getBoundingClientRect();
+        tooltip.style.display = 'block';
+        tooltip.style.top = `${rect.bottom + window.scrollY + 10}px`;
+        tooltip.style.left = `${rect.left + window.scrollX - (tooltip.offsetWidth / 2) + (button.offsetWidth / 2)}px`;
+    }
+
+
     function getUrlParameter(name) {
         name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
         var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
         var results = regex.exec(location.search);
         return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
     }
-
     function createGauge(id) {
         return `
         <div class="gauge-container" id="container-${id}" >
@@ -342,6 +411,14 @@
                 filteredData.forEach((item, index) => {
                     const row = createTableRow(item, index);
                     tableBody.appendChild(row);
+
+                    // Ajouter une ligne vide
+                    const emptyRow = document.createElement('tr');
+                    const emptyCell = document.createElement('td');
+                    emptyCell.colSpan = 11; // Assurez-vous que le nombre de colonnes correspond à votre tableau
+                    emptyCell.style.border = 'none'; // Pour enlever les bordures de la ligne vide
+                    emptyRow.appendChild(emptyCell);
+                    tableBody.appendChild(emptyRow);
                 });
 
                 // Initialiser les jauges après avoir ajouté les lignes au tableau

@@ -1,7 +1,7 @@
 [
   {
     "code": "ESRS E1",
-    "text": "Inventaire des impacts sur le climat Parts des émissions de Gaz à Effet de Serre",
+    "text": "Adaptation au changement\nclimatique\n\n(vulnérabilités actuelles\n\net futures)",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -15,7 +15,7 @@
   },
   {
     "code": "ESRS E1",
-    "text": "Inventaire des impacts sur le climat Parts dans la consommation d'énergie liée aux opérations propres",
+    "text": "Atténuation du changement\nclimatique\n\n(incidences des mesures mises en\nplace ou à mettre en place)",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -29,21 +29,7 @@
   },
   {
     "code": "ESRS E1",
-    "text": "Exposition à des risques physiques (liés aux impacts physiques du changement climatique)",
-    "negatif-ampleur": "0",
-    "negatif-etendu": "0",
-    "negatif-caractere": "0",
-    "positif-ampleur": "0",
-    "positif-etendu": "0",
-    "resultat-materiel": "❌",
-    "financiers-patrimoine": "0",
-    "financiers-activite": "0",
-    "financiers-opportunites": "0",
-    "resultat-financier": "❌"
-  },
-  {
-    "code": "ESRS E1",
-    "text": "Exposition à des risques et opportunités de transition (liés à la transition vers une économie à plus faibles émissions de CO²)",
+    "text": "Energie\n\n(ressources et transition\n\nÉnergétiques)",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -57,7 +43,7 @@
   },
   {
     "code": "ESRS E2",
-    "text": "Inventaire des impacts liés à la pollution Polluants atmosphériques",
+    "text": "Pollution de l’air",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -71,7 +57,7 @@
   },
   {
     "code": "ESRS E2",
-    "text": "Inventaire des impacts liés à la pollution Pollution de l'eau",
+    "text": "Pollution de l'eau",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -85,7 +71,7 @@
   },
   {
     "code": "ESRS E2",
-    "text": "Inventaire des impacts liés à la pollution Pollution des sols",
+    "text": "Pollution des sols",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -99,7 +85,7 @@
   },
   {
     "code": "ESRS E2",
-    "text": "Inventaire des impacts liés à la pollution Pollution par les plastiques et microplastiques",
+    "text": "Pollution des organismes vivants et\nressources alimentaires",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -127,7 +113,7 @@
   },
   {
     "code": "ESRS E2",
-    "text": "Exposition à des risques physiques (liés aux impacts liés à la pollution)",
+    "text": "Substances préoccupantes",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -141,7 +127,21 @@
   },
   {
     "code": "ESRS E2",
-    "text": "Exposition à des risques et opportunités de transition (liés à la transition vers une économie moins polluante)",
+    "text": "Substances extrêmement\npréoccupantes",
+    "negatif-ampleur": "0",
+    "negatif-etendu": "0",
+    "negatif-caractere": "0",
+    "positif-ampleur": "0",
+    "positif-etendu": "0",
+    "resultat-materiel": "❌",
+    "financiers-patrimoine": "0",
+    "financiers-activite": "0",
+    "financiers-opportunites": "0",
+    "resultat-financier": "❌"
+  },
+  {
+    "code": "ESRS E2",
+    "text": "Pollution par les plastiques et\nmicroplastiques",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -156,7 +156,7 @@
 
   {
     "code": "ESRS E3",
-    "text": "Inventaire des impacts liés à l'eau et aux ressources marines : Eaux",
+    "text": "EAU",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -170,7 +170,7 @@
   },
   {
     "code": "ESRS E3",
-    "text": "Inventaire des impacts liés à l'eau et aux ressources marines : Ressources aquatiques et marines",
+    "text": "Ressources marines",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -183,8 +183,8 @@
     "resultat-financier": "❌"
   },
   {
-    "code": "ESRS E3",
-    "text": "Exposition à des risques physiques",
+    "code": "ESRS E4",
+    "text": "Vecteurs d’incidence directs de\nla perte de biodiversité",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -197,8 +197,36 @@
     "resultat-financier": "❌"
   },
   {
-    "code": "ESRS E3",
-    "text": "Exposition à des risques et opportunités de transition",
+    "code": "ESRS E4",
+    "text": "Incidences sur l’état des espèces",
+    "negatif-ampleur": "0",
+    "negatif-etendu": "0",
+    "negatif-caractere": "0",
+    "positif-ampleur": "0",
+    "positif-etendu": "0",
+    "resultat-materiel": "❌",
+    "financiers-patrimoine": "0",
+    "financiers-activite": "0",
+    "financiers-opportunites": "0",
+    "resultat-financier": "❌"
+  },
+  {
+    "code": "ESRS E4",
+    "text": "Incidences sur l’étendue et l’état\ndes écosystèmes",
+    "negatif-ampleur": "0",
+    "negatif-etendu": "0",
+    "negatif-caractere": "0",
+    "positif-ampleur": "0",
+    "positif-etendu": "0",
+    "resultat-materiel": "❌",
+    "financiers-patrimoine": "0",
+    "financiers-activite": "0",
+    "financiers-opportunites": "0",
+    "resultat-financier": "❌"
+  },
+  {
+    "code": "ESRS E4",
+    "text": "Incidences et dépendances sur les services écosystémiques",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -213,7 +241,7 @@
 
   {
     "code": "ESRS E5",
-    "text": "Inventaire des impacts liés à l'utilisation efficace des ressources, leur non épuisement et leur utilisation durable : Ressources entrantes",
+    "text": "Ressources entrantes, y compris\nl’utilisation des ressources",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -227,7 +255,7 @@
   },
   {
     "code": "ESRS E5",
-    "text": "Inventaire des impacts liés à l'utilisation efficace des ressources, leur non épuisement et leur utilisation durable : Ressources sortantes liées aux produits et services",
+    "text": "Ressources sortantes liées aux\nproduits et services",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -241,7 +269,7 @@
   },
   {
     "code": "ESRS E5",
-    "text": "Inventaire des impacts liés à l'utilisation efficace des ressources, leur non épuisement et leur utilisation durable : Déchets",
+    "text": "Optimisation de l'utilisation des\nressources",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -255,7 +283,7 @@
   },
   {
     "code": "ESRS E5",
-    "text": "Inventaire des impacts liés à l'utilisation efficace des ressources, leur non épuisement et leur utilisation durable : Optimisation de l'utilisation des ressources",
+    "text": "Déchets",
     "negatif-ampleur": "0",
     "negatif-etendu": "0",
     "negatif-caractere": "0",
@@ -267,48 +295,7 @@
     "financiers-opportunites": "0",
     "resultat-financier": "❌"
   },
-  {
-    "code": "ESRS E5",
-    "text": "Inventaire des impacts liés à l'utilisation efficace des ressources, leur non épuisement et leur utilisation durable : Développement d'une économie circulaire dans la chaîne de valeur",
-    "negatif-ampleur": "0",
-    "negatif-etendu": "0",
-    "negatif-caractere": "0",
-    "positif-ampleur": "0",
-    "positif-etendu": "0",
-    "resultat-materiel": "❌",
-    "financiers-patrimoine": "0",
-    "financiers-activite": "0",
-    "financiers-opportunites": "0",
-    "resultat-financier": "❌"
-  },
-  {
-    "code": "ESRS E5",
-    "text": "Exposition à des risques physiques",
-    "negatif-ampleur": "0",
-    "negatif-etendu": "0",
-    "negatif-caractere": "0",
-    "positif-ampleur": "0",
-    "positif-etendu": "0",
-    "resultat-materiel": "❌",
-    "financiers-patrimoine": "0",
-    "financiers-activite": "0",
-    "financiers-opportunites": "0",
-    "resultat-financier": "❌"
-  },
-  {
-    "code": "ESRS E5",
-    "text": "Exposition à des risques et opportunités de transition",
-    "negatif-ampleur": "0",
-    "negatif-etendu": "0",
-    "negatif-caractere": "0",
-    "positif-ampleur": "0",
-    "positif-etendu": "0",
-    "resultat-materiel": "❌",
-    "financiers-patrimoine": "0",
-    "financiers-activite": "0",
-    "financiers-opportunites": "0",
-    "resultat-financier": "❌"
-  },
+
   {
     "code": "ESRS S1",
     "text": "Conditions de travail : Conditions d'emploi",
