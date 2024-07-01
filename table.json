@@ -324,20 +324,7 @@
     "financiers-opportunites": "0",
     "resultat-financier": "❌"
   },
-  {
-    "code": "ESRS S1",
-    "text": "Conditions de travail : Autres",
-    "negatif-ampleur": "0",
-    "negatif-etendu": "0",
-    "negatif-caractere": "0",
-    "positif-ampleur": "0",
-    "positif-etendu": "0",
-    "resultat-materiel": "❌",
-    "financiers-patrimoine": "0",
-    "financiers-activite": "0",
-    "financiers-opportunites": "0",
-    "resultat-financier": "❌"
-  },
+
   {
     "code": "ESRS S1",
     "text": "Égalité de traitement et égalité des chances pour tous : Equité d'emploi, de salaire et de formation",
@@ -394,20 +381,7 @@
     "financiers-opportunites": "0",
     "resultat-financier": "❌"
   },
-  {
-    "code": "ESRS S1",
-    "text": "Autres droits liés au travail : Autres",
-    "negatif-ampleur": "0",
-    "negatif-etendu": "0",
-    "negatif-caractere": "0",
-    "positif-ampleur": "0",
-    "positif-etendu": "0",
-    "resultat-materiel": "❌",
-    "financiers-patrimoine": "0",
-    "financiers-activite": "0",
-    "financiers-opportunites": "0",
-    "resultat-financier": "❌"
-  },
+
   {
     "code": "ESRS S1",
     "text": "Respect des conditions de logement",
@@ -450,20 +424,7 @@
     "financiers-opportunites": "0",
     "resultat-financier": "❌"
   },
-  {
-    "code": "ESRS S2",
-    "text": "Conditions de travail : Autres",
-    "negatif-ampleur": "0",
-    "negatif-etendu": "0",
-    "negatif-caractere": "0",
-    "positif-ampleur": "0",
-    "positif-etendu": "0",
-    "resultat-materiel": "❌",
-    "financiers-patrimoine": "0",
-    "financiers-activite": "0",
-    "financiers-opportunites": "0",
-    "resultat-financier": "❌"
-  },
+
   {
     "code": "ESRS S2",
     "text": "Égalité de traitement et égalité des chances pour tous : Equité d'emploi, de salaire et de formation",
@@ -492,20 +453,7 @@
     "financiers-opportunites": "0",
     "resultat-financier": "❌"
   },
-  {
-    "code": "ESRS S2",
-    "text": "Égalité de traitement et égalité des chances pour tous : Autres",
-    "negatif-ampleur": "0",
-    "negatif-etendu": "0",
-    "negatif-caractere": "0",
-    "positif-ampleur": "0",
-    "positif-etendu": "0",
-    "resultat-materiel": "❌",
-    "financiers-patrimoine": "0",
-    "financiers-activite": "0",
-    "financiers-opportunites": "0",
-    "resultat-financier": "❌"
-  },
+
   {
     "code": "ESRS S2",
     "text": "Autres droits liés au travail : Respect des droits de l'homme",
@@ -534,20 +482,7 @@
     "financiers-opportunites": "0",
     "resultat-financier": "❌"
   },
-  {
-    "code": "ESRS S2",
-    "text": "Autres droits liés au travail : Autres",
-    "negatif-ampleur": "0",
-    "negatif-etendu": "0",
-    "negatif-caractere": "0",
-    "positif-ampleur": "0",
-    "positif-etendu": "0",
-    "resultat-materiel": "❌",
-    "financiers-patrimoine": "0",
-    "financiers-activite": "0",
-    "financiers-opportunites": "0",
-    "resultat-financier": "❌"
-  },
+
   {
     "code": "ESRS S3",
     "text": "Communautés touchées : Droits économiques, sociaux et culturels des communautés",
@@ -646,20 +581,7 @@
     "financiers-opportunites": "0",
     "resultat-financier": "❌"
   },
-  {
-    "code": "ESRS S4",
-    "text": "Consommateurs et utilisateurs finals : Autres",
-    "negatif-ampleur": "0",
-    "negatif-etendu": "0",
-    "negatif-caractere": "0",
-    "positif-ampleur": "0",
-    "positif-etendu": "0",
-    "resultat-materiel": "❌",
-    "financiers-patrimoine": "0",
-    "financiers-activite": "0",
-    "financiers-opportunites": "0",
-    "resultat-financier": "❌"
-  },
+
 
 
 
