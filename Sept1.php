@@ -16,7 +16,7 @@
             justify-content: space-between;
             align-items: center;
             background-color: #F5F5DC;
-            padding: 30px 20px;
+            padding: 50px 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             position: relative;
         }
@@ -73,7 +73,7 @@
             display: flex; /* Utilisation de flexbox pour aligner les éléments au bas */
             flex-direction: column; /* Définir la direction de flexbox en colonne */
             justify-content: space-between; /* Espacement égal pour aligner les éléments au bas */
-            height: 70%;
+            height: 62%;
         }
         .card h2 {
             margin: 0;
@@ -135,7 +135,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: #caf4ca;
+            background-color: #edf3ed;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
@@ -175,7 +175,6 @@
         <img src="./images/title_ecriture.png" alt="Logo" class="logo">
     </div>
     <div class="icons">
-        <img src="./images/img.png" alt="Info Icon" id="info-icon">
         <a href="https://panel-esrs.vercel.app/">Pannel Gestion</a>
     </div>
 </header>
@@ -184,8 +183,11 @@
     <div class="cards">
         <div class="card environnementsec">
             <div class="card-header environnement">
+
                 <h2>Environnement</h2>
-                <div class="status">ESRS</div>
+                <div class="status">ESRS
+                </div>
+                <img src="./images/img.png" alt="Info Icon" id="info-icon2" style="margin-left: 85%; width: 50px;">
             </div>
             <div class="card-body">
                 <ul>
@@ -209,6 +211,7 @@
             <div class="card-header social">
                 <h2>Social</h2>
                 <div class="status">ESRS</div>
+                <img src="./images/img.png" alt="Info Icon" id="info-icon3" style="margin-left: 85%; width: 50px;">
             </div>
             <div class="card-body">
                 <ul>
@@ -231,6 +234,7 @@
             <div class="card-header gouvernance">
                 <h2>Gouvernance</h2>
                 <div class="status">ESRS</div>
+                <img src="./images/img.png" alt="Info Icon" id="info-icon" style="margin-left: 85%; width: 50px;">
             </div>
             <div class="card-body">
                 <ul>
@@ -404,6 +408,8 @@
             }
         }
         const infoIcon = document.getElementById('info-icon');
+        const infoIcon2 = document.getElementById('info-icon2');
+        const infoIcon3 = document.getElementById('info-icon3');
         const infoPopup = document.getElementById('info-popup');
         const popupClose = document.getElementById('popup-close');
 
@@ -419,6 +425,8 @@
 
         // Ajouter un écouteur d'événement pour ouvrir la popup lorsque l'utilisateur clique sur l'icône
         infoIcon.addEventListener('click', showPopup);
+        infoIcon2.addEventListener('click', showPopup);
+        infoIcon3.addEventListener('click', showPopup);
 
         // Ajouter un écouteur d'événement pour fermer la popup lorsque l'utilisateur clique sur le "x"
         popupClose.addEventListener('click', hidePopup);

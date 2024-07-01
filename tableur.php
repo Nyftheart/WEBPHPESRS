@@ -166,6 +166,21 @@
             background-color: #45a049; /* Fond vert plus foncé au survol */
         }
 
+        .modal {
+            display: block; /* Masqué par défaut */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: #d7d7d7; /* Couleur de fond avec opacité */
+            transition: opacity 0.3s ease; /* Transition en douceur */
+            opacity: 1; /* Début avec opacité 0 */
+        }
+
+
         .modal-content {
             font-size: 30px;
             background-color: #fefefe;
@@ -173,11 +188,23 @@
             padding: 20px;
             border: 1px solid #888;
             width: 80%;
-            max-width: 600px;
+            max-width: 1400px;
             text-align: center;
             position: relative;
             border-radius: 10px; /* Ajout de coins arrondis */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajout d'une ombre */
+            animation: fadeIn 0.5s ease; /* Animation d'apparition en douceur */
+        }
+
+        @keyframes fadeIn {
+            from {
+                transform: translateY(-50px); /* Départ légèrement au-dessus */
+                opacity: 0; /* Départ avec opacité 0 */
+            }
+            to {
+                transform: translateY(0); /* Arrivée à la position normale */
+                opacity: 1; /* Arrivée avec opacité 1 */
+            }
         }
 
         .modal-content button {
@@ -197,6 +224,7 @@
         .modal-content button:hover {
             background-color: #45a049; /* Fond vert plus foncé au survol */
         }
+
         .tooltip {
 
             text-align: left;
